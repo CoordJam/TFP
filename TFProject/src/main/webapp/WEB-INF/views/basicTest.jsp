@@ -9,6 +9,37 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+body, html {
+	font-family: "Lato", sans-serif;
+	height: 100%;
+	color: #444;
+	line-height: 1.8;
+}
+
+#myNavbar {
+	opacity: 0.5;
+	color: #FFF;
+}
+
+#navDemo {
+	opacity: 0.7;
+	color: #FFF;
+}
+
+::-webkit-scrollbar {
+	width: 1px;
+}
+
+::-webkit-scrollbar-track {
+	display: none;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+}
+</style>
 </head>
 <body id="body">
 <!-- Navbar (sit on top) -->
