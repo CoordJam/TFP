@@ -6,10 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 body, h1, h2, h3, h4, h5, h6 {
 	font-family: "Lato", sans-serif;
@@ -97,37 +96,33 @@ body, html {
 	<!-- Navbar (sit on top) -->
 	<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
-			<a class="w3-bar-item w3-button w3-hover-black w3-left"
-				href="javascript:void(0);" onclick="toggleFunction()"
-				title="Toggle Navigation Menu"> <i class="fa fa-bars"></i>
-			</a> <a href="#home" class="w3-bar-item w3-hover-black w3-button">HOME</a>
-			<a href="#about"
-				class="w3-bar-item w3-button w3-hover-black w3-hide-small"> <i
-				class="fa fa-user"></i> ABOUT
-			</a> <a href="#portfolio"
-				class="w3-bar-item w3-button w3-hover-black w3-hide-small"><i
-				class="fa fa-th"></i> RUNWAY</a> <a href="#contact"
-				class="w3-bar-item w3-button w3-hover-black w3-hide-small"><i
-				class="fa fa-envelope"></i> CONTACT</a> <i id="usound"
-				style="font-size: 20px"
-				class="w3-bar-item fa fa-volume-up 
-				w3-right w3-hover-black w3-button"
-				onclick="sounds()"></i>
+			<a class="w3-bar-item w3-button w3-hover-black w3-left" href="javascript:void(0);"
+			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
+			
+			<a href="#home" class="w3-bar-item w3-hover-black w3-button">HOME</a>
+			
+			<a href="#about" class="w3-bar-item w3-button w3-hover-black w3-hide-small"> 
+				<i class="fa fa-user"></i> ABOUT</a> 
+				
+			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+				<i class="fa fa-th"></i> RUNWAY</a> 
+				
+			<a href="#contact" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+				<i class="fa fa-envelope"></i> CONTACT</a> 
+			
+			<i id="usound" style="font-size: 20px; height: 42px;" class="w3-bar-item fa fa-volume-up 
+				w3-right w3-hover-black w3-button" onclick="sounds()"></i>
 		</div>
 
 		<!-- Navbar on small screens -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
-			<a href="#about" class="w3-bar-item w3-button"
-				onclick="toggleFunction()">일정</a> <a href="#portfolio"
-				class="w3-bar-item w3-button" onclick="toggleFunction()">뉴욕</a> <a
-				href="#contact" class="w3-bar-item w3-button"
-				onclick="toggleFunction()">런던</a> <a href="#contact"
-				class="w3-bar-item w3-button" onclick="toggleFunction()">도쿄</a> <a
-				href="#contact" class="w3-bar-item w3-button"
-				onclick="toggleFunction()">파리</a> <a href="#contact"
-				class="w3-bar-item w3-button" onclick="toggleFunction()">디자이너</a> <a
-				href="#contact" class="w3-bar-item w3-button"
-				onclick="toggleFunction()">QnA</a>
+			<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">일정</a> 
+			<a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">뉴욕</a> 
+			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">런던</a> 
+			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">도쿄</a> 
+			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">파리</a> 
+			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">디자이너</a> 
+			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
 		</div>
 	</div>
 
@@ -137,6 +132,7 @@ body, html {
 		class="w3-display-middle w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">TOTAL
 		FASHION <span class="w3-hide-small">WEEK</span>
 	</span>
+	
 	<!-- Container (About Section) -->
 	<div class="w3-content w3-container w3-padding-64" id="about">
 		<h3 class="w3-center">ABOUT</h3>
@@ -145,6 +141,7 @@ body, html {
 		</p>
 
 		<p class="w3-center">Total Fashion - 유명 도시의 유명 브랜드의 패션쇼 정보를 한눈에</p>
+		
 		<div class="w3-row">
 
 			<div class="w3-col m6 w3-center w3-padding-large">
@@ -156,6 +153,7 @@ body, html {
 					class="w3-round w3-image w3-hover-opacity" alt="Photo of Me"
 					width="500" height="333">
 			</div>
+			
 			<!-- Hide this text on small devices -->
 			<div class="w3-col m6 w3-hide-small w3-padding-large"
 				style="margin-top: 80px; text-align: justify;">
@@ -168,20 +166,25 @@ body, html {
 					wear'와 같은 말로 원래는 오트쿠튀르보다 품질이 낮고 저렴한 기성복을 의미했지만, 대중들의 수요가 늘어나 점차 고급
 					기성복으로 의미가 변화했습니다.</span>
 			</div>
+			
 		</div>
+		
 		<p class="w3-large w3-center w3-padding-16">About Percentage:</p>
 		<p class="w3-wide">
 			<i class="fa fa-circle"></i>Fashion Black and White Percentage
 		</p>
+		
 		<div class="w3-light-grey">
 			<div class="w3-container w3-padding-small w3-dark-grey w3-center"
 				style="width: 68%">Black 68%</div>
 			<div class="w3-container w3-padding-small w3-grey w3-center"
 				style="width: 32%">White 32%</div>
 		</div>
+		
 		<p class="w3-wide">
 			<i class="fa fa-circle"></i>Haute couture and Pret a porter
 		</p>
+		
 		<div class="w3-light-grey">
 			<div class="w3-container w3-padding-small w3-dark-grey w3-center"
 				style="width: 58%">Haute couture 58%</div>
@@ -311,12 +314,13 @@ body, html {
 	</div>
 
 	<!-- Container (Contact Section) -->
-	<div class="w3-content w3-center w3-container w3-padding-64"
-		id="contact">
+	<div class="w3-content w3-center w3-container w3-padding-64" id="contact">
+	
 		<h3 class="w3-center">WHERE I WORK</h3>
 		<p class="w3-center">
 			<em>I'd love your feedback!</em>
 		</p>
+		
 		<div class="w3-col w3-panel">
 			<div class="w3-large w3-center">
 				<i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge"></i>
@@ -331,7 +335,9 @@ body, html {
 				Swing by for a cup of <i class="fa fa-coffee"></i>, &nbsp;or leave
 				me a note:
 			</p>
+			
 		</div>
+		
 		<form action="/action_page.php" target="_blank">
 			<div class="w3-row-padding" style="margin: 0 100px 8px 100px">
 				<div class="w3-half">
@@ -407,9 +413,8 @@ body, html {
 			}
 		}
 	</script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
-
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
 	<script>
 		bl = true;
@@ -418,20 +423,48 @@ body, html {
 		yousound.onclick = function() {
 
 			if (bl) {
-				yousound.className = "3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
 				console.log(bl);
 				bl = !bl;
 				console.log(bl);
 				ytplayer.playVideo();
 				console.log(ytplayer);
 			} else {
-				yousound.className = "3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
+				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
 				console.log(bl);
 				bl = !bl;
 				console.log(bl);
 				ytplayer.pauseVideo();
 			}
 		}
+	</script>
+	
+	<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	      }
+	    }
+	  });
 	</script>
 
 </body>
