@@ -1,20 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
 <title></title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
 body, html {
-	font-family: "Lato", sans-serif;
 	height: 100%;
 	color: #444;
 	line-height: 1.8;
+	font-family: "Lato", sans-serif;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1 {
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+	background-image:
+		url("https://media.giphy.com/media/3o7abmKhQ80pURWbgQ/giphy.gif");
+	min-height: 50%;
+	opacity: 0.9;
+}
+
+
+.w3-wide {
+	letter-spacing: 10px;
+}
+
+.w3-hover-opacity {
+	cursor: pointer;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+	.bgimg-1 {
+		background-attachment: scroll;
+		min-height: 400px;
+	}
 }
 
 #myNavbar {
@@ -40,9 +73,9 @@ body, html {
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
 </style>
-</head>
+
 <body id="body">
-<!-- Navbar (sit on top) -->
+	<!-- Navbar (sit on top) -->
 	<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
 			<a class="w3-bar-item w3-button w3-hover-black w3-left" href="javascript:void(0);"
@@ -74,17 +107,22 @@ body, html {
 			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
 		</div>
 	</div>
+
+	<!-- First Parallax Image with Logo Text -->
+	<div class="bgimg-1 w3-display-container" id="home"></div>
 	
+	<img src="https://media.giphy.com/media/3o7abmKhQ80pURWbgQ/giphy.gif"/>
+
 	<script>
+		
 		// Change style of navbar on scroll
 		window.onscroll = function() {
 			myFunction()
 		};
 		function myFunction() {
 			var navbar = document.getElementById("myNavbar");
-			//기본 검정 스크롤바 100초과시 흰색 메뉴바
-			if (document.body.scrollTop > 100
-					|| document.documentElement.scrollTop > 100) {
+			if (document.body.scrollTop > 300
+					|| document.documentElement.scrollTop > 300) {
 				navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
 						+ " w3-white";
 			} else {
@@ -105,7 +143,7 @@ body, html {
 	</script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
-	
+
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
@@ -130,31 +168,32 @@ body, html {
 	</script>
 	
 	<script>
-	// Select all links with hashes
-	$('a[href*="#"]')
-	  // Remove links that don't actually link to anything
-	  .not('[href="#"]')
-	  .not('[href="#0"]')
-	  .click(function(event) {
-	    // On-page links
-	    if (
-	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-	      && 
-	      location.hostname == this.hostname
-	    ) {
-	      // Figure out element to scroll to
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-	      // Does a scroll target exist?
-	      if (target.length) {
-	        // Only prevent default if animation is actually gonna happen
-	        event.preventDefault();
-	        $('html, body').animate({
-	          scrollTop: target.offset().top
-	        }, 1000);
-	      }
-	    }
-	  });
+		// Select all links with hashes
+		$('a[href*="#"]')
+		  // Remove links that don't actually link to anything
+		  .not('[href="#"]')
+		  .not('[href="#0"]')
+		  .click(function(event) {
+		    // On-page links
+		    if (
+		      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+		      && 
+		      location.hostname == this.hostname
+		    ) {
+		      // Figure out element to scroll to
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		      // Does a scroll target exist?
+		      if (target.length) {
+		        // Only prevent default if animation is actually gonna happen
+		        event.preventDefault();
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		      }
+		    }
+		  });
 	</script>
+
 </body>
 </html>

@@ -393,8 +393,8 @@ body, html {
 		};
 		function myFunction() {
 			var navbar = document.getElementById("myNavbar");
-			if (document.body.scrollTop > 100
-					|| document.documentElement.scrollTop > 100) {
+			if (document.body.scrollTop > 300
+					|| document.documentElement.scrollTop > 300) {
 				navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
 						+ " w3-white";
 			} else {
@@ -440,31 +440,31 @@ body, html {
 	</script>
 	
 	<script>
-	// Select all links with hashes
-	$('a[href*="#"]')
-	  // Remove links that don't actually link to anything
-	  .not('[href="#"]')
-	  .not('[href="#0"]')
-	  .click(function(event) {
-	    // On-page links
-	    if (
-	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-	      && 
-	      location.hostname == this.hostname
-	    ) {
-	      // Figure out element to scroll to
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-	      // Does a scroll target exist?
-	      if (target.length) {
-	        // Only prevent default if animation is actually gonna happen
-	        event.preventDefault();
-	        $('html, body').animate({
-	          scrollTop: target.offset().top
-	        }, 1000);
-	      }
-	    }
-	  });
+		// Select all links with hashes
+		$('a[href*="#"]')
+		  // Remove links that don't actually link to anything
+		  .not('[href="#"]')
+		  .not('[href="#0"]')
+		  .click(function(event) {
+		    // On-page links
+		    if (
+		      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+		      && 
+		      location.hostname == this.hostname
+		    ) {
+		      // Figure out element to scroll to
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		      // Does a scroll target exist?
+		      if (target.length) {
+		        // Only prevent default if animation is actually gonna happen
+		        event.preventDefault();
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		      }
+		    }
+		  });
 	</script>
 
 </body>
