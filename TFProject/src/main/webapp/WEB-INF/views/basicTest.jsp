@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <title></title>
@@ -29,7 +28,7 @@ body, html {
 .bgimg-1 {
 	background-image:
 		url("https://media.giphy.com/media/3o7abmKhQ80pURWbgQ/giphy.gif");
-	min-height: 50%;
+	min-height: 100%;
 	opacity: 0.9;
 }
 
@@ -51,7 +50,7 @@ body, html {
 }
 
 #myNavbar {
-	opacity: 0.5;
+	opacity: 0.6;
 	color: #FFF;
 }
 
@@ -76,43 +75,40 @@ body, html {
 
 <body id="body">
 	<!-- Navbar (sit on top) -->
-	<div class="w3-top">
+	<div class="w3-top"> 
 		<div class="w3-bar" id="myNavbar">
 			<a class="w3-bar-item w3-button w3-hover-black w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a href="#home" class="w3-bar-item w3-hover-black w3-button">HOME</a>
+			<a href="/" class="w3-bar-item w3-hover-black w3-button">HOME</a>
 			
-			<a href="#about" class="w3-bar-item w3-button w3-hover-black w3-hide-small"> 
-				<i class="fa fa-user"></i> ABOUT</a> 
+			<a href="/test1/#a1" class="w3-bar-item w3-button w3-hover-black w3-hide-small"> 
+				<i class="fa fa-user"></i> a1</a> 
 				
-			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
-				<i class="fa fa-th"></i> RUNWAY</a> 
+			<a href="/test1/#a2" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+				<i class="fa fa-th"></i> a2</a> 
 				
-			<a href="#contact" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a> 
+			<a href="/test1/#a3" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+				<i class="fa fa-envelope"></i> a3</a> 
 			
-			<i id="usound" style="font-size: 20px; height: 42px;" class="w3-bar-item fa fa-volume-up 
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
 				w3-right w3-hover-black w3-button" onclick="sounds()"></i>
 		</div>
 
 		<!-- Navbar on small screens -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
-			<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">일정</a> 
-			<a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">뉴욕</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">런던</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">도쿄</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">파리</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">디자이너</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
+			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
+			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a> 
 		</div>
 	</div>
 
 	<!-- First Parallax Image with Logo Text -->
 	<div class="bgimg-1 w3-display-container" id="home"></div>
 	
-	<img src="https://media.giphy.com/media/3o7abmKhQ80pURWbgQ/giphy.gif"/>
-
+	<img name="a1" src="https://media.giphy.com/media/3o7abmKhQ80pURWbgQ/giphy.gif"/>
+	<img name="a2" src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg"/>
+	<img name="a3" src="http://images6.fanpop.com/image/photos/39900000/IMG-6250-PNG-kion-39961687-1024-577.png"/>
 	<script>
 		
 		// Change style of navbar on scroll

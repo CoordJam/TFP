@@ -10,7 +10,16 @@ public class HomeController {
 	@RequestMapping("/")
 	public String home() {
 		return "home";
-		//return "basicTest";
+	}
+	
+	@RequestMapping("/test1")
+	public String test1() {
+		return "basicTest";
+	}
+	
+	@RequestMapping("/test2")
+	public String test2() {
+		return "basicTest2";
 	}
 	
 }

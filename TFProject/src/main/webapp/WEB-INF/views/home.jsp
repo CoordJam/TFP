@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <title></title>
@@ -9,6 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <style>
 body, h1, h2, h3, h4, h5, h6 {
 	font-family: "Lato", sans-serif;
@@ -69,7 +69,7 @@ body, html {
 }
 
 #myNavbar {
-	opacity: 0.5;
+	opacity: 0.6;
 	color: #FFF;
 }
 
@@ -110,19 +110,15 @@ body, html {
 			<a href="#contact" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
 				<i class="fa fa-envelope"></i> CONTACT</a> 
 			
-			<i id="usound" style="font-size: 20px; height: 42px;" class="w3-bar-item fa fa-volume-up 
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
 				w3-right w3-hover-black w3-button" onclick="sounds()"></i>
 		</div>
 
 		<!-- Navbar on small screens -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
-			<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">일정</a> 
-			<a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">뉴욕</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">런던</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">도쿄</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">파리</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">디자이너</a> 
-			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
+			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
+			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a> 
 		</div>
 	</div>
 
