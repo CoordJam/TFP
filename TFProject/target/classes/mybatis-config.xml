@@ -4,11 +4,11 @@
 <configuration>
 
 	<typeAliases>
-		<!-- <typeAlias type="test.license.lDto" alias="lDto"/> -->
+		<typeAlias type="com.coord.jam.Test3Dto" alias="Test3Dto"/>
 	</typeAliases>
 	
 	<mappers>
-		<!-- <mapper resource="test/license/lSql.xml" /> -->
+		<mapper resource="com/coord/jam/Test3Sql.xml" />
 	</mappers>
 	
 </configuration>

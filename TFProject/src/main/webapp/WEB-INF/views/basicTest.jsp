@@ -99,7 +99,8 @@ body, html {
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
 			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a> 
+			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
+			<a href="/test3/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>  
 		</div>
 	</div>
 
