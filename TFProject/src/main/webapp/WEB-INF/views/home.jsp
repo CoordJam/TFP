@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <style>
 body, h1, h2, h3, h4, h5, h6 {
 	font-family: "Lato", sans-serif;
@@ -91,10 +91,27 @@ body, html {
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
 </style>
-
+<script>
+var audio = new Audio('/audio/backgroundMusic.mp3');
+audio.play(); 
+audioIsPlaying = true;
+function sounds() {
+	if(audioIsPlaying == true){
+		audio.pause();
+		audioIsPlaying = false;
+	}else{
+		audio.play();
+		audioIsPlaying = true;
+	}
+}
+$(function(){
+	
+});
+	
+</script>
 <body id="body">
 	<!-- Navbar (sit on top) -->
-	<div class="w3-top">
+		<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
 			<a class="w3-bar-item w3-button w3-hover-black w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
@@ -119,11 +136,13 @@ body, html {
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
 			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
 			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/test3/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>  
+			<a href="/test3/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
+			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
 		</div>
 	</div>
 
 	<!-- First Parallax Image with Logo Text -->
+	
 	<div class="bgimg-1 w3-display-container" id="home"></div>
 	<span style="white-space: nowrap;"
 		class="w3-display-middle w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">TOTAL
@@ -136,6 +155,9 @@ body, html {
 		<p class="w3-center">
 			<em>I love fashion</em>
 		</p>
+	<!-- <audio controls autoplay src="/audio/sharksong.mp3"  loop="loop" preload="auto" class = "song" type="audio/mp3" muted="muted"></audio> -->
+
+
 
 		<p class="w3-center">Total Fashion - 유명 도시의 유명 브랜드의 패션쇼 정보를 한눈에</p>
 		
@@ -413,7 +435,7 @@ body, html {
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
-	<script>
+	<!-- <script>
 		bl = true;
 		var yousound = document.getElementById("usound");
 
@@ -434,7 +456,8 @@ body, html {
 				ytplayer.pauseVideo();
 			}
 		}
-	</script>
+	</script> -->
+	
 	
 	<script>
 		// Select all links with hashes
