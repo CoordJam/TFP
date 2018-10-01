@@ -137,6 +137,7 @@ $(function(){
 			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
 			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
 			<a href="/test3/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
+			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
 			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
 		</div>
 	</div>
@@ -435,7 +436,7 @@ $(function(){
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
-	<!-- <script>
+	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
 
@@ -456,7 +457,7 @@ $(function(){
 				ytplayer.pauseVideo();
 			}
 		}
-	</script> -->
+	</script>
 	
 	
 	<script>

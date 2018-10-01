@@ -1,6 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
 <title></title>
@@ -18,22 +16,6 @@ body, html {
 	font-family: "Lato", sans-serif;
 }
 
-/* Create a Parallax Effect */
-.bgimg-1 {
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-	background-image:
-		url("https://payload506.cargocollective.com/1/17/570101/12439724/HOSTIONENLACARA.gif");
-	min-height: 100%;
-	opacity: 0.9;
-}
-
 
 .w3-wide {
 	letter-spacing: 10px;
@@ -43,13 +25,6 @@ body, html {
 	cursor: pointer;
 }
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-	.bgimg-1 {
-		background-attachment: scroll;
-		min-height: 400px;
-	}
-}
 
 #myNavbar {
 	opacity: 0.6;
@@ -84,13 +59,13 @@ body, html {
 			
 			<a href="/" class="w3-bar-item w3-hover-black w3-button">HOME</a>
 			
-			<a href="/test3/#c1" class="w3-bar-item w3-button w3-hover-black w3-hide-small"> 
+			<a href="/test4/#a1" class="w3-bar-item w3-button w3-hover-black w3-hide-small"> 
 				<i class="fa fa-user"></i> a1</a> 
 				
-			<a href="/test3/#c2" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+			<a href="/test4/#a2" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
 				<i class="fa fa-th"></i> a2</a> 
 				
-			<a href="/test3/#c3" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+			<a href="/test4/#a3" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
 				<i class="fa fa-envelope"></i> a3</a> 
 			
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
@@ -102,7 +77,7 @@ body, html {
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
 			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
 			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/test3/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a> 
+			<a href="/test3/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>  
 			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
 			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>
 		</div>
@@ -110,30 +85,14 @@ body, html {
 
 	<!-- First Parallax Image with Logo Text -->
 	<div class="bgimg-1 w3-display-container" id="home"></div>
-	<b>이런식으로 밝은 이미지를 첫부분에 넣고싶으면 테스트2를 이용해야함</b><br>
-	<img name="c1" src="https://payload506.cargocollective.com/1/17/570101/12439724/HOSTIONENLACARA.gif"/><br>
-	<img name="c2" src="https://vignette.wikia.nocookie.net/central/images/1/1c/J-0.gif/revision/latest?cb=20170601153446"/>
-	<img name="c3" src="https://orig00.deviantart.net/2d92/f/2017/318/9/9/6pyeqehwyd5wq7tt_by_daycolors-dbtrudn.gif"/>
 	
-	
-	<table border="1" class ="TB"> 			   
-			   	<c:forEach var="a" items="${list}">
-			   	<tr>
-			 		<td rowspan="3" class="uu">${number} <c:set var="number" value="${number+1}"/></td>
-			 		<td rowspan="3" style="width:300px; height:200px;">${a.academy_geogra}</td>
-			 		<td colspan="2">${a.academy_title}</td>
-			   	</tr>
-			   	<tr>
-					<td>${a.academy_id}</td>
-					<td rowspan="2" style="width:300px; height:60px;">${a.academy_content}</td> 	
-			   	</tr>
-			   	<tr>
-			 		<td>${a.academy_date}</td>
-			   	</tr>
-			  	</c:forEach>
-	</table><br>
+	<img name="a1" src="https://media.giphy.com/media/3o7abmKhQ80pURWbgQ/giphy.gif"/>
+	<img name="a2" src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg"/>
+	<img name="a3" src="http://images6.fanpop.com/image/photos/39900000/IMG-6250-PNG-kion-39961687-1024-577.png"/>
+	<b>${list}</b>
 	
 	<script>
+		
 		// Change style of navbar on scroll
 		window.onscroll = function() {
 			myFunction()
