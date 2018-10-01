@@ -42,11 +42,5 @@ public class MenuController {
 	
 	}
 	
-	@RequestMapping("/goCollectionTestPage/")
-	public ModelAndView goCollectionTestPage() {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("collectionTestPage");
-		
-		return model;
-	}
+	
 }

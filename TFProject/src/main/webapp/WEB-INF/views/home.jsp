@@ -435,7 +435,7 @@ $(function(){
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
-	<!-- <script>
+	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
 
@@ -456,7 +456,7 @@ $(function(){
 				ytplayer.pauseVideo();
 			}
 		}
-	</script> -->
+	</script>
 	
 	
 	<script>
