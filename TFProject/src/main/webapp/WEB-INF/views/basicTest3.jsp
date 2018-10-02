@@ -55,18 +55,18 @@ body, html {
 	<!-- Navbar (sit on top) -->
 	<div class="w3-top"> 
 		<div class="w3-bar" id="myNavbar">
-			<a class="w3-bar-item w3-button w3-hover-black w3-left" href="javascript:void(0);"
+			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
 			<a href="/" class="w3-bar-item w3-hover-black w3-button">HOME</a>
 			
-			<a href="/test3/#c1" class="w3-bar-item w3-button w3-hover-black w3-hide-small"> 
+			<a href="/test3/#c1" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
 				<i class="fa fa-user"></i> a1</a> 
 				
-			<a href="/test3/#c2" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+			<a href="/test3/#c2" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
 				<i class="fa fa-th"></i> a2</a> 
 				
-			<a href="/test3/#c3" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+			<a href="/test3/#c3" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
 				<i class="fa fa-envelope"></i> a3</a> 
 			
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
@@ -85,7 +85,7 @@ body, html {
 	</div>
 
 	<!-- First Parallax Image with Logo Text -->
-	<img style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br>
+	<img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
 	<img name="c2" src="https://vignette.wikia.nocookie.net/central/images/1/1c/J-0.gif/revision/latest?cb=20170601153446"/>
 	<img name="c3" src="https://orig00.deviantart.net/2d92/f/2017/318/9/9/6pyeqehwyd5wq7tt_by_daycolors-dbtrudn.gif"/>
 	
@@ -114,8 +114,8 @@ body, html {
 		};
 		function myFunction() {
 			var navbar = document.getElementById("myNavbar");
-			if (document.body.scrollTop > 300
-					|| document.documentElement.scrollTop > 300) {
+			if (document.body.scrollTop > 100
+					|| document.documentElement.scrollTop > 100) {
 				navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
 						+ " w3-white";
 			} else {
