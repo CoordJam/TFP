@@ -18,22 +18,6 @@ body, html {
 	font-family: "Lato", sans-serif;
 }
 
-/* Create a Parallax Effect */
-.bgimg-1 {
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-  
-/* First image (Logo. Full height) */
-.bgimg-1 {
-	background-image:
-		url("https://payload506.cargocollective.com/1/17/570101/12439724/HOSTIONENLACARA.gif");
-	min-height: 100%;
-	opacity: 0.9;
-}
-
 
 .w3-wide {
 	letter-spacing: 10px;
@@ -41,14 +25,6 @@ body, html {
 
 .w3-hover-opacity {
 	cursor: pointer;
-}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-	.bgimg-1 {
-		background-attachment: scroll;
-		min-height: 400px;
-	}
 }
 
 #myNavbar {
@@ -109,9 +85,7 @@ body, html {
 	</div>
 
 	<!-- First Parallax Image with Logo Text -->
-	<div class="bgimg-1 w3-display-container" id="home"></div>
-	<b>이런식으로 밝은 이미지를 첫부분에 넣고싶으면 테스트2를 이용해야함</b><br>
-	<img name="c1" src="https://payload506.cargocollective.com/1/17/570101/12439724/HOSTIONENLACARA.gif"/><br>
+	<img style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br>
 	<img name="c2" src="https://vignette.wikia.nocookie.net/central/images/1/1c/J-0.gif/revision/latest?cb=20170601153446"/>
 	<img name="c3" src="https://orig00.deviantart.net/2d92/f/2017/318/9/9/6pyeqehwyd5wq7tt_by_daycolors-dbtrudn.gif"/>
 	
