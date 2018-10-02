@@ -25,7 +25,7 @@ body, html {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
+ 
 /* First image (Logo. Full height) */
 .bgimg-1 {
 	background-image:
