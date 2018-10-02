@@ -31,7 +31,7 @@ body, html {
 /* First image (Logo. Full height) */
 .bgimg-1 {
 	background-image:
-		url("https://hips.hearstapps.com/hbz.h-cdn.co/assets/15/40/1443449900-hbz-armani-index2.gif");
+		url("/img/main_menu_img/main_img1.gif");
 	min-height: 100%;
 	opacity: 0.9;
 }
@@ -39,7 +39,7 @@ body, html {
 /* Second image (Portfolio) */
 .bgimg-2 {
 	background-image:
-		url("https://yoyokulala.com/wp-content/uploads/2018/02/alexander-wang-fall-2018-finale-3.gif");
+		url("/img/main_menu_img/main_img2.gif");
 	min-height: 400px;
 	opacity: 0.78;
 }
@@ -47,7 +47,7 @@ body, html {
 /* Third image (Contact) */
 .bgimg-3 {
 	background-image:
-		url("https://thumbs.gfycat.com/InfatuatedWarmBlackmamba-size_restricted.gif");
+		url("/img/main_menu_img/main_img3.gif");
 	min-height: 400px;
 	opacity: 0.78;
 }
@@ -152,7 +152,7 @@ body, html {
 					<b><i class="fa fa-user w3-margin-right"></i>Fashion Week</b>
 				</p>
 				<br> <img
-					src="http://beautifulepiphany.com/wp-content/uploads/2014/11/new-york-fashion-week-fall-winter-September-3-11-2014.jpg"
+					src="/img/main_menu_img/main_about_img.jpg"
 					class="w3-round w3-image w3-hover-opacity" alt="Photo of Me"
 					width="500" height="333">
 			</div>
@@ -239,28 +239,28 @@ body, html {
 		<div class="w3-row-padding w3-center">
 			<div class="w3-col m3">
 				<img
-					src="https://assets.vogue.com/photos/5b9d23cc9bf76c2d7fed6e69/master/pass/ALEXACHUNG_006.jpg"
+					src="/img/main_menu_img/main_runway_img1.jpg"
 					style="width: 100%" onclick="onClick(this)"
 					class="w3-hover-opacity" alt="The mist over the mountains">
 			</div>
 
 			<div class="w3-col m3">
 				<img
-					src="https://assets.vogue.com/photos/5b9d23f7f9500659b68b8455/master/pass/ALEXACHUNG_010.jpg"
+					src="/img/main_menu_img/main_runway_img2.jpg"
 					style="width: 100%" height="80%" onclick="onClick(this)"
 					class="w3-hover-opacity" alt="Coffee beans">
 			</div>
 
 			<div class="w3-col m3">
 				<img
-					src="https://assets.vogue.com/photos/5b9d246a35d1b930650f21ca/master/pass/ALEXACHUNG_001.jpg"
+					src="/img/main_menu_img/main_runway_img3.jpg"
 					style="width: 100%" onclick="onClick(this)"
 					class="w3-hover-opacity" alt="Bear closeup">
 			</div>
 
 			<div class="w3-col m3">
 				<img
-					src="https://assets.vogue.com/photos/5b9d23db35d1b930650f21bf/master/pass/ALEXACHUNG_013.jpg"
+					src="/img/main_menu_img/main_runway_img4.jpg"
 					style="width: 100%" onclick="onClick(this)"
 					class="w3-hover-opacity" alt="Quiet ocean">
 			</div>
@@ -269,28 +269,28 @@ body, html {
 		<div class="w3-row-padding w3-center w3-section">
 			<div class="w3-col m3">
 				<img
-					src="https://assets.vogue.com/photos/5b9d242c65ea682dbea28fb0/master/pass/ALEXACHUNG_017.jpg"
+					src="/img/main_menu_img/main_runway_img5.jpg"
 					style="width: 100%" onclick="onClick(this)"
 					class="w3-hover-opacity" alt="The mist">
 			</div>
 
 			<div class="w3-col m3">
 				<img
-					src="https://assets.vogue.com/photos/5b9d237b263d012dbbbdd904/master/pass/ALEXACHUNG_005.jpg"
+					src="/img/main_menu_img/main_runway_img6.jpg"
 					style="width: 100%" onclick="onClick(this)"
 					class="w3-hover-opacity" alt="My beloved typewriter">
 			</div>
 
 			<div class="w3-col m3">
 				<img
-					src="https://assets.vogue.com/photos/5b9d2470263d012dbbbdd914/master/pass/ALEXACHUNG_016.jpg"
+					src="/img/main_menu_img/main_runway_img7.jpg"
 					style="width: 100%" onclick="onClick(this)"
 					class="w3-hover-opacity" alt="Empty ghost train">
 			</div>
 
 			<div class="w3-col m3">
 				<img
-					src="https://assets.vogue.com/photos/5b9d23bef9500659b68b8450/master/pass/ALEXACHUNG_019.jpg"
+					src="/img/main_menu_img/main_runway_img8.jpg"
 					style="width: 100%" onclick="onClick(this)"
 					class="w3-hover-opacity" alt="Sailing">
 			</div>
