@@ -91,24 +91,7 @@ body, html {
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
 </style>
-<script>
-var audio = new Audio('/audio/backgroundMusic.mp3');
-audio.play(); 
-audioIsPlaying = true;
-function sounds() {
-	if(audioIsPlaying == true){
-		audio.pause();
-		audioIsPlaying = false;
-	}else{
-		audio.play();
-		audioIsPlaying = true;
-	}
-}
-$(function(){
-	
-});
-	
-</script>
+
 <body id="body">
 	<!-- Navbar (sit on top) -->
 		<div class="w3-top">
@@ -435,11 +418,14 @@ $(function(){
 	</script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
-
+	
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
-
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audio.play(); 
+		audioIsPlaying = true;
+		
 		yousound.onclick = function() {
 
 			if (bl) {
@@ -447,14 +433,17 @@ $(function(){
 				console.log(bl);
 				bl = !bl;
 				console.log(bl);
-				ytplayer.playVideo();
-				console.log(ytplayer);
+				
+				audio.pause();
+				audioIsPlaying = false;
 			} else {
 				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
 				console.log(bl);
 				bl = !bl;
 				console.log(bl);
-				ytplayer.pauseVideo();
+				
+				audio.play();
+				audioIsPlaying = true;
 			}
 		}
 	</script>
