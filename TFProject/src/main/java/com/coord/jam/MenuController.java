@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class MenuController {
 	@Autowired
 	private Test3Dao Test3Dao;
-	CrawlingTest crawlingtest=new CrawlingTest();
 	
 	@RequestMapping("/")
 	public String home() {
@@ -46,7 +45,6 @@ public class MenuController {
 	@RequestMapping("/test4")
 	public ModelAndView test4() {
 		ModelAndView model = new ModelAndView();
-		model.addObject("list",crawlingtest.designerName());
 		model.setViewName("basicTest4");
 		return model;
 	}
