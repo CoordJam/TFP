@@ -417,7 +417,7 @@ body, html {
 	</script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
-	
+
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");

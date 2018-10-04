@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix ="fmt" uri ="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <title></title>
@@ -49,8 +51,18 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{position: relative; }
-.logo{position: relative; height:60px;left:900px; margin:5px;}
+#player{position: relative; top:500px;}
+.logo{position: relative; height:100px;left:800px; margin:15px;top:15px;}
+.calanderBox{position: relative; height: 100px; width:600px; left:600px; margin-top:50px; border:0px solid black; margin-bottom: 0px;}
+.divinderUnderCalanderBox{color:black; position: relative; left:350px; border:solid 1px black; top:-25px;}
+.goRight, .goLeft{font-size:50px; cursor: pointer; color: black;}
+.goLeft{position: relative; left:100px;}
+.goRight {position: relative; left:150px;}
+.collectionName{font-size:50px;position:relative; left:130px; color:black; font-style: italic; }
+.calanderIcon{display: inline; position: relative; left:150px;top:-15px; height:60px;}
+.smallCollections{width:45px; cursor: pointer;}
+.smallCollections1 {border:0px solid red; width:400px; position: relative; left:200px; top:100px;}
+.smallCollections2{border: 0px solid green; width:400px; position: absolute; left:1300px; top:450px; }
 </style>
 
 <body id="body">
@@ -81,9 +93,43 @@ body, html {
 		</div>
 	</div>
 	<img src ="/img/brandLogos/gucci.png" class="logo">
+	<div class ="calanderBox">
+		<span class="nextCollection">
+			<span class="goLeft">◀</span>
+				<span class ="collectionName">2018 F/W</span>
+			<span class="goRight">▶</span>                             
+		</span>
+		<img src = "/img/calanderIcon.png" class="calanderIcon" >
+	</div>
+	
+	<hr class ="divinderUnderCalanderBox">
 	<!-- First Parallax Image with Logo Text -->
 	<div class="bgimg-1 w3-display-container" id="home"></div>
-	 
+	}    
+	
+	<c:set var ="half" value= "${fn:length(list)/2}"/>
+	<c:set var ="divided" value ='1'/>
+	<div class ="smallCollections1">     
+	<c:forEach items="${list }" var="item" varStatus="status">
+		<c:if test="${status.index < half}">
+			<img src = "${item }" class ="smallCollections">
+		</c:if>
+		<c:if test="${status.index > half && divided =='1'}">
+			<c:set var="divided" value= '0' />
+			</div>
+			<div class ="smallCollections2">
+		</c:if>
+		<c:if test="${status.index > half}">
+			<img src = "${item }" class ="smallCollections">
+		</c:if>		
+	</c:forEach>
+	</div>
+	<script>
+	/* alert(${fn:length(list)} ); */
+	</script>
+	 <%-- <c:forEach items="${list}" var="item" varStatus="status">
+	window.alert(${status.index});
+	</c:forEach> --%>
 	<div id="player"></div>
 
     <script>
