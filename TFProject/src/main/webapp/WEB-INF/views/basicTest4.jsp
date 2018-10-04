@@ -28,12 +28,12 @@ body, html {
 
 #myNavbar {
 	opacity: 0.6;
-	color: #FFF;
+	color: #000;
 }
 
 #navDemo {
 	opacity: 0.7;
-	color: #FFF;
+	color: #000;
 }
 
 ::-webkit-scrollbar {
@@ -54,22 +54,22 @@ body, html {
 	<!-- Navbar (sit on top) -->
 	<div class="w3-top"> 
 		<div class="w3-bar" id="myNavbar">
-			<a class="w3-bar-item w3-button w3-hover-black w3-left" href="javascript:void(0);"
+			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a href="/" class="w3-bar-item w3-hover-black w3-button">HOME</a>
+			<a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
-			<a href="/test4/#a1" class="w3-bar-item w3-button w3-hover-black w3-hide-small"> 
+			<a href="/test4/#a1" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
 				<i class="fa fa-user"></i> a1</a> 
 				
-			<a href="/test4/#a2" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+			<a href="/test4/#a2" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
 				<i class="fa fa-th"></i> a2</a> 
 				
-			<a href="/test4/#a3" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
+			<a href="/test4/#a3" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
 				<i class="fa fa-envelope"></i> a3</a> 
 			
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
-				w3-right w3-hover-black w3-button" onclick="sounds()"></i>
+				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 		</div>
 
 		<!-- Navbar on small screens -->
@@ -102,10 +102,10 @@ body, html {
 			if (document.body.scrollTop > 300
 					|| document.documentElement.scrollTop > 300) {
 				navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
-						+ " w3-white";
+						+ " w3-black";
 			} else {
 				navbar.className = navbar.className.replace(
-						" w3-card w3-animate-top w3-white", "");
+						" w3-card w3-animate-top w3-black", "");
 			}
 		}
 

@@ -70,7 +70,7 @@ body, html {
 				<i class="fa fa-envelope"></i> a3</a> 
 			
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
-				w3-right w3-hover-black w3-button" onclick="sounds()"></i>
+				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 		</div>
 
 		<!-- Navbar on small screens -->
