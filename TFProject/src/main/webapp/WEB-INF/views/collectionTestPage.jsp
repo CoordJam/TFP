@@ -17,7 +17,7 @@
 		<c:set  var ="brandName" value="${brandName }"/>
 		<c:set  var="season" value ="${season }"/>
 		<c:set  var="year" value = "${year }"/>
-		<c:set  var="baseDirectoryPath" value =" ${baseDirectoryPath }"/>
+		<c:set  var="baseDirectoryPath" value ="${baseDirectoryPath }"/>
 
 
 
@@ -318,25 +318,19 @@ body, html {
 		});
 	});
 	</script>
+		<%
+	int  yearInt = Integer.parseInt(pageContext.getAttribute("year").toString());
+	String year;
+	String season = pageContext.getAttribute("season").toString();
+	String baseDirectoryPath = pageContext.getAttribute("baseDirectoryPath").toString();
+	String brandName = pageContext.getAttribute("brandName").toString();
+
+%>
 	<script>
-	
-	function goNextSeason(where){
-		
-<%-- 		<%=
 
-			System.out.println(pageContext.getAttribute("name").toString()); --%>
-
-			<%
-				int  yearInt = Integer.parseInt(pageContext.getAttribute("year").toString());
-				String year;
-				String season = pageContext.getAttribute("season").toString();
-				String baseDirectoryPath = pageContext.getAttribute("baseDirectoryPath").toString();
-				String brandName = pageContext.getAttribute("brandName").toString();
-
-		 %>
+	function goNextSeason(where){			
 		if (where =="left"){
-			alert("left");
-			
+			alert("left")		
 			<% IsThereFile ith = new IsThereFile();
 			year = String.valueOf(--yearInt);
 			String xmlPath = baseDirectoryPath+brandName+"/"+year+" "+season+".xml";
@@ -346,8 +340,6 @@ body, html {
 		}else {
 			alert("right");
 		}
-		
-	
 	}
 	</script>
 </body>
