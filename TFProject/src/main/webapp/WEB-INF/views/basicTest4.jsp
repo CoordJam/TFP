@@ -82,16 +82,144 @@ body, html {
 			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>
 		</div>
 	</div>
+<!-- Container (Portfolio Section) -->
+	<div class="w3-content w3-container w3-padding-64" id="portfolio">
+		<h3 class="w3-center">Gallery</h3>
+		<p class="w3-center">
+			<em>
+				Month Top 3
+			</em>
+		</p>
+		<br>
+			<div class="w3-col m3">
+				<img
+					src="/img/main_menu_img/main_runway_img1.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="The mist over the mountains">
+			</div>
 
-	<!-- First Parallax Image with Logo Text -->
-	<div class="bgimg-1 w3-display-container" id="home"></div>
-	
-	<img name="a1" src="https://media.giphy.com/media/3o7abmKhQ80pURWbgQ/giphy.gif"/>
-	<img name="a2" src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg"/>
-	<img name="a3" src="http://images6.fanpop.com/image/photos/39900000/IMG-6250-PNG-kion-39961687-1024-577.png"/>
-	<b>${list}</b>
-	
+			<div class="w3-col m3">
+				<img
+					src="/img/main_menu_img/main_runway_img2.jpg"
+					style="width: 100%" height="80%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Coffee beans">
+			</div>
+
+			<div class="w3-col m3">
+				<img
+					src="/img/main_menu_img/main_runway_img3.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Bear closeup">
+			</div>
+
+		<!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+	<div class="w3-row-padding w3-center">
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img1.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="The mist over the mountains">
+			</div>
+
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img2.jpg"
+					style="width: 100%" height="80%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Coffee beans">
+			</div>
+
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img3.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Bear closeup">
+			</div>
+
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img4.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Quiet ocean">
+			</div>
+			
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img8.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Quiet ocean">
+			</div>
+			
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img1.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Quiet ocean">
+			</div>
+		</div>
+
+		<div class="w3-row-padding w3-center w3-section">
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img5.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="The mist">
+			</div>
+
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img6.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="My beloved typewriter">
+			</div>
+
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img7.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Empty ghost train">
+			</div>
+
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img8.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Sailing">
+			</div>
+			
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img1.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Quiet ocean">
+			</div>
+			
+			<div class="w3-col m2">
+				<img
+					src="/img/main_menu_img/main_runway_img1.jpg"
+					style="width: 100%" onclick="onClick(this)"
+					class="w3-hover-opacity" alt="Quiet ocean">
+			</div>
+		</div>
+	</div>
+	<!-- Modal for full size images on click-->
+	<div id="modal01" class="w3-modal w3-black"
+		onclick="this.style.display='none'">
+		<span class="w3-button w3-large w3-black w3-display-topright"
+			title="Close Modal Image"><i class="fa fa-remove"></i></span>
+		<div
+			class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+			<img id="img01" class="w3-image">
+			<p id="caption" class="w3-opacity w3-large"></p>
+		</div>
+	</div>
 	<script>
+	//Modal Image Gallery
+	function onClick(element) {
+		document.getElementById("img01").src = element.src;
+		document.getElementById("modal01").style.display = "block";
+		var captionText = document.getElementById("caption");
+		captionText.innerHTML = element.alt;
+	}
 		
 		// Change style of navbar on scroll
 		window.onscroll = function() {
