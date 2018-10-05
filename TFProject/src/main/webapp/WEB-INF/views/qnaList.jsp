@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 body, html {
@@ -49,6 +50,11 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
+.divTable{
+display: table;
+width: 100%;}
+.divTableRow{
+display: table-row;}
 </style>
 
 <body id="body">
@@ -86,26 +92,45 @@ body, html {
 
 	<!-- First Parallax Image with Logo Text -->
 	<img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
-	<img name="c2" src="https://vignette.wikia.nocookie.net/central/images/1/1c/J-0.gif/revision/latest?cb=20170601153446"/>
-	<img name="c3" src="https://orig00.deviantart.net/2d92/f/2017/318/9/9/6pyeqehwyd5wq7tt_by_daycolors-dbtrudn.gif"/>
+	
+	<div class="divTable">
+    <div class="divTableRow">
+    	<div class="divTableHead">번호</div>
+    	<div class="divTableHead">제목</div>
+    	<div class="divTableHead">작성자</div>
+    	<div class="divTableHead">날짜</div>
+    </div>
+	<div class="divTableBody">
+			<c:forEach var="list" items="${list}">
+				<div class="divTableRow w3-hover-grayscale">
+					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">${no}</div>
+					<c:set var="no" value="${no-1}"></c:set>
+					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">
+						
+						<a href="content?seq=${list.qnaBoard_seq}">${list.qnaBoard_title}</a>
+					</div>
+					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">${list.qnaBoard_id}</div>
+					<%-- <div class="divTableCell" style="border-left-style:none; border-right-style:none;">${dto.readcount}</div> --%>
+					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">
+	                      ${list.qnaBoard_date}
+					</div>
+				</div>
+				</c:forEach>
+			</div>
+	</div>
+	</div>
+	<br><br>
+
+      <div style="border-bottom-width: 3px; border-bottom-color: #e8e8e887; width: 800px; margin: auto;">
+	<input type="button" value="글쓰기" class="btn btn-primary btn-warning"
+		style="margin-left: 500px;" onclick="location.href='/qnaWriteform'">
+		</div>
+		<div align="center" style="height: 40;">
+			${pageShow}
+		
+		</div>
 	
 	
-	<table border="1" class ="TB"> 			   
-			   	<c:forEach var="a" items="${list}">
-			   	<tr>
-			 		<td rowspan="3" class="uu">${number} <c:set var="number" value="${number+1}"/></td>
-			 		<td rowspan="3" style="width:300px; height:200px;">${a.academy_geogra}</td>
-			 		<td colspan="2">${a.academy_title}</td>
-			   	</tr>
-			   	<tr>
-					<td>${a.academy_id}</td>
-					<td rowspan="2" style="width:300px; height:60px;">${a.academy_content}</td> 	
-			   	</tr>
-			   	<tr>
-			 		<td>${a.academy_date}</td>
-			   	</tr>
-			  	</c:forEach>
-	</table><br>
 	
 	<script>
 		// Change style of navbar on scroll

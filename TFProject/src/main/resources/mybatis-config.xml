@@ -4,11 +4,11 @@
 <configuration>
 
 	<typeAliases>
-		<typeAlias type="com.coord.jam.Test3Dto" alias="Test3Dto"/>
+		<typeAlias type="com.coord.jam.QnaDto" alias="QnaDto"/>
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="com/coord/jam/Test3Sql.xml" />
+		<mapper resource="com/coord/jam/QnaSql.xml" />
 	</mappers>
 	
 </configuration>

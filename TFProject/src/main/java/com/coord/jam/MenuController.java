@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MenuController {
 	@Autowired
-	private Test3Dao Test3Dao;
+	private QnaDao Test3Dao;
 	
 	@RequestMapping("/")
 	public String home() {
@@ -35,7 +35,7 @@ public class MenuController {
 	@RequestMapping("/test3")
 	public ModelAndView test3() {
 		ModelAndView model=new ModelAndView();
-		List<Test3Dto> list=Test3Dao.getAlldatas();
+		List<QnaDto> list=Test3Dao.getAlldatas();
 		model.addObject("list",list);
 		model.setViewName("basicTest3");
 		return model;
