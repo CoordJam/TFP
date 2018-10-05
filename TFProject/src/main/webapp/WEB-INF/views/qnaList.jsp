@@ -101,30 +101,30 @@ height: 50px;}
 	<img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
 	
 	<div class="divTable">
-    <div class="divTableRow">
-    	<div class="divTableHead">번호</div>
-    	<div class="divTableHead">제목</div>
-    	<div class="divTableHead">작성자</div>
-    	<div class="divTableHead">날짜</div>
-    </div>
-	<div class="divTableBody">
-			<c:forEach var="list" items="${list}">
-				<div class="divTableRow w3-hover-grayscale">
-					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">${no}</div>
-					<c:set var="no" value="${no-1}"></c:set>
-					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">
-						
-						<a href="/qnaContent?seq=${list.qnaBoard_seq}">${list.qnaBoard_title}</a>
+	    <div class="divTableRow">
+	    	<div class="divTableHead">번호</div>
+	    	<div class="divTableHead">제목</div>
+	    	<div class="divTableHead">작성자</div>
+	    	<div class="divTableHead">날짜</div>
+	    </div>
+		<div class="divTableBody">
+				<c:forEach var="list" items="${list}">
+					<div class="divTableRow w3-hover-grayscale">
+						<div class="divTableCell" style="border-left-style:none; border-right-style:none;">${no}</div>
+						<c:set var="no" value="${no-1}"></c:set>
+						<div class="divTableCell" style="border-left-style:none; border-right-style:none;">
+							
+							<a href="/qnaContent?seq=${list.qnaBoard_seq}">${list.qnaBoard_title}</a>
+						</div>
+						<div class="divTableCell" style="border-left-style:none; border-right-style:none;">${list.qnaBoard_id}</div>
+						<%-- <div class="divTableCell" style="border-left-style:none; border-right-style:none;">${dto.readcount}</div> --%>
+						<div class="divTableCell" style="border-left-style:none; border-right-style:none;">
+		                      ${list.qnaBoard_date}
+						</div>
 					</div>
-					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">${list.qnaBoard_id}</div>
-					<%-- <div class="divTableCell" style="border-left-style:none; border-right-style:none;">${dto.readcount}</div> --%>
-					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">
-	                      ${list.qnaBoard_date}
-					</div>
-				</div>
-				</c:forEach>
-			</div>
-	</div>
+					</c:forEach>
+			
+		</div>
 	</div>
 	<br><br>
 
