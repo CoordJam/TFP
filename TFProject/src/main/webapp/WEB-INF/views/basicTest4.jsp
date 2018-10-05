@@ -82,15 +82,19 @@ body, html {
 			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>
 		</div>
 	</div>
+	<div style="display: flex; width: 100%;">
+	<div style="flex: 1; margin: auto;">
+<div style="margin-left: 60%; font-size: 60px; opacity: 0.5;" class="w3-left w3-hover-text-gray">&#10094;</div>
+</div>
 <!-- Container (Portfolio Section) -->
-	<div class="w3-content w3-container w3-padding-64" id="portfolio">
-		<h3 class="w3-center">Gallery</h3>
+	<div style="flex: 4;" class="w3-content w3-container w3-padding-48" id="portfolio">
+		<h3 style="margin:0; " class="w3-center">Gallery</h3>
 		<p class="w3-center">
 			<em>
 				Month Top 3
 			</em>
 		</p>
-		<br>
+		<div class="w3-row-padding w3-center">
 			<div class="w3-col m3">
 				<img
 					src="/img/main_menu_img/main_runway_img1.jpg"
@@ -111,7 +115,12 @@ body, html {
 					style="width: 100%" onclick="onClick(this)"
 					class="w3-hover-opacity" alt="Bear closeup">
 			</div>
-
+			<p> Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
+			 Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
+			  Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
+			   Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
+			    Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3</p>
+		</div> <br>
 		<!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
 	<div class="w3-row-padding w3-center">
 			<div class="w3-col m2">
@@ -156,7 +165,6 @@ body, html {
 					class="w3-hover-opacity" alt="Quiet ocean">
 			</div>
 		</div>
-
 		<div class="w3-row-padding w3-center w3-section">
 			<div class="w3-col m2">
 				<img
@@ -200,6 +208,10 @@ body, html {
 					class="w3-hover-opacity" alt="Quiet ocean">
 			</div>
 		</div>
+	</div>
+	<div style="flex: 1; margin: auto;">
+	<div style="margin-right: 60%; font-size: 60px; opacity: 0.5;" class="w3-right w3-hover-text-gray">&#10095;</div>
+	</div>
 	</div>
 	<!-- Modal for full size images on click-->
 	<div id="modal01" class="w3-modal w3-black"
