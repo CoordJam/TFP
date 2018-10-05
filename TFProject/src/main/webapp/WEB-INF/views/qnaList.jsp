@@ -52,9 +52,16 @@ body, html {
 }
 .divTable{
 display: table;
-width: 100%;}
+width: 70%;}
 .divTableRow{
 display: table-row;}
+.divTableCell, .divTableHead{
+display: table-cell;
+padding: 0px 20px;
+height: 50px;}
+.divTableHead{
+
+}
 </style>
 
 <body id="body">
@@ -84,7 +91,7 @@ display: table-row;}
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
 			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
 			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/test3/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a> 
+			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a> 
 			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
 			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>
 		</div>
@@ -107,7 +114,7 @@ display: table-row;}
 					<c:set var="no" value="${no-1}"></c:set>
 					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">
 						
-						<a href="content?seq=${list.qnaBoard_seq}">${list.qnaBoard_title}</a>
+						<a href="/qnaContent?seq=${list.qnaBoard_seq}">${list.qnaBoard_title}</a>
 					</div>
 					<div class="divTableCell" style="border-left-style:none; border-right-style:none;">${list.qnaBoard_id}</div>
 					<%-- <div class="divTableCell" style="border-left-style:none; border-right-style:none;">${dto.readcount}</div> --%>

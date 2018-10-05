@@ -16,7 +16,7 @@ public class qnaPageController {
 	@Autowired
 	QnaDao qnaDao;
 	
-	@RequestMapping("qnaList")
+	@RequestMapping("/qnaList")
 	public ModelAndView qnaboard(@RequestParam(value="page",defaultValue="1") String page)
 	{
 		//페이징 처리
@@ -43,13 +43,13 @@ public class qnaPageController {
 		  list=qnaDao.getList(start, limit);
 		  System.out.println("list size:"+list.size());
 		  pc=new PageCount(5, limit, totalpage);
-		  pageShow=pc.ShowPaging(currentpage, "qnaList", "");
+		  pageShow=pc.ShowPaging(currentpage, "", "");
 		  
 		  ModelAndView view=new ModelAndView();
 		  view.addObject("list",list);
 		  view.addObject("pageShow",pageShow);
-		  int number=totalcount-(currentpage-1)*limit;
-		  view.addObject("number",number);  
+		  int no=totalcount-(currentpage-1)*limit;
+		  view.addObject("no",no);  
 		  view.setViewName("qnaList");
 		  return view;
 		  

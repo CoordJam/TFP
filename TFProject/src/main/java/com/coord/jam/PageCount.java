@@ -4,10 +4,10 @@ public class PageCount {
 	private int link=10;
 	private int limit=10;
 	private int totalpage=0;
-	private String FirstImage="";
-	private String BeforeImage="";
-	private String NextImage="";
-	private String LastImage="";
+	private String FirstImage="https://orig00.deviantart.net/03d8/f/2010/271/a/5/ghj_by_chloee111-d2zodyw.jpg";
+	private String BeforeImage="http://bpic.588ku.com/element_pic/00/91/37/6856f1691db6a1a.jpg";
+	private String NextImage="https://orig00.deviantart.net/03d8/f/2010/271/a/5/ghj_by_chloee111-d2zodyw.jpg";
+	private String LastImage="https://orig00.deviantart.net/03d8/f/2010/271/a/5/ghj_by_chloee111-d2zodyw.jpg";
 	
 	//한 블럭안에 보여질 페이지 갯수,한페이지안에 보여질 게시글갯수,전체 페이지수
 	public PageCount(int Link,int Limit,int TotalPage)

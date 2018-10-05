@@ -29,7 +29,7 @@ public class QnaController {
 		ModelAndView model=new ModelAndView();
 		QnaDto dto=qnaDao.delete(seq);
 		model.addObject("dto",dto);
-		model.setViewName("qnaList");
+		model.setViewName("redirect:qnaList");
 		return model;
 	}
 
@@ -37,7 +37,7 @@ public class QnaController {
 	public ModelAndView qnaInsert(@ModelAttribute QnaDto qnaDto) {
 		ModelAndView view=new ModelAndView();
 		qnaDao.insertQnaboard(qnaDto);
-		view.setViewName("qnaList");
+		view.setViewName("redirect:qnaList");
 		return view;
 	}
 	
