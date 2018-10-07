@@ -2,8 +2,6 @@ package com.coord.jam;
 
 import java.sql.Date;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class QnaDto {
 	private int qnaBoard_seq;
 	private String qnaBoard_title;
