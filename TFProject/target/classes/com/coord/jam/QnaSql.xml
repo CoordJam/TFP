@@ -6,24 +6,31 @@
 	<select id="qnaAlldata" resultType="QnaDto">
 		select * from qnaboard order by qnaBoard_seq desc
 	</select>
+	
 	<select id="selectDatas" resultType="QnaDto" parameterType="HashMap">
 	      select * from qnaboard order by qnaBoard_seq desc limit #{start},#{end}
   	</select>
+  	
   	<select id="getMainList" resultType="QnaDto">
   		select * from qnaboard order by qnaBoard_seq desc limit 5
   	</select>
+  	
   	<select id="qnaboardContent" resultType="QnaDto" parameterType="int">
 		select * from qnaboard where qnaBoard_seq=#{seq}
 	</select>
+	
 	<select id="qnaboardDelete" resultType="QnaDto" parameterType="int">
 		delete from qnaboard where qnaBoard_seq=#{seq}
 	</select>
+	
 	<insert id="qnaboardInsert" parameterType="QnaDto">
 		insert into qnaboard
 		(qnaBoard_title, qnaBoard_id, qnaBoard_content, qnaBoard_date)
 		values (#{qnaBoard_title}, #{qnaBoard_id}, #{qnaBoard_content}, NOW())
 	</insert>
+	
 	<select id="qnagetCount" resultType="int">
    		select count(*) from qnaboard
   	</select>
+
 </mapper>

@@ -5,160 +5,152 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
-body, h1, h2, h3, h4, h5, h6 {
-	font-family: "Lato", sans-serif;
-}
-
-body, html {
-	height: 100%;
-	color: #444;
-	line-height: 1.8;
-}
-
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-	background-image:
-		url("/img/main_menu_img/main_img1.gif");
-	min-height: 100%;
-	opacity: 0.9;
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-	background-image:
-		url("/img/main_menu_img/main_img2.gif");
-	min-height: 400px;
-	opacity: 0.78;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-	background-image:
-		url("/img/main_menu_img/main_img3.gif");
-	min-height: 400px;
-	opacity: 0.78;
-}
-
-.w3-wide {
-	letter-spacing: 10px;
-}
-
-.w3-hover-opacity {
-	cursor: pointer;
-}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-	.bgimg-1, .bgimg-2, .bgimg-3 {
-		background-attachment: scroll;
-		min-height: 400px;
+	body, html {
+		height: 100%;
+		color: #444;
+		line-height: 1.8;
 	}
-}
-
-#myNavbar {
-	opacity: 0.6;
-	color: #FFF;
-}
-
-#navDemo {
-	opacity: 0.7;
-	color: #FFF;
-}
-
-::-webkit-scrollbar {
-	width: 1px;
-}
-
-::-webkit-scrollbar-track {
-	display: none;
-}
-
-::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
-}
+	
+	/* Create a Parallax Effect */
+	.bgimg-1, .bgimg-2, .bgimg-3 {
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	
+	/* First image (Logo. Full height) */
+	.bgimg-1 {
+		background-image:
+			url("/img/main_menu_img/main_img1.gif");
+		min-height: 100%;
+		opacity: 0.9;
+	}
+	
+	/* Second image (Portfolio) */
+	.bgimg-2 {
+		background-image:
+			url("/img/main_menu_img/main_img2.gif");
+		min-height: 400px;
+		opacity: 0.78;
+	}
+	
+	/* Third image (Contact) */
+	.bgimg-3 {
+		background-image:
+			url("/img/main_menu_img/main_img3.gif");
+		min-height: 400px;
+		opacity: 0.78;
+	}
+	
+	.w3-wide {
+		letter-spacing: 10px;
+	}
+	
+	.w3-hover-opacity {
+		cursor: pointer;
+	}
+	
+	/* Turn off parallax scrolling for tablets and phones */
+	@media only screen and (max-device-width: 1600px) {
+		.bgimg-1, .bgimg-2, .bgimg-3 {
+			background-attachment: scroll;
+			min-height: 400px;
+		}
+	}
+	
+	#myNavbar {
+		opacity: 0.6;
+		color: #FFF;
+	}
+	
+	#navDemo {
+		opacity: 0.7;
+		color: #FFF;
+	}
+	
+	::-webkit-scrollbar {
+		width: 1px;
+	}
+	
+	::-webkit-scrollbar-track {
+		display: none;
+	}
+	
+	::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+	}
 </style>
 
 <body id="body">
 	<!-- Navbar (sit on top) -->
-		<div class="w3-top">
+	<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
-			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
-			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
-			
+			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+				<i class="fa fa-bars"></i></a>
+
 			<a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
-			
-			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-				<i class="fa fa-user"></i> ABOUT</a> 
-				
+
+			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i class="fa fa-user"></i> ABOUT</a>
+
 			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-th"></i> RUNWAY</a> 
-				
+				<i class="fa fa-th"></i> RUNWAY</a>
+
 			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a> 
-			
+				<i class="fa fa-envelope"></i> CONTACT</a>
+
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
-				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
+				w3-right w3-hover-gray w3-button"
+			 onclick="sounds()"></i>
 		</div>
 
 		<!-- Navbar on small screens -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
-			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
+			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a>
+			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a>
 			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
 			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
 			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>
 		</div>
 	</div>
 
 	<!-- First Parallax Image with Logo Text -->
-	
+
 	<div class="bgimg-1 w3-display-container" id="home"></div>
-	<span style="white-space: nowrap;"
-		class="w3-display-middle w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">TOTAL
+	<span style="white-space: nowrap;" class="w3-display-middle w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">TOTAL
 		FASHION <span class="w3-hide-small">WEEK</span>
 	</span>
-	
+
 	<!-- Container (About Section) -->
 	<div class="w3-content w3-container w3-padding-64" id="about">
 		<h3 class="w3-center">ABOUT</h3>
 		<p class="w3-center">
 			<em>I love fashion</em>
 		</p>
-	<!-- <audio controls autoplay src="/audio/sharksong.mp3"  loop="loop" preload="auto" class = "song" type="audio/mp3" muted="muted"></audio> -->
+		<!-- <audio controls autoplay src="/audio/sharksong.mp3"  loop="loop" preload="auto" class = "song" type="audio/mp3" muted="muted"></audio> -->
 
 
 
 		<p class="w3-center">Total Fashion - 유명 도시의 유명 브랜드의 패션쇼 정보를 한눈에</p>
-		
+
 		<div class="w3-row">
 
 			<div class="w3-col m6 w3-center w3-padding-large">
 				<p>
 					<b><i class="fa fa-user w3-margin-right"></i>Fashion Week</b>
 				</p>
-				<br> <img
-					src="/img/main_menu_img/main_about_img.jpg"
-					class="w3-round w3-image w3-hover-opacity" alt="Photo of Me"
-					width="500" height="333">
+				<br> <img src="/img/main_menu_img/main_about_img.jpg" class="w3-round w3-image w3-hover-opacity" alt="Photo of Me"
+				 width="500" height="333">
 			</div>
-			
+
 			<!-- Hide this text on small devices -->
-			<div class="w3-col m6 w3-hide-small w3-padding-large"
-				style="margin-top: 80px; text-align: justify;">
+			<div class="w3-col m6 w3-hide-small w3-padding-large" style="margin-top: 80px; text-align: justify;">
 				<span><b>패션 위크(Fashion week)</b>는 디자이너들이 작품을 발표하며, 패션쇼가 집중적으로
 					열리는 주간을 뜻한다. 뉴욕 패션 위크, 밀라노 패션 위크, 파리 패션 위크, 런던 패션 위크가 유명하며, 그 외에도
 					오스트레일리아 패션 위크, 베를린 패션 위크, 로스앤젤레스 패션 위크, 서울 패션 위크 등이 개최된다. <br>
@@ -168,30 +160,26 @@ body, html {
 					wear'와 같은 말로 원래는 오트쿠튀르보다 품질이 낮고 저렴한 기성복을 의미했지만, 대중들의 수요가 늘어나 점차 고급
 					기성복으로 의미가 변화했습니다.</span>
 			</div>
-			
+
 		</div>
-		
+
 		<p class="w3-large w3-center w3-padding-16">About Percentage:</p>
 		<p class="w3-wide">
 			<i class="fa fa-circle"></i>Fashion Black and White Percentage
 		</p>
-		
+
 		<div class="w3-light-grey">
-			<div class="w3-container w3-padding-small w3-dark-grey w3-center"
-				style="width: 68%">Black 68%</div>
-			<div class="w3-container w3-padding-small w3-grey w3-center"
-				style="width: 32%">White 32%</div>
+			<div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width: 68%">Black 68%</div>
+			<div class="w3-container w3-padding-small w3-grey w3-center" style="width: 32%">White 32%</div>
 		</div>
-		
+
 		<p class="w3-wide">
 			<i class="fa fa-circle"></i>Haute couture and Pret a porter
 		</p>
-		
+
 		<div class="w3-light-grey">
-			<div class="w3-container w3-padding-small w3-dark-grey w3-center"
-				style="width: 58%">Haute couture 58%</div>
-			<div class="w3-container w3-padding-small w3-grey w3-center"
-				style="width: 42%">Pret a porter 42%</div>
+			<div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width: 58%">Haute couture 58%</div>
+			<div class="w3-container w3-padding-small w3-grey w3-center" style="width: 42%">Pret a porter 42%</div>
 		</div>
 
 	</div>
@@ -237,72 +225,53 @@ body, html {
 		<!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
 		<div class="w3-row-padding w3-center">
 			<div class="w3-col m3">
-				<img
-					src="/img/main_menu_img/main_runway_img1.jpg"
-					style="width: 100%" onclick="onClick(this)"
-					class="w3-hover-opacity" alt="The mist over the mountains">
+				<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+				 alt="The mist over the mountains">
 			</div>
 
 			<div class="w3-col m3">
-				<img
-					src="/img/main_menu_img/main_runway_img2.jpg"
-					style="width: 100%" height="80%" onclick="onClick(this)"
-					class="w3-hover-opacity" alt="Coffee beans">
+				<img src="/img/main_menu_img/main_runway_img2.jpg" style="width: 100%" height="80%" onclick="onClick(this)" class="w3-hover-opacity"
+				 alt="Coffee beans">
 			</div>
 
 			<div class="w3-col m3">
-				<img
-					src="/img/main_menu_img/main_runway_img3.jpg"
-					style="width: 100%" onclick="onClick(this)"
-					class="w3-hover-opacity" alt="Bear closeup">
+				<img src="/img/main_menu_img/main_runway_img3.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+				 alt="Bear closeup">
 			</div>
 
 			<div class="w3-col m3">
-				<img
-					src="/img/main_menu_img/main_runway_img4.jpg"
-					style="width: 100%" onclick="onClick(this)"
-					class="w3-hover-opacity" alt="Quiet ocean">
+				<img src="/img/main_menu_img/main_runway_img4.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+				 alt="Quiet ocean">
 			</div>
 		</div>
 
 		<div class="w3-row-padding w3-center w3-section">
 			<div class="w3-col m3">
-				<img
-					src="/img/main_menu_img/main_runway_img5.jpg"
-					style="width: 100%" onclick="onClick(this)"
-					class="w3-hover-opacity" alt="The mist">
+				<img src="/img/main_menu_img/main_runway_img5.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+				 alt="The mist">
 			</div>
 
 			<div class="w3-col m3">
-				<img
-					src="/img/main_menu_img/main_runway_img6.jpg"
-					style="width: 100%" onclick="onClick(this)"
-					class="w3-hover-opacity" alt="My beloved typewriter">
+				<img src="/img/main_menu_img/main_runway_img6.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+				 alt="My beloved typewriter">
 			</div>
 
 			<div class="w3-col m3">
-				<img
-					src="/img/main_menu_img/main_runway_img7.jpg"
-					style="width: 100%" onclick="onClick(this)"
-					class="w3-hover-opacity" alt="Empty ghost train">
+				<img src="/img/main_menu_img/main_runway_img7.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+				 alt="Empty ghost train">
 			</div>
 
 			<div class="w3-col m3">
-				<img
-					src="/img/main_menu_img/main_runway_img8.jpg"
-					style="width: 100%" onclick="onClick(this)"
-					class="w3-hover-opacity" alt="Sailing">
+				<img src="/img/main_menu_img/main_runway_img8.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+				 alt="Sailing">
 			</div>
 		</div>
 	</div>
 
 	<!-- Modal for full size images on click-->
-	<div id="modal01" class="w3-modal w3-black"
-		onclick="this.style.display='none'">
-		<span class="w3-button w3-large w3-black w3-display-topright"
-			title="Close Modal Image"><i class="fa fa-remove"></i></span>
-		<div
-			class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+	<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+		<span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+		<div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
 			<img id="img01" class="w3-image">
 			<p id="caption" class="w3-opacity w3-large"></p>
 		</div>
@@ -317,19 +286,17 @@ body, html {
 
 	<!-- Container (Contact Section) -->
 	<div class="w3-content w3-center w3-container w3-padding-64" id="contact">
-	
+
 		<h3 class="w3-center">WHERE I WORK</h3>
 		<p class="w3-center">
 			<em>I'd love your feedback!</em>
 		</p>
-		
+
 		<div class="w3-col w3-panel">
 			<div class="w3-large w3-center">
 				<i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge"></i>
-				한국ICT융합협동조합, KOREA<br> <i
-					class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge"></i> Phone:
-				+00 151515<br> <i
-					class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge"></i>
+				한국ICT융합협동조합, KOREA<br> <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge"></i> Phone:
+				+00 151515<br> <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge"></i>
 				Email: mail@mail.com<br>
 			</div>
 
@@ -337,23 +304,20 @@ body, html {
 				Swing by for a cup of <i class="fa fa-coffee"></i>, &nbsp;or leave
 				me a note:
 			</p>
-			
+
 		</div>
-		
+
 		<form action="/action_page.php" target="_blank">
 			<div class="w3-row-padding" style="margin: 0 100px 8px 100px">
 				<div class="w3-half">
-					<input class="w3-input w3-border" type="text" placeholder="Name"
-						required name="Name">
+					<input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
 				</div>
 				<div class="w3-half">
-					<input class="w3-input w3-border" type="text" placeholder="Email"
-						required name="Email">
+					<input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
 				</div>
 			</div>
 			<div class="w3-row-padding" style="margin: 0 108.45px 8px 108.45px">
-				<input class="w3-input w3-border" type="text" placeholder="Message"
-					required name="Message"><br>
+				<input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"><br>
 			</div>
 
 			<button class="w3-button w3-black w3-center w3-section" type="submit">
@@ -363,19 +327,13 @@ body, html {
 	</div>
 
 	<!-- Footer -->
-	<footer
-		class="w3-center w3-black w3-padding-64 w3-opacity-min w3-hover-opacity-off">
-		<a href="#home" class="w3-button w3-light-gray"><i
-			class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+	<footer class="w3-center w3-black w3-padding-64 w3-opacity-min w3-hover-opacity-off">
+		<a href="#home" class="w3-button w3-light-gray"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 		<p>
-			<br> 제휴 사이트&nbsp;&nbsp;&nbsp;<a
-				href="https://www.vogue.com/fashion-shows" title="VOGUE"
-				target="_blank" class="w3-hover-text-gray w3-medium">VOGUE</a>
-			&nbsp;&nbsp;&nbsp; <a href="https://fashionweekonline.com/"
-				title="FashionWeek" target="_blank"
-				class="w3-hover-text-gray w3-medium">Fashion-Week</a>
-			&nbsp;&nbsp;&nbsp; <a href="http://seoul365fashion.kr/" title="SEOUL"
-				target="_blank" class="w3-hover-text-gray w3-medium">SEOUL 365
+			<br> 제휴 사이트&nbsp;&nbsp;&nbsp;<a href="https://www.vogue.com/fashion-shows" title="VOGUE" target="_blank" class="w3-hover-text-gray w3-medium">VOGUE</a>
+			&nbsp;&nbsp;&nbsp; <a href="https://fashionweekonline.com/" title="FashionWeek" target="_blank" class="w3-hover-text-gray w3-medium">Fashion-Week</a>
+			&nbsp;&nbsp;&nbsp; <a href="http://seoul365fashion.kr/" title="SEOUL" target="_blank" class="w3-hover-text-gray w3-medium">SEOUL
+				365
 				패션쇼</a>
 		</p>
 
@@ -390,18 +348,18 @@ body, html {
 		}
 
 		// Change style of navbar on scroll
-		window.onscroll = function() {
+		window.onscroll = function () {
 			myFunction()
 		};
 		function myFunction() {
 			var navbar = document.getElementById("myNavbar");
 			if (document.body.scrollTop > 300
-					|| document.documentElement.scrollTop > 300) {
+				|| document.documentElement.scrollTop > 300) {
 				navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
-						+ " w3-white";
+					+ " w3-white";
 			} else {
 				navbar.className = navbar.className.replace(
-						" w3-card w3-animate-top w3-white", "");
+					" w3-card w3-animate-top w3-white", "");
 			}
 		}
 
@@ -415,25 +373,25 @@ body, html {
 			}
 		}
 	</script>
-	
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
 		var audio = new Audio('/audio/backgroundMusic.mp3');
-		audio.play(); 
+		audio.play();
 
 		audioIsPlaying = true;
-		
-		yousound.onclick = function() {
+
+		yousound.onclick = function () {
 
 			if (bl) {
 				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
 				console.log(bl);
 				bl = !bl;
 				console.log(bl);
-				
+
 				audio.pause();
 				audioIsPlaying = false;
 			} else {
@@ -441,41 +399,42 @@ body, html {
 				console.log(bl);
 				bl = !bl;
 				console.log(bl);
-				
+
 				audio.play();
 				audioIsPlaying = true;
 			}
 		}
 	</script>
-	
-	
+
+
 	<script>
 		// Select all links with hashes
 		$('a[href*="#"]')
-		  // Remove links that don't actually link to anything
-		  .not('[href="#"]')
-		  .not('[href="#0"]')
-		  .click(function(event) {
-		    // On-page links
-		    if (
-		      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-		      && 
-		      location.hostname == this.hostname
-		    ) {
-		      // Figure out element to scroll to
-		      var target = $(this.hash);
-		      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-		      // Does a scroll target exist?
-		      if (target.length) {
-		        // Only prevent default if animation is actually gonna happen
-		        event.preventDefault();
-		        $('html, body').animate({
-		          scrollTop: target.offset().top
-		        }, 1000);
-		      }
-		    }
-		  });
+			// Remove links that don't actually link to anything
+			.not('[href="#"]')
+			.not('[href="#0"]')
+			.click(function (event) {
+				// On-page links
+				if (
+					location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+					&&
+					location.hostname == this.hostname
+				) {
+					// Figure out element to scroll to
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+					// Does a scroll target exist?
+					if (target.length) {
+						// Only prevent default if animation is actually gonna happen
+						event.preventDefault();
+						$('html, body').animate({
+							scrollTop: target.offset().top
+						}, 1000);
+					}
+				}
+			});
 	</script>
 
 </body>
+
 </html>
