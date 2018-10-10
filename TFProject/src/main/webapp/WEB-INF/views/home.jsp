@@ -335,25 +335,26 @@ body, html {
 
 			<p>
 				Swing by for a cup of <i class="fa fa-coffee"></i>, &nbsp;or leave
-				me a note:
+				me a note <br>Naver 메일정보를 입력하세요.
 			</p>
 			
 		</div>
 		
-		<form action="/action_page.php" target="_blank">
+		<form action="/mailSender" target="_blank">
 			<div class="w3-row-padding" style="margin: 0 100px 8px 100px">
+				
 				<div class="w3-half">
-					<input class="w3-input w3-border" type="text" placeholder="Name"
-						required name="Name">
+					<input class="w3-input w3-border" type="text" placeholder="@naver.com 제외하고 아이디 입력"
+						name="email">
 				</div>
 				<div class="w3-half">
-					<input class="w3-input w3-border" type="text" placeholder="Email"
-						required name="Email">
+					<input class="w3-input w3-border" type="text" placeholder="Password"
+						name="password">
 				</div>
 			</div>
 			<div class="w3-row-padding" style="margin: 0 108.45px 8px 108.45px">
 				<input class="w3-input w3-border" type="text" placeholder="Message"
-					required name="Message"><br>
+					name="message"><br>
 			</div>
 
 			<button class="w3-button w3-black w3-center w3-section" type="submit">
