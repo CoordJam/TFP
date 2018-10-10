@@ -5,6 +5,7 @@
 <%@ taglib prefix ="fmt" uri ="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
+<head>
 <title></title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,10 +14,26 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		
+<script type="text/javascript" src="/js/jquery.popup.js"></script>
+<link rel="stylesheet" href="/css/jquery.popup.css" type="text/css">
+
+<!-- selectbox -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.2/chosen.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css'>
+
+ <link rel="stylesheet" href="/css/style.css">
+
+
+<script type="text/javascript">
+    $(function() {
+      $(".js__p_start, .js__p_another_start").simplePopup();
+    });
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Cinzel');
-
+.p_content{}
 body, html {
 	height: 100%;
 	color: #444;
@@ -56,7 +73,7 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-60px; width: 100%;}
+#player{ margin-top:-60px; width: 100%; margin-bottom: 55px;}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
 .divinderUnderCalanderBox{color:black; position: relative; left:350px; border:solid 1px black; top:-25px;}
@@ -84,8 +101,20 @@ width: 100%; text-align: center;}
 .secondNextCollection .collectionName{font-size: 3.5vh;  position: relative;  left: 130px;color: black;  font-style: italic;}
 .secondNextCollection img {height: 34px;  left: 150px;top: -7px;}
 .modelTwo{position:absolute;}
-</style>
+.p_close{right: 10px;}
+.mordalrelationDiv{position: relative;}
+.mordalh1Div{position: absolute;left: 30px;top:-92px;}
+.mordalFormDiv{position: absolute; left: 266px; top: -89px; width: 308px;}
+.mordalh1{font-family: 'Cinzel', serif; font-weight: bold; font-size: 46px; margin:30px;}
+.mordalFormDiv select {display: block;  margin: 43px; font-family: 'Cinzel', serif}
+.chosen-container{margin:10px;}
+/* selectBox */
+.chosen-wrapper .chosen-container .chosen-single{border-bottom-color: black; color: black; text-align: center;font-size: 20px;  padding: 8px;}
+option{font-size: 20px; }
+.gosubmit{ left: 220px;background-color: white;   font-family: 'Cinzel', serif; border: 0px;font-size: 39px; top: 285px;font-style: italic;   position: absolute; }
 
+</style>
+</head>
 <body id="body">
 <c:set var="root" value="<%=request.getContextPath()%>"></c:set>
 	<!-- Navbar (sit on top) -->
@@ -120,11 +149,71 @@ width: 100%; text-align: center;}
 			<span class="goLeft" onclick=" goNextSeason('left')">◀</span>
 				<span class ="collectionName">${year } ${season }</span>
 			<span class="goRight" onclick=" goNextSeason('right')">▶</span>    
-			<img src = "/img/calenderIcon.png" class="calenderIcon"  onclick="calender()">                         
+			<img src = "/img/calenderIcon.png" class="calenderIcon lal js__p_start" >                         
 		</div>
 		
 	</div>
-	
+	<!-- modal Content -->
+	<div class="p_body js__p_body js__fadeout"></div>
+	<div class="popup js__popup js__slide_top">
+    <a href="#" class="p_close js__p_close" title="Закрыть">
+      <span></span><span></span>
+    </a>
+    <div class="p_content">
+    <div class ="mordalrelationDiv">
+    <div class ="mordalh1Div">
+	    <h1 class ="mordalh1">Brand</h1>
+	    <h1 class ="mordalh1">Year</h1>
+	    <h1 class ="mordalh1">Season</h1>
+    </div>
+    <div class ="mordalFormDiv chosen-wrapper chosen-wrapper--style2" data-js="custom-scroll">
+	    <form action="/goCollectionTestPage/">
+	    	 <select class="chosen-select" data-placeholder="CHOOSE THE BRAND" name="brandName">
+				    <option></option>
+				    <option>Armani Prive</option>
+				    <option>CALVIN KLEIN</option>
+				    <option>Chanel</option>
+				    <option>Dolce & Gabbana</option>
+				    <option>Givenchy</option>
+				    <option>Gucci</option>
+				    <option>Louis Vuitton</option>
+				    <option>Prada</option>
+				    <option>Versace</option>
+  			</select>
+  			<select class="chosen-select" data-placeholder="CHOOSE THE YEAR" name ="year">
+  					<option></option>
+				    <option>2019</option>
+				    <option>2018</option>
+				    <option>2017</option>
+				    <option>2016</option>
+				    <option>2015</option>
+				    <option>2014</option>
+				    <option>2013</option>
+				    <option>2012</option>
+				    <option>2011</option>
+				    <option>2010</option>
+				    <option>2009</option>
+				  
+  			</select>
+  			<select class="chosen-select" data-placeholder="CHOOSE THE SEASON" name="season">
+  					<option></option>
+				    <option>SS</option>
+				    <option>FW</option>
+  			</select>
+  			<input type="submit" value="go" class ="gosubmit"> 
+	    </form>
+    </div>
+    </div>
+    
+    <form>
+    	
+    </form>
+    
+    </div>
+  </div>
+  <!-- modal Content -->
+  
+  
 	<hr class ="divinderUnderCalanderBox">
 	<!-- First Parallax Image with Logo Text -->
 	<div class="bgimg-1 w3-display-container" id="home"></div>
@@ -150,6 +239,7 @@ width: 100%; text-align: center;}
 				<script>
 				$(function(){
 					$(".modelOne").attr("src","${item}");
+					$(".modelTwo").attr("src","${item}");
 				});
 			</script>
 			</c:if>
@@ -162,11 +252,11 @@ width: 100%; text-align: center;}
 			<div class ="smallCollections2">
 		</c:if>
 		<c:if test="${divided == 0 }">
-			<script>
+			<!-- <script>
 				$(function(){
-					$(".modelTwo").attr("src","${item}");
+					
 				});
-			</script>
+			</script> -->
 			<c:set var="divided" value="-1"/>
 		</c:if>
 		<c:if test="${status.index > half}">
@@ -328,12 +418,13 @@ width: 100%; text-align: center;}
 	</script>
 	<script>
 	$(function(){
-		$(".smallCollections1 img").click(function(){
+		$(".smallCollections1 img, .smallCollections2 img").click(function(){
 			$(".modelOne").attr("src",$(this).attr("src"));
-		});
-		$(".smallCollections2 img").click(function(){
 			$(".modelTwo").attr("src",$(this).attr("src"));
 		});
+		/* $(".smallCollections2 img").click(function(){
+			$(".modelTwo").attr("src",$(this).attr("src"));
+		}); */
 	});
 	</script>	
 	<script>
@@ -362,5 +453,11 @@ width: 100%; text-align: center;}
 		}
 	}
 	</script>
+	
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.js'></script>
+
+  
+
+    <script  src="/js/index.js"></script>
 </body>
 </html>

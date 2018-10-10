@@ -25,8 +25,8 @@ public class CollectionController
 	
 	@RequestMapping("/goCollectionTestPage/")
 	public ModelAndView goCollectionTestPage(@RequestParam(value ="year",
-			defaultValue = "2018") String year, @RequestParam(value ="brandName",
-			defaultValue = "Louis Vuitton") String brandName, @RequestParam(value="season", 
+			defaultValue = "2017") String year, @RequestParam(value ="brandName",
+			defaultValue = "Chanel") String brandName, @RequestParam(value="season", 
 	defaultValue="FW") String season, HttpServletRequest request)
 {
 		String baseDirectoryPath = request.getServletContext().getRealPath("")+"xml/Collection/";
