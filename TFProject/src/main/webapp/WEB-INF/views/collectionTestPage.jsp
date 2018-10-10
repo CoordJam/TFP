@@ -24,6 +24,23 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css'>
 
  <link rel="stylesheet" href="/css/style.css">
+<script>
+/* var currentScroll = 0;
+var keeppingScrollEvent = false;
+$( window ).scroll(function(e) {
+	cureentScroll = $(this).scrollTop();
+	if ($(this).scrollTop()<500){
+		if(currentScroll<$(this).scrollTop() && keepingScrollEvent == false){
+			$('html, body').stop().animate({
+	            scrollTop: 1156
+	            }, 100);
+			keepingScrollEvent = true;
+		}
+	}
+	console.log($(this).scrollTop());
+}); */
+
+</script>
 
 
 <script type="text/javascript">
@@ -73,7 +90,7 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-60px; width: 100%; margin-bottom: 55px;}
+#player{ margin-top:-40px; width: 100%; margin-bottom: 75px;margin-top:}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
 .divinderUnderCalanderBox{color:black; position: relative; left:350px; border:solid 1px black; top:-25px;}
@@ -83,13 +100,13 @@ body, html {
 .collectionName{font-size: 5vh;position:relative; left:130px; color:black; font-style: italic; }
 .calenderIcon{display: inline; position: relative; left:150px;top:-15px; height:50px; cursor: pointer;}
 .smallCollections1 {width: 534px; position: absolute;  left: 72px; top: 319px;   cursor: pointer;}
-.smallCollections2{width: 504px;  position: absolute; left: 1300px;top: 318px;cursor: pointer; z-index: 2;}
+.smallCollections2{width: 504px;  position: absolute; left: 1300px;top: 318px;cursor: pointer; }
 .smallCollections{width:154px;  visible:none;}
 .modelOne{border:0px solid black;}
 .fashionModels img {height:45vw;}
 .fashionModels{ position: absolute; left:650px; top:321px;}
-.boardDiv{width:1900px; height:1080px; border: 2px solid orange; top:-650px;}
-.sectionOne{border : 2px solid red; position: relative; left: -12px; top:-59px;}
+.boardDiv{width:1900px; height:1080px; border: 0px solid orange; top:-650px;}
+.sectionOne{border : 0px solid red; position: relative; left: -12px; top:-59px;}
 .brandName{font-size: 6.5vh; position: absolute; left: -10vw; top: --0.6vh; font-family: 'Cinzel', serif; font-weight: bold;  color: black; display: inline;
 width: 100%; text-align: center;}
 .nextCollection{position: absolute; left: 15vw; font-family: 'Cinzel', serif;     top: 0.8vh; }
@@ -100,7 +117,7 @@ width: 100%; text-align: center;}
 .secondNextCollection .goRight, .goLeft {font-size: 35px;}
 .secondNextCollection .collectionName{font-size: 3.5vh;  position: relative;  left: 130px;color: black;  font-style: italic;}
 .secondNextCollection img {height: 34px;  left: 150px;top: -7px;}
-.modelTwo{position:absolute;}
+.modelTwo, .modelThree{display: block;}
 .p_close{right: 10px;}
 .mordalrelationDiv{position: relative;}
 .mordalh1Div{position: absolute;left: 30px;top:-92px;}
@@ -226,7 +243,7 @@ option{font-size: 20px; }
 			<span class="goLeft" onclick=" goNextSeason('left')">◀</span>
 				<span class ="collectionName">${year } ${season }</span>
 			<span class="goRight" onclick=" goNextSeason('right')">▶</span>    
-			<img src = "/img/calenderIcon.png" class="calenderIcon"  onclick="calender()">                         
+			<img src = "/img/calenderIcon.png" class="calenderIcon lal js__p_start" >                         
 		</div>
 		</div>
 	<div class ="sectionOne">
@@ -240,6 +257,7 @@ option{font-size: 20px; }
 				$(function(){
 					$(".modelOne").attr("src","${item}");
 					$(".modelTwo").attr("src","${item}");
+
 				});
 			</script>
 			</c:if>
@@ -273,6 +291,11 @@ option{font-size: 20px; }
 	<div class ="fashionModels">
 		<img class ="modelOne" src="">
 		<img class ="modelTwo" src="">
+		<img class ="modelTwo" src="">
+		<img class ="modelTwo" src="">
+		<img class ="modelTwo" src="">
+		<img class ="modelTwo" src="">
+		
 	</div>
 	</div>
 	<script>
