@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndViewDefiningException;
 
@@ -24,9 +25,9 @@ public class CollectionController
 	
 	@RequestMapping("/goCollectionTestPage/")
 	public ModelAndView goCollectionTestPage(@RequestParam(value ="year",
-			defaultValue = "2012") String year, @RequestParam(value ="brandName",
-			defaultValue = "Givenchy") String brandName, @RequestParam(value="season", 
-	defaultValue="SS") String season, HttpServletRequest request)
+			defaultValue = "2018") String year, @RequestParam(value ="brandName",
+			defaultValue = "Louis Vuitton") String brandName, @RequestParam(value="season", 
+	defaultValue="FW") String season, HttpServletRequest request)
 {
 		String baseDirectoryPath = request.getServletContext().getRealPath("")+"xml/Collection/";
 		String xmlPath = baseDirectoryPath+brandName+"/"+year+" "+season+".xml";
@@ -46,6 +47,20 @@ public class CollectionController
 		model.addObject("baseDirectoryPath",baseDirectoryPath);
 		model.addObject("youtubeId", xmlParser.getYoutubeId(xmlPath));
 		model.setViewName("collectionTestPage");
+		return model;
+	}
+	
+	@RequestMapping("/isThereFile")
+	@ResponseBody
+	String isThereFile(int year, String brandName, String season) {
+			
+		return  brandName;
+	}
+	
+	@RequestMapping("/collectionCalenderPopUp/")
+	ModelAndView collectionCalenderPopUp() {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("collectionCalenderPopUp");
 		return model;
 	}
 }

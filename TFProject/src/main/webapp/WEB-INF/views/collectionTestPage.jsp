@@ -14,14 +14,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		
-		<c:set  var ="brandName" value="${brandName }"/>
-		<c:set  var="season" value ="${season }"/>
-		<c:set  var="year" value = "${year }"/>
-		<c:set  var="baseDirectoryPath" value ="${baseDirectoryPath }"/>
-
-
-
 <style>
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
 body, html {
 	height: 100%;
 	color: #444;
@@ -61,23 +56,34 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-80px;}
-.logo{position: absolute; height:128px;left:838px; margin:15px;top:230px;}
-.calanderBox{position: relative; height: 100px; width:600px; left:600px; margin-top:25px; border:0px solid black; margin-bottom: 0px;}
+#player{ margin-top:-60px; width: 100%;}
+.logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
+.calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
 .divinderUnderCalanderBox{color:black; position: relative; left:350px; border:solid 1px black; top:-25px;}
 .goRight, .goLeft{font-size:50px; cursor: pointer; color: black;}
 .goLeft{position: relative; left:100px;}
 .goRight {position: relative; left:150px;}
-.collectionName{font-size:50px;position:relative; left:130px; color:black; font-style: italic; }
-.calanderIcon{display: inline; position: relative; left:150px;top:-15px; height:60px; cursor: pointer;}
-.smallCollections1 {border:3px solid red; width:450px; position: absolute; left:200px; top:300px; cursor: pointer;}
-.smallCollections2{border: 3px solid green; width:450px; position: absolute; left:1300px; top:300px; cursor: pointer; z-index: 2;}
-.smallCollections{width:50px;  visible:none;}
+.collectionName{font-size: 5vh;position:relative; left:130px; color:black; font-style: italic; }
+.calenderIcon{display: inline; position: relative; left:150px;top:-15px; height:50px; cursor: pointer;}
+.smallCollections1 {width: 534px; position: absolute;  left: 72px; top: 319px;   cursor: pointer;}
+.smallCollections2{width: 504px;  position: absolute; left: 1300px;top: 318px;cursor: pointer; z-index: 2;}
+.smallCollections{width:154px;  visible:none;}
 .modelOne{border:0px solid black;}
-.fashionModels img {height:460px;}
-.fashionModels{ position: absolute; left:650px; top:400px;}
+.fashionModels img {height:45vw;}
+.fashionModels{ position: absolute; left:650px; top:321px;}
 .boardDiv{width:1900px; height:1080px; border: 2px solid orange; top:-650px;}
 .sectionOne{border : 2px solid red; position: relative; left: -12px; top:-59px;}
+.brandName{font-size: 6.5vh; position: absolute; left: -10vw; top: --0.6vh; font-family: 'Cinzel', serif; font-weight: bold;  color: black; display: inline;
+width: 100%; text-align: center;}
+.nextCollection{position: absolute; left: 15vw; font-family: 'Cinzel', serif;     top: 0.8vh; }
+.brandName2{ position:absolute; font-family: 'Cinzel', serif; font-weight: bold;  color: black;  font-size: 5.1vw; left: 24vw;text-align: center;width: 900px;}
+.brandNameBox{position: absolute;   width: 1000px;  text-align: center; top: -3.2vw; left: -200px;}
+.secondNextCollection{position: relative;}
+.secondNextCollection .nextCollection{left: 35vw; top: 18.8vh;}
+.secondNextCollection .goRight, .goLeft {font-size: 35px;}
+.secondNextCollection .collectionName{font-size: 3.5vh;  position: relative;  left: 130px;color: black;  font-style: italic;}
+.secondNextCollection img {height: 34px;  left: 150px;top: -7px;}
+.modelTwo{position:absolute;}
 </style>
 
 <body id="body">
@@ -107,13 +113,16 @@ body, html {
 	</div>
 	
 
-	<div class ="calanderBox">
-		<span class="nextCollection">
+	<div class ="calenderBox">
+	<div class = "brandNameBox">
+	<p class = "brandName">${brandName}</p></div>
+		<div class="nextCollection">
 			<span class="goLeft" onclick=" goNextSeason('left')">◀</span>
 				<span class ="collectionName">${year } ${season }</span>
-			<span class="goRight" onclick=" goNextSeason('right')">▶</span>                             
-		</span>
-		<img src = "/img/calanderIcon.png" class="calanderIcon" >
+			<span class="goRight" onclick=" goNextSeason('right')">▶</span>    
+			<img src = "/img/calenderIcon.png" class="calenderIcon"  onclick="calender()">                         
+		</div>
+		
 	</div>
 	
 	<hr class ="divinderUnderCalanderBox">
@@ -122,8 +131,16 @@ body, html {
 	}    
 	
 	<div id="player"></div> 
+	<h1 class = "brandName2">${brandName }</h1>
+	<div class = "secondNextCollection">
+	<div class="nextCollection">
+			<span class="goLeft" onclick=" goNextSeason('left')">◀</span>
+				<span class ="collectionName">${year } ${season }</span>
+			<span class="goRight" onclick=" goNextSeason('right')">▶</span>    
+			<img src = "/img/calenderIcon.png" class="calenderIcon"  onclick="calender()">                         
+		</div>
+		</div>
 	<div class ="sectionOne">
-	<img src ="/img/brandLogos/gucci.png" class="logo">
 	<c:set var ="half" value= "${fn:length(list)/2}"/>
 	<c:set var ="divided" value ='1'/>
 	<div class ="smallCollections1">     
@@ -225,6 +242,7 @@ body, html {
 	
 	<h1>안녕하세요.</h1> -->
 	</div>
+	
 	<script>
 		
 	
@@ -317,26 +335,28 @@ body, html {
 			$(".modelTwo").attr("src",$(this).attr("src"));
 		});
 	});
-	</script>
-		<%
-	int  yearInt = Integer.parseInt(pageContext.getAttribute("year").toString());
-	String year;
-	String season = pageContext.getAttribute("season").toString();
-	String baseDirectoryPath = pageContext.getAttribute("baseDirectoryPath").toString();
-	String brandName = pageContext.getAttribute("brandName").toString();
-
-%>
+	</script>	
 	<script>
-
+	function calender(){
+		alert("hi");
+		window.open("/collectionCalenderPopUp/"
+				,"_blank","width=400,height=400,left=600, location='no'");
+	}
 	function goNextSeason(where){			
 		if (where =="left"){
-			alert("left")		
-			<% IsThereFile ith = new IsThereFile();
-			year = String.valueOf(--yearInt);
-			String xmlPath = baseDirectoryPath+brandName+"/"+year+" "+season+".xml";
-			ith.checkFiel(xmlPath); 
-				
-				%>
+			alert("left")
+			/*  var allData = {"year":${year}, "brandName":${brandName},"season",${season}}
+			  $.ajax({
+			        url:'/isThereFile', 
+			        type:'post',     
+			        data: allData,
+			        success:function(data){
+			        	alert(data);
+			        },error:function(){
+			        	alert("에러 발생");
+			        }
+			    })
+			}); */
 		}else {
 			alert("right");
 		}
