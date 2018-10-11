@@ -54,7 +54,7 @@
    #container{margin: 0 auto; } 
    h3{width: 71%;
       align:center;
-   /* margin-left: 6%; */ margin-top: 2% }
+   	  margin-top: 2% }
    
    .TB{
 
@@ -72,11 +72,6 @@
   .TB {
 
    width: 55%;
-
-      border-color: gray; 
-      align:center;
-   /* margin-left: 15%; */
-=======
    border-color: gray;
    align: center;
    margin-left: 15%;
@@ -86,11 +81,6 @@
 
   .TB2 {
    width: 55%;
-
-      border-color: gray; 
-      align:center;
-   /* margin-left: 19%; */
-
    border-color: gray;
    align: center;
    margin-left: 19%;
