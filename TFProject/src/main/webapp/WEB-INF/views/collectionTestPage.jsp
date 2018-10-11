@@ -87,28 +87,28 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-40px; width: 100%; margin-bottom: 75px;margin-top:}
+#player{ margin-top:-21px; width: 100%; margin-bottom: 1%;height: 53vw;  width: 157%;  margin-left: -28%; z-index: -1;pointer-events: none;}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
-.divinderUnderCalanderBox{color:black; position: relative; left:350px; border:solid 1px black; top:-25px;}
+.divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-17px;}
 .goRight, .goLeft{font-size:50px; cursor: pointer; color: black;}
 .goLeft{position: relative; left:100px;}
 .goRight {position: relative; left:150px;}
 .collectionName{font-size: 5vh;position:relative; left:130px; color:black; font-style: italic; }
 .calenderIcon{display: inline; position: relative; left:150px;top:-15px; height:50px; cursor: pointer;}
-.smallCollections1 {width: 534px; position: absolute;  left: 72px; top: 319px;   cursor: pointer;}
-.smallCollections2{width: 504px;  position: absolute; left: 1300px;top: 318px;cursor: pointer; }
-.smallCollections{width:154px;  visible:none;}
+.smallCollections1 {width: 87vw;   left: 72px; top: 319px;   cursor: pointer;margin-left: 10vw; margin-top: 20%;}
+.smallCollections2{width: 1700px;  left: 1300px;top: 318px;cursor: pointer; margin-left: 10%;}
+.smallCollections{width:18vw;  visible:none;margin: 5px;}
 .modelOne{border:0px solid black;}
 .fashionModels img {height:45vw;}
 .fashionModels{ position: absolute; left:650px; top:321px;}
 .boardDiv{width:1900px; height:1080px; border: 0px solid orange; top:-650px;}
-.sectionOne{border : 0px solid red; position: relative; left: -12px; top:-59px;}
-.brandName{font-size: 6.5vh; position: absolute; left: -10vw; top: --0.6vh; font-family: 'Cinzel', serif; font-weight: bold;  color: black; display: inline;
-width: 100%; text-align: center;}
-.nextCollection{position: absolute; left: 15vw; font-family: 'Cinzel', serif;     top: 0.8vh; }
-.brandName2{ position:absolute; font-family: 'Cinzel', serif; font-weight: bold;  color: black;  font-size: 5.1vw; left: 24vw;text-align: center;width: 900px;}
-.brandNameBox{position: absolute;   width: 1000px;  text-align: center; top: -3.2vw; left: -200px;}
+.sectionOne{border : 0px solid red;  left: -12px; top:-59px; /* position: relative; */}
+.brandName{font-size: 5.5VH; position: absolute; left: -5vw;  font-family: 'Cinzel', serif; font-weight: bold;  color: black; display: inline;
+width: 67%; text-align: center;}
+.nextCollection{position: absolute; left: 15vw; font-family: 'Cinzel', serif;     top: 1.8vh; }
+.brandName2{ position:absolute; font-family: 'Cinzel', serif; font-weight: bold;  color: black;  font-size: 5.1vw; left: 24vw;text-align: center;width: 52%;}
+.brandNameBox{position: absolute;   width: 1000px;  text-align: center; top: -2.2vw; left: -200px;}
 .secondNextCollection{position: relative;}
 .secondNextCollection .nextCollection{left: 35vw; top: 18.8vh;}
 .secondNextCollection .goRight, .goLeft {font-size: 35px;}
@@ -122,11 +122,62 @@ width: 100%; text-align: center;}
 .mordalh1{font-family: 'Cinzel', serif; font-weight: bold; font-size: 46px; margin:30px;}
 .mordalFormDiv select {display: block;  margin: 43px; font-family: 'Cinzel', serif}
 .chosen-container{margin:10px;}
+.secondNextCollection .goRight, .goLeft, .goLeft{font-size:50px;}
+.playerShield{width:100%; height:51vw; border: 2px solid lime;  position: absolute; z-index:1; top: 250px; opacity: 0;} 
+
 /* selectBox */
 .chosen-wrapper .chosen-container .chosen-single{border-bottom-color: black; color: black; text-align: center;font-size: 20px;  padding: 8px;}
 option{font-size: 20px; }
 .gosubmit{ left: 220px;background-color: white;   font-family: 'Cinzel', serif; border: 0px;font-size: 39px; top: 285px;font-style: italic;   position: absolute; }
-
+@media (max-width:1417px){
+			.brandNameBox{margin-left: 7%;}
+			#player{margin-top:5%;  margin-bottom: -1%;/* margin-bottom: 88px; */}
+			.nextCollection{top: 9.8vh; display: block;left: -9vw;}
+			/* .brandName2{left: 14vw;top: 3vw;}
+			.secondNextCollection{top: -10vw;    left: -17vw; } */			
+			/* .smallCollections1{margin-top:27%;} */
+			.smallCollections1{    margin-top: 24%;}
+        }
+        @media (max-width:1185px){
+       .secondNextCollection .nextCollection{display:none;} 
+        }
+@media (max-width:550px){
+			.divinderUnderCalanderBox{visibility: hidden;}
+			.brandNameBox { margin-left: 7%;  }
+			.brandName {  font-size: 5.5VH;  position: absolute;  left: -6vw;left: -17vw;   width: 67%;  }     
+			.nextCollection {  top: 11.8vh;  display: block;  left: -27vw;}
+			.goLeft, .goRight{font-size: 30px;}
+			.calenderIcon {height: 33px; top:-7px; left:145px;	}
+			.divinderUnderCalanderBox {width: 200%;left: -26px;  margin: 7%; margin-top: 2.5vw;}
+			.collectionName {font-size: 4.3vh;}
+			#player{margin-bottom: 10px;margin-top:35px;    margin-bottom: -64px;}
+			.sectionOne{    margin-left: -6%;}
+			.brandName2{    top: -11vw;}
+			}
+	@media (max-width:750px){		
+			.mordalh1{font-size: 24px; margin: 5px;     left: 13px;}
+			.mordalFormDiv{    width: 237px; z-index: 1;}
+			.chosen-container-single .chosen-single{font-size: 15px; border-color:white; padding: -4px; }
+			.chosen-wrapper--style2 .chosen-container.chosen-with-drop .chosen-drop{    width: 243px;}
+			.chosen-container{margin: -8px; left: -140px;}
+			.chosen-wrapper .chosen-container.chosen-with-drop .chosen-single{border-color: white; }
+			.chosen-wrapper .chosen-container .chosen-single{ border-bottom-color: white;     margin-bottom: 5px;}
+			.chosen-wrapper .chosen-container .chosen-single{font-size: 17px;}
+			.gosubmit {
+    left: -58px;
+    background-color: white;
+    font-family: 'Cinzel', serif;
+    border: 0px;
+    font-size: 51px;
+    top: 192px;
+    font-style: italic;
+    position: absolute;
+}.p_close {
+    right: 10px;
+    z-index: 2;
+}
+			}
+			   
 </style>
 </head>
 <body id="body">
@@ -196,7 +247,6 @@ option{font-size: 20px; }
   			</select>
   			<select class="chosen-select" data-placeholder="CHOOSE THE YEAR" name ="year">
   					<option></option>
-				    <option>2019</option>
 				    <option>2018</option>
 				    <option>2017</option>
 				    <option>2016</option>
@@ -207,6 +257,9 @@ option{font-size: 20px; }
 				    <option>2011</option>
 				    <option>2010</option>
 				    <option>2009</option>
+				    <!-- 해야될 거: 파일이 있는지 확인하고 출력하고 이동 안 하기
+				    왼쪽 오른쪽 누르면 계산해서 가는 거 아니면 아예 없애버리기 희희
+				    사진을 클릭하면 크게 나오게 하기~~ -->
 				  
   			</select>
   			<select class="chosen-select" data-placeholder="CHOOSE THE SEASON" name="season">
@@ -231,11 +284,12 @@ option{font-size: 20px; }
 	<hr class ="divinderUnderCalanderBox">
 	<!-- First Parallax Image with Logo Text -->
 	<div class="bgimg-1 w3-display-container" id="home"></div>
-	}    
 	
+	<!-- <div class ="playerShield"></div>  -->
 	<div id="player"></div> 
-	<h1 class = "brandName2">${brandName }</h1>
+	
 	<div class = "secondNextCollection">
+	<h1 class = "brandName2">${brandName }</h1>
 	<div class="nextCollection">
 			<span class="goLeft" onclick=" goNextSeason('left')">◀</span>
 				<span class ="collectionName">${year } ${season }</span>
@@ -248,7 +302,7 @@ option{font-size: 20px; }
 	<c:set var ="divided" value ='1'/>
 	<div class ="smallCollections1">     
 	<c:forEach items="${list }" var="item" varStatus="status">
-		<c:if test="${status.index < half}">
+		<%-- <c:if test="${status.index < half}">
 			<c:if test="${status.index ==0 }">
 				<script>
 				$(function(){
@@ -257,9 +311,9 @@ option{font-size: 20px; }
 
 				});
 			</script>
-			</c:if>
+			</c:if> --%>
 			<img src = "${item }" class ="smallCollections">
-		</c:if>
+		<%-- </c:if>
 		
 		<c:if test="${status.index > half && divided =='1'}">
 			<c:set var="divided" value= '0' />
@@ -276,7 +330,7 @@ option{font-size: 20px; }
 		</c:if>
 		<c:if test="${status.index > half}">
 			<img src = "${item }" class ="smallCollections">
-		</c:if>		
+		</c:if>		 --%>
 	</c:forEach>
 	</div>
 	<script>
@@ -285,7 +339,7 @@ option{font-size: 20px; }
 	});
 	</script>
 	
-	<div class ="fashionModels">
+<!-- 	<div class ="fashionModels">
 		<img class ="modelOne" src="">
 		<img class ="modelTwo" src="">
 		<img class ="modelTwo" src="">
@@ -293,7 +347,7 @@ option{font-size: 20px; }
 		<img class ="modelTwo" src="">
 		<img class ="modelTwo" src="">
 		
-	</div>
+	</div> -->
 	</div>
 	<script>
 	/* alert(${fn:length(list)} ); */
@@ -316,7 +370,7 @@ option{font-size: 20px; }
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          height: '900',
+          height: '1080',
           width: '1920',
           videoId:"${youtubeId}",
           events: {
@@ -347,7 +401,7 @@ option{font-size: 20px; }
     </script>
 	<!-- <iframe width="1920" height="880" src="https://www.youtube.com/embed/K3_kN6VjAXg?autoplay=1"
 	frameborder="0" allowfullscreen></iframe> -->
-	<div class ="boardDiv">
+	<!-- <div class ="boardDiv"> -->
 	<!-- <h1>안녕하세요.</h1>
 	
 	<h1>안녕하세요.</h1> -->

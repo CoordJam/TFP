@@ -9,6 +9,13 @@
     -webkit-transition:top 800ms;
   transition:top 800ms;
 }
+
+@media (max-width:750px){
+			.popup {  width: 375px; height: 312px;}
+			
+			}
+
+
   .p_content { width:100%; text-align:center; font-size:23px; padding:110px 0 0; }
   .p_anch {
     float:left; position:relative; z-index:1; width:100%;
