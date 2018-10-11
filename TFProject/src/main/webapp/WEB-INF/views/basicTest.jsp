@@ -19,8 +19,6 @@
 
 Calendar cal = Calendar.getInstance();
 
- 
-
 String strYear = request.getParameter("year");
 
 String strMonth = request.getParameter("month");
@@ -79,13 +77,7 @@ if(intToday==20181010){
 	intToday+=234;
 }
 
- 
-
- 
-
 %>
-
-<html lang="ko">
 
 <style>
 
@@ -138,67 +130,25 @@ body, html {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
  }
-</style>
 
-<TITLE>캘린더</TITLE>
 
-       <meta http-equiv="content-type" content="text/html; charset=utf-8">
-       <script type="text/javaScript" language="javascript"> 
-       </script>
-       <style TYPE="text/css">
-             body {
+    td {font-family: "돋움"; font-size: 9pt; color:#595959;}
 
-             scrollbar-face-color: #F6F6F6;
+    th {font-family: "돋움"; font-size: 9pt; color:#000000;}
 
-             scrollbar-highlight-color: #bbbbbb;
+    select {font-family: "돋움"; font-size: 9pt; color:#595959;}
 
-             scrollbar-3dlight-color: #FFFFFF;
 
-             scrollbar-shadow-color: #bbbbbb;
 
-             scrollbar-darkshadow-color: #FFFFFF;
 
-             scrollbar-track-color: #FFFFFF;
 
-             scrollbar-arrow-color: #bbbbbb;
+    .divDotText {
 
-             margin-left:"0px"; margin-right:"0px"; margin-top:"0px"; margin-bottom:"0px";
+    overflow:hidden;
 
-             }
+    text-overflow:ellipsis;
 
- 
-
-             td {font-family: "돋움"; font-size: 9pt; color:#595959;}
-
-             th {font-family: "돋움"; font-size: 9pt; color:#000000;}
-
-             select {font-family: "돋움"; font-size: 9pt; color:#595959;}
-
- 
-
- 
-
-             .divDotText {
-
-             overflow:hidden;
-
-             text-overflow:ellipsis;
-
-             }
-
- 
-
-            A:link { font-size:9pt; font-family:"돋움";color:#000000; text-decoration:none; }
-
-            A:visited { font-size:9pt; font-family:"돋움";color:#000000; text-decoration:none; }
-
-            A:active { font-size:9pt; font-family:"돋움";color:red; text-decoration:none; }
-
-            A:hover { font-size:9pt; font-family:"돋움";color:red;text-decoration:none;}
-
- 
-
- 
+    }
 
        </style>
 
@@ -207,19 +157,19 @@ body, html {
  <!-- Navbar (sit on top) -->
  <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
-   <a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
-    onclick="toggleFunction()" title="Toggle Navigation Menu">
+   <a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);" 
+   onclick="toggleFunction()" title="Toggle Navigation Menu">
     <i class="fa fa-bars"></i></a>
 
    <a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 
-   <a href="/test1/#a1" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+   <a href="/test3/#c1" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
     <i class="fa fa-user"></i> a1</a>
 
-   <a href="/test1/#a2" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+   <a href="/test3/#c2" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
     <i class="fa fa-th"></i> a2</a>
 
-   <a href="/test1/#a3" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+   <a href="/test3/#c3" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
     <i class="fa fa-envelope"></i> a3</a>
 
    <i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
@@ -284,7 +234,7 @@ body, html {
 
        <td align ="right">
 
-             <input type="button" onclick="javascript:location.href='<c:url value='basicTest' />'" value="오늘"/>
+             <input type="button" onclick="javascript:location.href='<c:url value='' />'" value="오늘"/>
 
        </td>
 
@@ -322,7 +272,7 @@ body, html {
 
              <td align="center" >
 
-                    <a href="<c:url value='basicTest' />?year=<%=year-1%>&amp;month=<%=month%>" target="_self">
+                    <a href="<c:url value='' />?year=<%=year-1%>&amp;month=<%=month%>" target="_self">
 
                            <b>&lt;&lt;</b><!-- 이전해 -->
 
@@ -330,7 +280,7 @@ body, html {
 
                     <%if(month > 0 ){ %>
 
-                    <a href="<c:url value='basicTest' />?year=<%=year%>&amp;month=<%=month-1%>" target="_self">
+                    <a href="<c:url value='' />?year=<%=year%>&amp;month=<%=month-1%>" target="_self">
 
                            <b>&lt;</b><!-- 이전달 -->
 
@@ -354,7 +304,7 @@ body, html {
 
                     <%if(month < 11 ){ %>
 
-                    <a href="<c:url value='basicTest' />?year=<%=year%>&amp;month=<%=month+1%>" target="_self">
+                    <a href="<c:url value='' />?year=<%=year%>&amp;month=<%=month+1%>" target="_self">
 
                            <!-- 다음달 --><b>&gt;</b>
 
@@ -366,7 +316,7 @@ body, html {
 
                     <%} %>
 
-                    <a href="<c:url value='basicTest' />?year=<%=year+1%>&amp;month=<%=month%>" target="_self">
+                    <a href="<c:url value='' />?year=<%=year+1%>&amp;month=<%=month%>" target="_self">
 
                            <!-- 다음해 --><b>&gt;&gt;</b>
 
@@ -576,11 +526,64 @@ while(newLine > 0 && newLine < 7)
 
 </TABLE>
 
-</DIV>
+</form> <br><br><br><br><br><br>
 
-</form>
+<!-- Footer -->
+	<footer
+		class="w3-center w3-black w3-padding-48 w3-opacity-min w3-hover-opacity-off">
+		<a href="#home" class="w3-button w3-light-gray"><i
+			class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+		<p>
+			<br> 제휴 사이트&nbsp;&nbsp;&nbsp;<a
+				href="https://www.vogue.com/fashion-shows" title="VOGUE"
+				target="_blank" class="w3-hover-text-gray w3-medium">VOGUE</a>
+			&nbsp;&nbsp;&nbsp; <a href="https://fashionweekonline.com/"
+				title="FashionWeek" target="_blank"
+				class="w3-hover-text-gray w3-medium">Fashion-Week</a>
+			&nbsp;&nbsp;&nbsp; <a href="http://seoul365fashion.kr/" title="SEOUL"
+				target="_blank" class="w3-hover-text-gray w3-medium">SEOUL 365
+				패션쇼</a>
+		</p>
 
-<!--    if (bl) {
+	</footer>
+
+ <script>
+  // Change style of navbar on scroll
+  window.onscroll = function () {
+   myFunction()
+  };
+  function myFunction() {
+   var navbar = document.getElementById("myNavbar");
+   if (document.body.scrollTop > 100
+    || document.documentElement.scrollTop > 100) {
+    navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
+     + " w3-white";
+   } else {
+    navbar.className = navbar.className.replace(
+     " w3-card w3-animate-top w3-white", "");
+   }
+  }
+
+  // Used to toggle the menu on small screens when clicking on the menu button
+  function toggleFunction() {
+   var x = document.getElementById("navDemo");
+   if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+   } else {
+    x.className = x.className.replace(" w3-show", "");
+   }
+  }
+ </script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
+
+ <script>
+  bl = true;
+  var yousound = document.getElementById("usound");
+
+  yousound.onclick = function () {
+
+   if (bl) {
     yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
     console.log(bl);
     bl = !bl;
@@ -594,7 +597,7 @@ while(newLine > 0 && newLine < 7)
     console.log(bl);
     ytplayer.pauseVideo();
    }
-  } -->
+  }
  </script>
 
  <script>

@@ -8,14 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
  body, html {
@@ -76,7 +69,7 @@ width: 60%;}
    onclick="toggleFunction()" title="Toggle Navigation Menu">
     <i class="fa fa-bars"></i></a>
 
-   <a href="/" class="w3-bar-item w3-hover-black w3-button">HOME</a>
+   <a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 
    <a href="/test3/#c1" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
     <i class="fa fa-user"></i> a1</a>
@@ -141,19 +134,11 @@ width: 60%;}
   <input type="button" value="글쓰기" class="btn btn-primary btn-warning" style="margin-left: 500px;" onclick="location.href='/qnaWriteform'">
  </div>
  
- <!-- Paging 처리, Bootstrap -->
-<nav aria-label="..." style="text-align: center;">
-  <ul class="pagination">
-    ${pageShow}
-  </ul>
-</nav>
 
-
- <%-- <div align="center" style="height: 40;">
+ <div align="center" style="height: 40;">
   ${pageShow}
 
- </div> --%>
-
+ </div>
  
 
 
