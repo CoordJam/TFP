@@ -111,7 +111,7 @@ body, html {
 				
 			<div id="kakao_btn_changed"></div>
 			
-			<div id="test1" class="w3-right w3-bar-item w3-hover-gray w3-hide-small"></div> 
+			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
 		<!-- Navbar on small screens -->
@@ -577,7 +577,7 @@ function logoutWithKakao(){
 // 로그인 버튼생성
 function createLoginKakao(){
  var login_btn = "<a href='javascript:loginWithKakao()'>"+
-                "<div id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
+                "<div id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
                 "<a/>";
  document.getElementById('kakao_btn_changed').innerHTML  = login_btn;
 }
