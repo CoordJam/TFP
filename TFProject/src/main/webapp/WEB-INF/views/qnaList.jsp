@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 <style>
  body, html {
  height: 100%;
@@ -145,85 +147,92 @@ width: 60%;}
 
 
  <script>
-  // Change style of navbar on scroll
-  window.onscroll = function () {
-   myFunction()
-  };
-  function myFunction() {
-   var navbar = document.getElementById("myNavbar");
-   if (document.body.scrollTop > 100
-    || document.documentElement.scrollTop > 100) {
-    navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
-     + " w3-white";
-   } else {
-    navbar.className = navbar.className.replace(
-     " w3-card w3-animate-top w3-white", "");
-   }
-  }
+		// Change style of navbar on scroll
+		window.onscroll = function () {
+			myFunction()
+		};
+		function myFunction() {
+			var navbar = document.getElementById("myNavbar");
+			if (document.body.scrollTop > 300
+				|| document.documentElement.scrollTop > 300) {
+				navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
+					+ " w3-black";
+			} else {
+				navbar.className = navbar.className.replace(
+					" w3-card w3-animate-top w3-black", "");
+			}
+		}
 
-  // Used to toggle the menu on small screens when clicking on the menu button
-  function toggleFunction() {
-   var x = document.getElementById("navDemo");
-   if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-   } else {
-    x.className = x.className.replace(" w3-show", "");
-   }
-  }
- </script>
+		// Used to toggle the menu on small screens when clicking on the menu button
+		function toggleFunction() {
+			var x = document.getElementById("navDemo");
+			if (x.className.indexOf("w3-show") == -1) {
+				x.className += " w3-show";
+			} else {
+				x.className = x.className.replace(" w3-show", "");
+			}
+		}
+	</script>
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
- <script>
-  bl = true;
-  var yousound = document.getElementById("usound");
+	<script>
+		bl = true;
+		var yousound = document.getElementById("usound");
 
-  yousound.onclick = function () {
+		yousound.onclick = function () {
 
-   if (bl) {
-    yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-    console.log(bl);
-    bl = !bl;
-    console.log(bl);
-    ytplayer.playVideo();
-    console.log(ytplayer);
-   } else {
-    yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-    console.log(bl);
-    bl = !bl;
-    console.log(bl);
-    ytplayer.pauseVideo();
-   }
-  }
- </script>
+			if (bl) {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				console.log(bl);
+				bl = !bl;
+				console.log(bl);
+				ytplayer.playVideo();
+				console.log(ytplayer);
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
+				console.log(bl);
+				bl = !bl;
+				console.log(bl);
+				ytplayer.pauseVideo();
+			}
+		}
+	</script>
 
- <script>
-  // Select all links with hashes
-  $('a[href*="#"]')
-   // Remove links that don't actually link to anything
-   .not('[href="#"]')
-   .not('[href="#0"]')
-   .click(function (event) {
-    // On-page links
-    if (
-     location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-     &&
-     location.hostname == this.hostname
-    ) {
-     // Figure out element to scroll to
-     var target = $(this.hash);
-     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-     // Does a scroll target exist?
-     if (target.length) {
-      // Only prevent default if animation is actually gonna happen
-      event.preventDefault();
-      $('html, body').animate({
-       scrollTop: target.offset().top
-      }, 1000);
-     }
-    }
-   });
- </script>
+	<script>
+		// Select all links with hashes
+		$('a[href*="#"]')
+			// Remove links that don't actually link to anything
+			.not('[href="#"]')
+			.not('[href="#0"]')
+			.click(function (event) {
+				// On-page links
+				if (
+					location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+					&&
+					location.hostname == this.hostname
+				) {
+					// Figure out element to scroll to
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+					// Does a scroll target exist?
+					if (target.length) {
+						// Only prevent default if animation is actually gonna happen
+						event.preventDefault();
+						$('html, body').animate({
+							scrollTop: target.offset().top
+						}, 1000);
+					}
+				}
+			});
+	</script>
+
+ 
+ <div id="kakao_btn_changed">
+<a href="javascript:loginWithKakao()">
+<img src="" /></a>
+</div>
+ 
  <script>
 var namelee=localStorage.getItem("key1");
 console.log(localStorage.getItem("key1"));

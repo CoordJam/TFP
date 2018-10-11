@@ -15,7 +15,7 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="/js/jquery.popup.js"></script>
 <link rel="stylesheet" href="/css/jquery.popup.css" type="text/css">
-
+<script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <!-- selectbox -->
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -540,6 +540,12 @@ option{font-size: 20px; }
 	
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.js'></script>
     <script  src="/js/index.js"></script>
+    
+    <div id="kakao_btn_changed">
+<a href="javascript:loginWithKakao()">
+<img src="" /></a>
+</div>
+    
     <script>
 var namelee=localStorage.getItem("key1");
 console.log(localStorage.getItem("key1"));
