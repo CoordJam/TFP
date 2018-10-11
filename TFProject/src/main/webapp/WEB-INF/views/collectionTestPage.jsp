@@ -181,7 +181,6 @@ option{font-size: 20px; }
 </style>
 </head>
 <body id="body">
-<c:set var="root" value="<%=request.getContextPath()%>"></c:set>
 	<!-- Navbar (sit on top) -->
 		<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">

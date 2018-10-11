@@ -104,37 +104,42 @@
  </head>
  
  <body id="body">
+ <body id="body">
  <!-- Navbar (sit on top) -->
- <div class="w3-top"> 
-  <div class="w3-bar" id="myNavbar">
-   <a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
-   onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
-   
-   <a href="/" class="w3-bar-item w3-hover-black w3-button">HOME</a>
-   
-   <a href="/test3/#c1" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-    <i class="fa fa-user"></i> a1</a> 
-    
-   <a href="/test3/#c2" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-    <i class="fa fa-th"></i> a2</a> 
-    
-   <a href="/test3/#c3" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-    <i class="fa fa-envelope"></i> a3</a> 
-   
-   <i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
-    w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
-  </div>
+		<div class="w3-top">
+		<div class="w3-bar" id="myNavbar">
+			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
+			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
+			
+			<a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			
+			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
+				<i class="fa fa-user"></i> ABOUT</a> 
+				
+			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i class="fa fa-th"></i> RUNWAY</a> 
+				
+			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i class="fa fa-envelope"></i> CONTACT</a>
+			
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
+				
+			<div id="kakao_btn_changed"></div>
+			
+			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
+		</div>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide">
-   <a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-   <a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-   <a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-   <a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a> 
-   <a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-   <a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>
-  </div>
- </div>
+		<!-- Navbar on small screens -->
+		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
+			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
+			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
+			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
+			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
+			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
+			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+		</div>
+	</div>
  <img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
   <div align="center">
   <h3>게시글 작성</h3>
@@ -150,7 +155,7 @@
     <input type="hidden" name="qnaBoard_id" value="익명">
     </c:when>
     <c:when test="${null ne id}">
-    <input type="hidden" name="qnaBoard_id" value="${sessionScope.id}">
+    <input type="hidden" id="names" name="qnaBoard_id" value="">
     </c:when>
    </c:choose>
          </tr>
@@ -291,6 +296,7 @@ function createLogoutKakao(){
 	 var s=document.getElementById("test1");
 	 if(localStorage.key1!=null){
  		s.innerText=localStorage.key1;
+ 		$('#names').vallocalStorage.key1();
 	 }else{
 		 s.innerText="";
 	 }

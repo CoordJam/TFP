@@ -11,7 +11,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-
 <%@page import="java.text.SimpleDateFormat"%>
 
 <%@page import="java.util.Calendar"%> 
@@ -61,7 +60,6 @@ body, html {
  height: 100%;
  color: #444;
  line-height: 1.8;
- font-family: "Lato", sans-serif;
 }
 
  
