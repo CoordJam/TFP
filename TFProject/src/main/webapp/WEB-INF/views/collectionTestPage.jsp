@@ -236,6 +236,9 @@ option{font-size: 20px; }
 				    <option>2011</option>
 				    <option>2010</option>
 				    <option>2009</option>
+				    <!-- 해야될 거: 파일이 있는지 확인하고 출력하고 이동 안 하기
+				    왼쪽 오른쪽 누르면 계산해서 가는 거 아니면 아예 없애버리기 희희
+				    사진을 클릭하면 크게 나오게 하기~~ -->
 				  
   			</select>
   			<select class="chosen-select" data-placeholder="CHOOSE THE SEASON" name="season">
