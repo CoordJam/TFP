@@ -1,7 +1,6 @@
 package com.coord.jam;
 
 import java.util.List;
-<<<<<<< HEAD
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -13,8 +12,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
-=======
->>>>>>> branch 'master' of https://github.com/CoordJam/TFP.git
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,14 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> branch 'master' of https://github.com/CoordJam/TFP.git
 @Controller
 public class MenuController {
-<<<<<<< HEAD
 	@Autowired
 	private QnaDao Test3Dao;
 	
@@ -109,43 +100,3 @@ public class MenuController {
 		Transport.send(mimeMessage); //javax.mail.Transport.send() 이용 
 		}
 	}
-
-		
-	
-
-=======
-  @Autowired
-  private QnaDao Test3Dao;
-
-  @RequestMapping("/")
-  public String home() {
-    return "home";
-  }
-
-  @RequestMapping("/test1")
-  public String test1() {
-    return "basicTest";
-  }
-
-  @RequestMapping("/test2")
-  public String test2() {
-    return "basicTest2";
-  }
-
-  @RequestMapping("/test3")
-  public ModelAndView test3() {
-    ModelAndView model = new ModelAndView();
-    List<QnaDto> list = Test3Dao.getAlldatas();
-    model.addObject("list", list);
-    model.setViewName("basicTest3");
-    return model;
-  }
-
-  @RequestMapping("/test4")
-  public ModelAndView test4() {
-    ModelAndView model = new ModelAndView();
-    model.setViewName("basicTest4");
-    return model;
-  }
-}
->>>>>>> branch 'master' of https://github.com/CoordJam/TFP.git
