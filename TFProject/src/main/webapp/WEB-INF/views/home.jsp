@@ -5,13 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <style>
-body, h1, h2, h3, h4, h5, h6 { 
-	font-family: "Lato", sans-serif;
-}
 
 body, html {
 	height: 100%;
@@ -107,10 +104,14 @@ body, html {
 				<i class="fa fa-th"></i> RUNWAY</a> 
 				
 			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a> 
+				<i class="fa fa-envelope"></i> CONTACT</a>
 			
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
+				
+			<div id="kakao_btn_changed"></div>
+			
+			<div id="test1" class="w3-right w3-bar-item w3-hover-gray w3-hide-small"></div> 
 		</div>
 
 		<!-- Navbar on small screens -->
@@ -477,6 +478,129 @@ body, html {
 		    }
 		  });
 	</script>
+	
+	<div id="kakao_btn_changed">
+<a href="javascript:loginWithKakao()">
+<img src="" /></a>
+</div>
+ 
+ 
+<script>
+var namelee=localStorage.getItem("key1");
+console.log(localStorage.getItem("key1"));
+console.log(namelee);
+//document.getElementById("test1").innerHTML=namelee;
+// 로그인 및 로그아웃 버튼 생성 처리
+var cookiedata = document.cookie;
+if(cookiedata.indexOf('kakao_login=done') < 0){
+    createLoginKakao();
+}else{
+    createLogoutKakao();
+}
+ 
+/* 로그인 관련 쿠키 생성 및 삭제 */
+function setCookie( name , value , expired ){
+ 
+ var date = new Date();
+ date.setHours(date.getHours() + expired);
+ var expried_set = "expries="+date.toGMTString();
+ document.cookie = name + "=" + value + "; path=/;" + expried_set + ";"
+ 
+}
+ 
+function getCookie(name){
+    var nameofCookie = name + "=";
+    var x = 0;
+    while(x <= document.cookie.length){
+        var y = ( x + nameofCookie.length);
+        if(document.cookie.substring(x,y) == nameofCookie){
+            if((endofCookie = document.cookie.indexOf(";",y)) == -1)
+                endofCookie = document.cookie.length;
+            return unescape(document.cookie.substring(y,endofCookie));
+        }
+        x = document.cookie.indexOf(" ",x) + 1;
+        if( x == 0 )
+            break;
+        }
+        
+        return "";
+}
+ 
+// 카카오 script key 입력
+Kakao.init('f97d93c0c9455c750f465c1049841311');
+ 
+ // 로그인 처리
+function loginWithKakao(){
+    
+    Kakao.Auth.cleanup();
+    Kakao.Auth.loginForm({
+        persistAccessToken: true,
+        persistRefreshToken: true,
+        success: function(authObj) {
+        	Kakao.API.request({
+        		url:'/v1/user/me',
+        		success: function(res){
+		            setCookie("kakao_login","done",1); // 쿠키생성 (로그인)
+		            console.log(JSON.stringify(res));
+		            createLogoutKakao();
+		            //window.location.href="../login.com";
+		            localStorage.setItem("key1", res.properties.nickname+"("+res.id+")"); 
+		            //localStorage.key1=res.properties.nickname;
+		            console.log(res.properties.nickname);
+		            console.log(localStorage.getItem("key1"));
+		            window.location.reload();
+   
+        },
+        fail: function(error){
+        	alert(JSON.stringify(error));
+        }
+        });
+        },
+            fail: function(err) {
+             alert(JSON.stringify(err));
+        }
+                 
+    });
+}
+ 
+// 로그아웃 처리
+function logoutWithKakao(){
+    Kakao.Auth.logout();
+    alert('카카오 로그아웃 완료!');
+    setCookie("kakao_login","",-1);  // 쿠키삭제 (로그아웃)
+    createLoginKakao();
+    //window.location.href="../login.com";
+    localStorage.removeItem("key1");
+    window.location.reload();
+}
+ 
+// 로그인 버튼생성
+function createLoginKakao(){
+ var login_btn = "<a href='javascript:loginWithKakao()'>"+
+                "<div id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
+                "<a/>";
+ document.getElementById('kakao_btn_changed').innerHTML  = login_btn;
+}
+ 
+// 로그아웃 버튼생성
+function createLogoutKakao(){
+ var logout_btn = "<a href='javascript:logoutWithKakao()'>"+
+ 				"<div class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Logout</div> "+
+                "</a>";
+ document.getElementById('kakao_btn_changed').innerHTML  = logout_btn;
+ 
+}
+ 
+// document.getElementById("test1").textContent=userNick;
+ $(function(){
+	 var s=document.getElementById("test1");
+	 if(localStorage.key1!=null){
+ 		s.innerText=localStorage.key1;
+	 }else{
+		 s.innerText="";
+	 }
+ });
+</script>
 
 </body>
 </html>
