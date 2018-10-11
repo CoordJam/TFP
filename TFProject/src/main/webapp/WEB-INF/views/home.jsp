@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
-body, h1, h2, h3, h4, h5, h6 {
+body, h1, h2, h3, h4, h5, h6 { 
 	font-family: "Lato", sans-serif;
 }
 

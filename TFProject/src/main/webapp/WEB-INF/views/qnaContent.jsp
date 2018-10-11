@@ -25,7 +25,7 @@
  height: 100%;
  color: #444;
  line-height: 1.8;
- font-family: "Lato", sans-serif;
+ font-family: "Lato", sans-serif; 
 }
 
 
