@@ -149,12 +149,35 @@ option{font-size: 20px; }
 			.brandName {  font-size: 5.5VH;  position: absolute;  left: -6vw;left: -17vw;   width: 67%;  }     
 			.nextCollection {  top: 11.8vh;  display: block;  left: -27vw;}
 			.goLeft, .goRight{font-size: 30px;}
-			.calenderIcon {height: 33px; top:-7px;}
+			.calenderIcon {height: 33px; top:-7px; left:145px;	}
 			.divinderUnderCalanderBox {width: 200%;left: -26px;  margin: 7%; margin-top: 2.5vw;}
 			.collectionName {font-size: 4.3vh;}
 			#player{margin-bottom: 10px;margin-top:35px;    margin-bottom: -64px;}
 			.sectionOne{    margin-left: -6%;}
 			.brandName2{    top: -11vw;}
+			}
+	@media (max-width:750px){		
+			.mordalh1{font-size: 24px; margin: 5px;     left: 13px;}
+			.mordalFormDiv{    width: 237px; z-index: 1;}
+			.chosen-container-single .chosen-single{font-size: 15px; border-color:white; padding: -4px; }
+			.chosen-wrapper--style2 .chosen-container.chosen-with-drop .chosen-drop{    width: 243px;}
+			.chosen-container{margin: -8px; left: -140px;}
+			.chosen-wrapper .chosen-container.chosen-with-drop .chosen-single{border-color: white; }
+			.chosen-wrapper .chosen-container .chosen-single{ border-bottom-color: white;     margin-bottom: 5px;}
+			.chosen-wrapper .chosen-container .chosen-single{font-size: 17px;}
+			.gosubmit {
+    left: -58px;
+    background-color: white;
+    font-family: 'Cinzel', serif;
+    border: 0px;
+    font-size: 51px;
+    top: 192px;
+    font-style: italic;
+    position: absolute;
+}.p_close {
+    right: 10px;
+    z-index: 2;
+}
 			}
 			   
 </style>
