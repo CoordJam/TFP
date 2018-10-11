@@ -59,7 +59,7 @@ body, html {
 	
 }
 
-
+.playerShield{width:1920px; height:51vw; border: 2px solid lime;  position: absolute; z-index:1; top: 250px; opacity: 0;}
 .w3-wide {
 	letter-spacing: 10px;
 }
@@ -90,7 +90,7 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-21px; width: 100%; margin-bottom: 75px; height: 53vw;  width: 157%;  margin-left: -28%; }
+#player{ margin-top:-21px; width: 100%; margin-bottom: 1%;height: 53vw;  width: 157%;  margin-left: -28%; z-index: -1;}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
 .divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-17px;}
@@ -106,11 +106,11 @@ body, html {
 .fashionModels img {height:45vw;}
 .fashionModels{ position: absolute; left:650px; top:321px;}
 .boardDiv{width:1900px; height:1080px; border: 0px solid orange; top:-650px;}
-.sectionOne{border : 0px solid red; position: relative; left: -12px; top:-59px;}
+.sectionOne{border : 0px solid red;  left: -12px; top:-59px; /* position: relative; */}
 .brandName{font-size: 5.5VH; position: absolute; left: -5vw;  font-family: 'Cinzel', serif; font-weight: bold;  color: black; display: inline;
 width: 67%; text-align: center;}
 .nextCollection{position: absolute; left: 15vw; font-family: 'Cinzel', serif;     top: 1.8vh; }
-.brandName2{ position:absolute; font-family: 'Cinzel', serif; font-weight: bold;  color: black;  font-size: 5.1vw; left: 24vw;text-align: center;width: 900px;}
+.brandName2{ position:absolute; font-family: 'Cinzel', serif; font-weight: bold;  color: black;  font-size: 5.1vw; left: 24vw;text-align: center;width: 52%;}
 .brandNameBox{position: absolute;   width: 1000px;  text-align: center; top: -2.2vw; left: -200px;}
 .secondNextCollection{position: relative;}
 .secondNextCollection .nextCollection{left: 35vw; top: 18.8vh;}
@@ -131,19 +131,20 @@ width: 67%; text-align: center;}
 .chosen-wrapper .chosen-container .chosen-single{border-bottom-color: black; color: black; text-align: center;font-size: 20px;  padding: 8px;}
 option{font-size: 20px; }
 .gosubmit{ left: 220px;background-color: white;   font-family: 'Cinzel', serif; border: 0px;font-size: 39px; top: 285px;font-style: italic;   position: absolute; }
-@media (max-width:1206px){
+@media (max-width:1417px){
 			.brandNameBox{margin-left: 7%;}
-			#player{margin-top:5%; margin-bottom: 88px;}
+			#player{margin-top:5%;  margin-bottom: -1%;/* margin-bottom: 88px; */}
 			.nextCollection{top: 9.8vh; display: block;left: -9vw;}
-			.brandName2{left: 1vw; top: 81vw;}
-			.secondNextCollection{top: -10vw;    left: -17vw; }
-			.smallCollections1{margin-top:27%;}
+			/* .brandName2{left: 14vw;top: 3vw;}
+			.secondNextCollection{top: -10vw;    left: -17vw; } */			
+			/* .smallCollections1{margin-top:27%;} */
+			.smallCollections1{    margin-top: 24%;}
         }
-        @media (max-width:929px){
-        .brandName2{display:none;}
-        
+        @media (max-width:1185px){
+       .secondNextCollection .nextCollection{display:none;} 
         }
 @media (max-width:550px){
+			.divinderUnderCalanderBox{visibility: hidden;}
 			.brandNameBox { margin-left: 7%;  }
 			.brandName {  font-size: 5.5VH;  position: absolute;  left: -6vw;left: -17vw;   width: 67%;  }     
 			.nextCollection {  top: 11.8vh;  display: block;  left: -27vw;}
@@ -151,9 +152,9 @@ option{font-size: 20px; }
 			.calenderIcon {height: 33px; top:-7px;}
 			.divinderUnderCalanderBox {width: 200%;left: -26px;  margin: 7%; margin-top: 2.5vw;}
 			.collectionName {font-size: 4.3vh;}
-			.brandName2{display:none;}
-			.secondNextCollection{display:none;}
-			#player{margin-bottom: 10px;margin-top:35px;}
+			#player{margin-bottom: 10px;margin-top:35px;    margin-bottom: -64px;}
+			.sectionOne{    margin-left: -6%;}
+			.brandName2{    top: -11vw;}
 			}
 			   
 </style>
@@ -225,7 +226,6 @@ option{font-size: 20px; }
   			</select>
   			<select class="chosen-select" data-placeholder="CHOOSE THE YEAR" name ="year">
   					<option></option>
-				    <option>2019</option>
 				    <option>2018</option>
 				    <option>2017</option>
 				    <option>2016</option>
@@ -261,10 +261,11 @@ option{font-size: 20px; }
 	<!-- First Parallax Image with Logo Text -->
 	<div class="bgimg-1 w3-display-container" id="home"></div>
 	
-	
+	<div class ="playerShield"></div>
 	<div id="player"></div> 
-	<h1 class = "brandName2">${brandName }</h1>
+	
 	<div class = "secondNextCollection">
+	<h1 class = "brandName2">${brandName }</h1>
 	<div class="nextCollection">
 			<span class="goLeft" onclick=" goNextSeason('left')">◀</span>
 				<span class ="collectionName">${year } ${season }</span>
@@ -345,7 +346,7 @@ option{font-size: 20px; }
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          height: '900',
+          height: '1080',
           width: '1920',
           videoId:"${youtubeId}",
           events: {
@@ -376,7 +377,7 @@ option{font-size: 20px; }
     </script>
 	<!-- <iframe width="1920" height="880" src="https://www.youtube.com/embed/K3_kN6VjAXg?autoplay=1"
 	frameborder="0" allowfullscreen></iframe> -->
-	<div class ="boardDiv">
+	<!-- <div class ="boardDiv"> -->
 	<!-- <h1>안녕하세요.</h1>
 	
 	<h1>안녕하세요.</h1> -->
