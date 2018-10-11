@@ -59,7 +59,7 @@ body, html {
 	
 }
 
-.playerShield{width:1920px; height:51vw; border: 2px solid lime;  position: absolute; z-index:1; top: 250px; opacity: 0;}
+
 .w3-wide {
 	letter-spacing: 10px;
 }
@@ -90,7 +90,7 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-21px; width: 100%; margin-bottom: 1%;height: 53vw;  width: 157%;  margin-left: -28%; z-index: -1;}
+#player{ margin-top:-21px; width: 100%; margin-bottom: 1%;height: 53vw;  width: 157%;  margin-left: -28%; z-index: -1;pointer-events: none;}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
 .divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-17px;}
@@ -126,6 +126,7 @@ width: 67%; text-align: center;}
 .mordalFormDiv select {display: block;  margin: 43px; font-family: 'Cinzel', serif}
 .chosen-container{margin:10px;}
 .secondNextCollection .goRight, .goLeft, .goLeft{font-size:50px;}
+.playerShield{width:100%; height:51vw; border: 2px solid lime;  position: absolute; z-index:1; top: 250px; opacity: 0;} 
 
 /* selectBox */
 .chosen-wrapper .chosen-container .chosen-single{border-bottom-color: black; color: black; text-align: center;font-size: 20px;  padding: 8px;}
@@ -287,7 +288,7 @@ option{font-size: 20px; }
 	<!-- First Parallax Image with Logo Text -->
 	<div class="bgimg-1 w3-display-container" id="home"></div>
 	
-	<div class ="playerShield"></div>
+	<!-- <div class ="playerShield"></div>  -->
 	<div id="player"></div> 
 	
 	<div class = "secondNextCollection">
