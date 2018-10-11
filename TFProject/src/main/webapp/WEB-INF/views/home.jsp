@@ -349,7 +349,7 @@ body, html {
 						name="email">
 				</div>
 				<div class="w3-half">
-					<input class="w3-input w3-border" type="text" placeholder="Password"
+					<input class="w3-input w3-border" type="password" placeholder="Password"
 						name="password">
 				</div>
 			</div>

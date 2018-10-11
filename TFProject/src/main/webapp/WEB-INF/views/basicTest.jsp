@@ -154,7 +154,7 @@ text-overflow:ellipsis;
 			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
 		</div>
 	</div>
-<img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
+<img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_imgg1.jpg"/><br><br><br>
 
  <form name="calendarFrm" id="calendarFrm" action="" method="post">
 
