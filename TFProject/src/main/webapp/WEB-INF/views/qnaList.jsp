@@ -14,6 +14,8 @@
 
 <style>
  body, html {
+ font-family: Verdana,sans-serif;
+ font-size: 15px;
  height: 100%;
  color: #444; 
  line-height: 1.8;
