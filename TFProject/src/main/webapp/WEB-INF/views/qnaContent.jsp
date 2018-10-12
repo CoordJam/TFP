@@ -133,9 +133,38 @@ border-bottom: 1px solid black;}
  
   <input class="btn btn-primary btn-warning" type="button" value="삭제하기" onclick="location.href='/qnaDelete?seq=${dto.qnaBoard_seq}'">
     <input class="btn btn-primary btn-warning" type="button" value="목록으로" onclick="location.href='/qnaList'">
-     <input type="button" value="답글" onclick="location.href='/qnaReplyForm'" >
+    
+  </div>
 
- </div>
+  <div align="center">  
+			<tr bgcolor="#F5F5F5">
+	            <form id="writeCommentForm" action="/qnaReplyInsert" method="post">
+	               <input type="hidden" name="comment_parent" value="${dto.qnaBoard_seq}">
+	                <!-- 본문 작성-->
+	                <td width="550">
+	                    <div>
+	                        <textarea name="comment_content" rows="4" cols="70" ></textarea>
+	                    </div>
+	                </td>
+	                <!-- 댓글 등록 버튼 -->
+	                <td width="100">
+	                    <div id="btn" style="text-align:center;">
+	                        <input class="btn btn-primary btn-warning" type="submit" value="댓글등록" onclick="location.href='/qnaContent?seq=${dto.qnaBoard_seq}'">    
+	                    </div>
+	                </td>
+	            </form>
+            </tr>
+</div>
+<div>
+	 <c:forEach var="list" items="${list}" varStatus="status">
+            <tr class="">
+                <td align="center">${list.comment_id}</td>
+                <td align="center">${list.comment_content}</td>
+                <td align="center">${list.comment_date}</td>
+            </tr>
+     </c:forEach>
+</div>
+ 
  
  <div id="kakao_btn_changed">
 <a href="javascript:loginWithKakao()">

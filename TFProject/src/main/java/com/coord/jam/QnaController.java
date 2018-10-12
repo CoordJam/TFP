@@ -1,5 +1,8 @@
 package com.coord.jam;
 
+import javax.mail.Message;
+import javax.mail.internet.MimeMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -42,6 +45,18 @@ public class QnaController {
   @RequestMapping("/qnaWriteform")
   public String qnaWriteform() {
     return "qnaWriteform";
+  }
+  @RequestMapping(value = "/qnaReplyInsert", method = RequestMethod.POST)
+  public ModelAndView qnaReplyInsert(@ModelAttribute QnaDto qnaDto, @RequestParam String comment_content) {
+    
+	String content=comment_content;  
+	ModelAndView view = new ModelAndView();
+	
+	QnaDto dto = qnaDao.ReplyInsertQnaboard(dto);
+
+    view.addObject(content);
+    //view.setViewName("redirect:qnaContent");
+    return view;
   }
   
  

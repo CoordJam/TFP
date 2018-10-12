@@ -29,6 +29,11 @@
 		values (#{qnaBoard_title}, #{qnaBoard_id}, #{qnaBoard_content}, NOW())
 	</insert>
 	
+	<insert id="qnaboardReplyInsert" parameterType="QnaDto">
+		insert into board_comment
+		(comment_id, comment_content, comment_date)
+		values (#{qnaBoard_id}, #{qnaBoard_content}, NOW())
+	</insert>
 	<select id="qnagetCount" resultType="int">
    		select count(*) from qnaboard
   	</select>
