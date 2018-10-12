@@ -68,6 +68,7 @@ body, html {
 #myNavbar {
 	opacity: 0.6;
 	color: #000;
+	margin-left: -15px;
 }
 
 #navDemo {

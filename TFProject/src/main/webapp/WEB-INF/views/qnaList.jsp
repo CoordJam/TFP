@@ -14,6 +14,8 @@
 
 <style>
  body, html {
+ font-family: Verdana,sans-serif;
+ font-size: 15px;
  height: 100%;
  color: #444; 
  line-height: 1.8;
@@ -31,11 +33,13 @@
 #myNavbar {
  opacity: 0.6;
  color: #FFF;
+ text-decoration: none;
 }
 
 #navDemo {
  opacity: 0.7;
  color: #FFF;
+ 
 }
 
 ::-webkit-scrollbar {
@@ -67,18 +71,18 @@ width: 60%;}
  <!-- Navbar (sit on top) -->
 		<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
-			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
+			<a style="text-decoration:none;" class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			<a style="text-decoration:none;" href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
-			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
+			<a style="text-decoration:none;" href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
 				<i class="fa fa-user"></i> ABOUT</a> 
 				
-			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+			<a style="text-decoration:none;" href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
 				<i class="fa fa-th"></i> RUNWAY</a> 
 				
-			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+			<a style="text-decoration:none;" href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
 				<i class="fa fa-envelope"></i> CONTACT</a>
 			
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
@@ -86,7 +90,7 @@ width: 60%;}
 				
 			<div id="kakao_btn_changed"></div>
 			
-			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
+			<div style="text-decoration:none;" id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
 		<!-- Navbar on small screens -->
@@ -106,7 +110,7 @@ width: 60%;}
  
  <div align="center">
     
-                <table class="table table-hover" style="border: 0;">
+                <table class="table table-hover" style="border: none;">
                 <thead>
                     <tr class="head">
                         <th width="50px" align="center">No</th>
@@ -325,7 +329,7 @@ function logoutWithKakao(){
 // 로그인 버튼생성
 function createLoginKakao(){
  var login_btn = "<a href='javascript:loginWithKakao()'>"+
-                "<div id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
+                "<div style='color:white;' id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
                 "<a/>";
  document.getElementById('kakao_btn_changed').innerHTML  = login_btn;
 }
@@ -333,7 +337,7 @@ function createLoginKakao(){
 // 로그아웃 버튼생성
 function createLogoutKakao(){
  var logout_btn = "<a href='javascript:logoutWithKakao()'>"+
- 				"<div class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Logout</div> "+
+ 				"<div style='color:white;' class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Logout</div> "+
                 "</a>";
  document.getElementById('kakao_btn_changed').innerHTML  = logout_btn;
  
