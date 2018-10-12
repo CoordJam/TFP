@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
  
@@ -11,6 +9,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 	<head>
@@ -86,7 +85,6 @@
    border-color: gray;
    align: center;
    margin-left: 19%;
-
    margin-top: 1%;
 
    }
@@ -134,10 +132,11 @@
  <img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
   <h3 style="margin: auto;" align="center">게시글 작성</h3><br>
   <div class="container">
+  <form action="/qnaInsert" method="post">
 <table class="table table-bordered">
 
     <tbody>
-        <form action="/qnaInsert" method="post" encType="multiplart/form-data">
+        
          <tr>
           <c:choose>
     <c:when test="${null eq id}">
@@ -168,9 +167,10 @@
                     <a class="btn btn-default" onclick="javascript:location.href='list.jsp'">글 목록으로...</a> -->
                 </td>
             </tr>
-        </form>
+        
     </tbody>
 </table>
+</form>
 </div>
 
 <div id="kakao_btn_changed">

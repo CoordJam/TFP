@@ -1,9 +1,9 @@
+<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<!DOCTYPE html>
 <html>
-<title></title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -106,7 +106,7 @@ width: 60%;}
  
  <div align="center">
     
-                <table class="table table-hover" border="0">
+                <table class="table table-hover" style="border: 0;">
                 <thead>
                     <tr class="head">
                         <th width="50px" align="center">No</th>

@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <head> 
@@ -51,43 +52,40 @@
  border-radius: 10px;
  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-   #container{margin: 0 auto; } 
-   h3{width: 71%;
-      align:center;
-   	  margin-top: 2% }
-   
-   .TB{
 
-  #container {
-   margin: 0 auto;
-  }
+#container{margin: 0 auto; } 
 
-  h3 {
-   width: 71%;
-   align: center;
-   margin-left: 6%;
-   margin-top: 2%
-  }
+ h3{
+ width: 71%;
+ align:center; 
+ margin-top: 2% }
+ 
+#container {
+ margin: 0 auto;
+}
 
-  .TB {
+h3 {
+ width: 71%;
+ align: center;
+ margin-left: 6%;
+ margin-top: 2%
+}
 
-   width: 55%;
-   border-color: gray;
-   align: center;
-   margin-left: 15%;
+.TB {
+ width: 55%;
+ border-color: gray;
+ align: center;
+ margin-left: 15%;
+ margin-top: 3%;
+}
 
-   margin-top: 3%;
-  }
-
-  .TB2 {
-   width: 55%;
-   border-color: gray;
-   align: center;
-   margin-left: 19%;
-
-   margin-top: 1%;
-
-   }
+.TB2 {
+ width: 55%;
+ border-color: gray;
+ align: center;
+ margin-left: 19%;
+ margin-top: 1%;
+ }
   
   </style>
   <title></title>
@@ -114,7 +112,7 @@
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
-			<div id="kakao_btn_changed"></div>
+			<div style="font: white;" id="kakao_btn_changed"></div>
 			
 			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
@@ -133,10 +131,11 @@
   <h3 style="margin: auto;" align="center">게시글 작성</h3><br>
   
   <div class="container">
+  <form action="/qnaInsert" method="post">
 <table class="table table-bordered">
 
     <tbody>
-        <form action="/qnaInsert" method="post" encType="multiplart/form-data">
+        
          <tr>
           <c:choose>
     <c:when test="${null eq id}">
@@ -167,9 +166,10 @@
                     <a class="btn btn-default" onclick="javascript:location.href='list.jsp'">글 목록으로...</a> -->
                 </td>
             </tr>
-        </form>
+        
     </tbody>
 </table>
+</form>
 </div>
 
 <div id="kakao_btn_changed">
