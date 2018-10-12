@@ -14,7 +14,7 @@
 
 <head> 
  <style type="text/css">
-
+a {text-decoration: none;}
  body, html {
  height: 100%;
  color: #444;
@@ -95,26 +95,26 @@ h3 {
  <!-- Navbar (sit on top) -->
 		<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
-			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
+			<a style="text-decoration:none;" class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			<a style="text-decoration:none;" href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
-			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
+			<a style="text-decoration:none;" href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
 				<i class="fa fa-user"></i> ABOUT</a> 
 				
-			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+			<a style="text-decoration:none;" href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
 				<i class="fa fa-th"></i> RUNWAY</a> 
 				
-			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+			<a style="text-decoration:none;" href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
 				<i class="fa fa-envelope"></i> CONTACT</a>
 			
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
-			<div style="font: white;" id="kakao_btn_changed"></div>
+			<div id="kakao_btn_changed"></div>
 			
-			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
+			<div style="text-decoration:none;" id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
 		<!-- Navbar on small screens -->
@@ -159,11 +159,6 @@ h3 {
                     <button type="submit" class="btn btn-primary btn-warning pull-right">작 성</button>
                    
                     <input class="btn btn-primary btn-warning" type="button" value="목록으로" onclick="location.href='/qnaList'">
-                <!--     <input type="button" value="reset" class="pull-left"/> -->
-                   <!--  <input type="button" value="글 목록으로... " class="pull-left" onclick="javascript:location.href='qnaList'"/> -->
-                    <!-- <a class="btn btn-default" onclick="sendData()"> 등록 </a>
-                    <a class="btn btn-default" type="reset"> reset </a>
-                    <a class="btn btn-default" onclick="javascript:location.href='list.jsp'">글 목록으로...</a> -->
                 </td>
             </tr>
         
@@ -348,7 +343,7 @@ function logoutWithKakao(){
 // 로그인 버튼생성
 function createLoginKakao(){
  var login_btn = "<a href='javascript:loginWithKakao()'>"+
-                "<div id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
+                "<div style='color:white;' id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
                 "<a/>";
  document.getElementById('kakao_btn_changed').innerHTML  = login_btn;
 }
@@ -356,7 +351,7 @@ function createLoginKakao(){
 // 로그아웃 버튼생성
 function createLogoutKakao(){
  var logout_btn = "<a href='javascript:logoutWithKakao()'>"+
- 				"<div class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Logout</div> "+
+ 				"<div style='color:white;' class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Logout</div> "+
                 "</a>";
  document.getElementById('kakao_btn_changed').innerHTML  = logout_btn;
  
