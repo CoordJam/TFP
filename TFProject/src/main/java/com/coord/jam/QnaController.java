@@ -43,4 +43,6 @@ public class QnaController {
   public String qnaWriteform() {
     return "qnaWriteform";
   }
+  
+ 
 }
