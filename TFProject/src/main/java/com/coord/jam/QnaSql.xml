@@ -29,9 +29,6 @@
 		values (#{qnaBoard_title}, #{qnaBoard_id}, #{qnaBoard_content}, NOW())
 	</insert>
 	
-	
-	
-	
 	<insert id="insertreply" parameterType="adto">
 		insert into board_comment (comment_parent,comment_id,comment_content,comment_date)
 		  values (#{comment_parent},#{comment_id},#{comment_content}, NOW())
@@ -45,8 +42,5 @@
 	<select id="qnagetCount" resultType="int">
    		select count(*) from qnaboard
   	</select>
-  	<select id="replyDelete" resultType="CommentDto" parameterType="int">
-		delete from board_comment where comment_seq=#{seq}
-	</select>
 
 </mapper>

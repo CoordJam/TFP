@@ -18,12 +18,12 @@
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ezbomb19?characterEncoding=UTF-8&amp;serverTimezone=UTC" />
 		
 		<!-- 개인 테스트 -->
-		<property name="username" value="root" />
-		<property name="password" value="1234" />
+		<!-- <property name="username" value="root" />
+		<property name="password" value="1234" /> -->
 		
 		<!-- 서버 -->
-		<!-- <property name="username" value="ezbomb19" />
-		<property name="password" value="codingjam0" /> -->
+		<property name="username" value="ezbomb19" />
+		<property name="password" value="codingjam0" />
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -36,7 +36,7 @@
 	</bean>  
 	
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSize" value="5000000"/>
+		<property name="maxUploadSize" value="10000000"/>
 		<property name="defaultEncoding" value="utf-8" />
 	</bean>                                                                       
 		

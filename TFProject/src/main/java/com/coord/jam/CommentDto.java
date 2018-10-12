@@ -3,15 +3,12 @@ package com.coord.jam;
 import java.sql.Date;
 
 public class CommentDto {
-	
 
 	private String comment_id;
 	private Date comment_date;
 	private int comment_parent;
 	private String comment_content;
 	private int comment_num;
-	
-	
 	
 	
 	public int getComment_num() {
@@ -44,7 +41,5 @@ public class CommentDto {
 	public void setComment_content(String comment_content) {
 		this.comment_content = comment_content;
 	}
-	
-	
 
 }

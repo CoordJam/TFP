@@ -29,9 +29,9 @@ public class GalleryController {
 	MultipartFile gallery_filename, HttpServletRequest request) {
 		ModelAndView view=new ModelAndView();
 		String path=request.getSession().getServletContext().getRealPath("/save");
-		System.out.println(path);
 		SpringFileWriter writer=new SpringFileWriter();
 		writer.writeFile(gallery_filename, path, gallery_filename.getOriginalFilename());
+		System.out.println(path);
 		dto.setGallery_imgname(dto.getGallery_filename().getOriginalFilename());
 		gallerydao.insertGallery(dto);
 		view.setViewName("redirect:test4");
