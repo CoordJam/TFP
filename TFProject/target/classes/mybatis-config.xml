@@ -5,10 +5,12 @@
 
 	<typeAliases>
 		<typeAlias type="com.coord.jam.QnaDto" alias="QnaDto"/>
+		<typeAlias type="com.coord.jam.GalleryDto" alias="GalleryDto"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="com/coord/jam/QnaSql.xml" />
+		<mapper resource="com/coord/jam/GallerySql.xml" />
 	</mappers>
 	
 </configuration>

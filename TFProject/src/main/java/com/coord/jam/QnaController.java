@@ -52,7 +52,7 @@ public class QnaController {
 	String content=comment_content;  
 	ModelAndView view = new ModelAndView();
 	
-	QnaDto dto = qnaDao.ReplyInsertQnaboard(dto);
+	//QnaDto dto = qnaDao.ReplyInsertQnaboard(dto);
 
     view.addObject(content);
     //view.setViewName("redirect:qnaContent");

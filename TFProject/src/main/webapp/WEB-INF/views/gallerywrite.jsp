@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <title></title>
@@ -9,43 +10,70 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <style>
-	body,
-	html {
-		height: 100%;
-		color: #444;
-		line-height: 1.8;
-	}
+body, html {
+	height: 100%;
+	color: #444;
+	line-height: 1.8;
+}
 
-	.w3-wide {
-		letter-spacing: 10px;
-	}
+.w3-wide {
+	letter-spacing: 10px;
+}
 
-	.w3-hover-opacity {
-		cursor: pointer;
-	}
+.w3-hover-opacity {
+	cursor: pointer;
+}
 
-	#myNavbar {
-		opacity: 0.6;
-		color: #000;
-	}
+#myNavbar {
+	opacity: 0.6;
+	color: #000;
+}
 
-	#navDemo {
-		opacity: 0.7;
-		color: #000;
-	}
+#navDemo {
+	opacity: 0.7;
+	color: #000;
+}
 
-	::-webkit-scrollbar {
-		width: 1px;
-	}
+::-webkit-scrollbar {
+	width: 1px;
+}
 
-	::-webkit-scrollbar-track {
-		display: none;
-	}
+::-webkit-scrollbar-track {
+	display: none;
+}
 
-	::-webkit-scrollbar-thumb {
-		border-radius: 10px;
-		-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
-	}
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+}
+
+.filebox input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+/* named upload */
+.filebox .upload-name {
+	display: inline-block;
+	padding: .5em .75em; /* label의 패딩값과 일치 */
+	font-size: inherit;
+	font-family: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #f5f5f5;
+	border: 1px solid #ebebeb;
+	border-bottom-color: #e2e2e2;
+	border-radius: .25em;
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+	-moz-appearance: none;
+	appearance: none;
+}
 </style>
 
 <body id="body">
@@ -83,139 +111,48 @@
 			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
 			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
 		</div>
+	</div><br><br><br><br>
+	
+	
+	<div class="w3-center w3-display-middle">
+	<h3 style="margin-top: 150px;">Gallery Write</h3>
+	<div id="View_area" style="height:350px; width: 100%;"></div><br><br>
+		<form style="margin-bottom: 100px;" method="post" action="/imgupload" enctype="multipart/form-data">
+			<c:choose>
+				<c:when test="${null eq id}">
+				<input type="hidden" name="gallery_id" value="익명">
+				</c:when>
+				<c:when test="${null ne id}">
+				<input type="hidden" name="gallery_id" value="">
+				</c:when>
+			</c:choose>
+			<textarea name="gallery_content" style="background-color:#f5f5f5; border:none; width: 400px; height: 50px; padding: 0; margin: 0;"></textarea><br><br>
+			<div class="filebox"> 
+				<input class="upload-name" value="파일선택" disabled="disabled"> 
+				<label class="w3-button" style="width:80px; color: #fff; background-color: #a9a9a9; padding: 3px;" for="ex_filename">업로드</label> 
+				<input type="file" id="ex_filename" name="gallery_filename" class="upload-hidden" onchange="previewImage(this,'View_area')">
+				<button class="w3-button" style="width:80px; color: #fff; background-color: #a9a9a9; padding: 3px;" type="submit">작성</button> 
+			</div>
+			
+		</form>
 	</div>
 	
-	<div style="display: flex; width: 100%;">
-		<div style="flex: 1; margin: auto;">
-			<div style="margin-left: 60%; font-size: 60px; opacity: 0.5;" class="w3-left w3-hover-text-gray">&#10094;</div>
-		</div>
-		<!-- Container (Portfolio Section) -->
-		<div style="flex: 4;" class="w3-content w3-container w3-padding-48" id="portfolio">
-			<h3 style="margin:0; " class="w3-center">Gallery</h3>
-			<p class="w3-center">
-				<em>
-					Month Top 3
-				</em>
-			</p>
-			<div class="w3-row-padding w3-center">
-				<div class="w3-col m3">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="The mist over the mountains">
-				</div>
-
-				<div class="w3-col m3">
-					<img src="/img/main_menu_img/main_runway_img2.jpg" style="width: 100%" height="80%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Coffee beans">
-				</div>
-
-				<div class="w3-col m3">
-					<img src="/img/main_menu_img/main_runway_img3.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Bear closeup">
-				</div>
-				<p>   Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
-					Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
-					Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
-					Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3</p>
-			</div> <br>
-			<!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-			<div class="w3-row-padding w3-center">
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="The mist over the mountains">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img2.jpg" style="width: 100%" height="80%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Coffee beans">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img3.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Bear closeup">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img4.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img8.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-			</div>
-			<div class="w3-row-padding w3-center w3-section">
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img5.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="The mist">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img6.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="My beloved typewriter">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img7.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Empty ghost train">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img8.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Sailing">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-			</div>
-		</div>
-		<div style="flex: 1; margin: auto;">
-			<div style="margin-right: 60%; font-size: 60px; opacity: 0.5;" class="w3-right w3-hover-text-gray">&#10095;</div>
-			<button onclick="location.href='/gallerywrite/'" class="w3-button w3-bottom w3-black" style="width:60px; padding:2px; margin-bottom:2px; opacity: 0.2;" type="button">글쓰기</button>
-		</div>
-	</div>
-	<!-- Modal for full size images on click-->
-	<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-		<span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-		<div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-			<img id="img01" class="w3-image">
-			<p id="caption" class="w3-opacity w3-large"></p>
-		</div>
-	</div>
+	
 	<script>
-		//Modal Image Gallery
-		function onClick(element) {
-			document.getElementById("img01").src = element.src;
-			document.getElementById("modal01").style.display = "block";
-			var captionText = document.getElementById("caption");
-			captionText.innerHTML = element.alt;
-		}
-
+		
 		// Change style of navbar on scroll
-		window.onscroll = function () {
+		window.onscroll = function() {
 			myFunction()
 		};
 		function myFunction() {
 			var navbar = document.getElementById("myNavbar");
 			if (document.body.scrollTop > 300
-				|| document.documentElement.scrollTop > 300) {
+					|| document.documentElement.scrollTop > 300) {
 				navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
-					+ " w3-black";
+						+ " w3-black";
 			} else {
 				navbar.className = navbar.className.replace(
-					" w3-card w3-animate-top w3-black", "");
+						" w3-card w3-animate-top w3-black", "");
 			}
 		}
 
@@ -229,14 +166,14 @@
 			}
 		}
 	</script>
-
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
 
-		yousound.onclick = function () {
+		yousound.onclick = function() {
 
 			if (bl) {
 				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
@@ -254,33 +191,33 @@
 			}
 		}
 	</script>
-
+	
 	<script>
 		// Select all links with hashes
 		$('a[href*="#"]')
-			// Remove links that don't actually link to anything
-			.not('[href="#"]')
-			.not('[href="#0"]')
-			.click(function (event) {
-				// On-page links
-				if (
-					location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-					&&
-					location.hostname == this.hostname
-				) {
-					// Figure out element to scroll to
-					var target = $(this.hash);
-					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-					// Does a scroll target exist?
-					if (target.length) {
-						// Only prevent default if animation is actually gonna happen
-						event.preventDefault();
-						$('html, body').animate({
-							scrollTop: target.offset().top
-						}, 1000);
-					}
-				}
-			});
+		  // Remove links that don't actually link to anything
+		  .not('[href="#"]')
+		  .not('[href="#0"]')
+		  .click(function(event) {
+		    // On-page links
+		    if (
+		      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+		      && 
+		      location.hostname == this.hostname
+		    ) {
+		      // Figure out element to scroll to
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		      // Does a scroll target exist?
+		      if (target.length) {
+		        // Only prevent default if animation is actually gonna happen
+		        event.preventDefault();
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000); 
+		      }
+		    }
+		  });
 	</script>
 	
 	<div id="kakao_btn_changed">
@@ -404,7 +341,103 @@ function createLogoutKakao(){
 	 }
  });
 </script>
+<script>
+$(document).ready(function(){ 
+	var fileTarget = $('.filebox .upload-hidden'); 
+	fileTarget.on('change', function(){ // 값이 변경되면 
+		if(window.FileReader){ // modern browser 
+			var filename = $(this)[0].files[0].name; 
+		} else { // old IE 
+			var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+		} // 추출한 파일명 삽입 
+		$(this).siblings('.upload-name').val(filename); 
+		}); 
+	});
+</script>
+
+<script>
+function previewImage(targetObj, View_area) {
+
+	var preview = document.getElementById(View_area); //div id
+	var ua = window.navigator.userAgent;
+
+  //ie일때(IE8 이하에서만 작동)
+
+	if (ua.indexOf("MSIE") > -1) {
+
+		targetObj.select();
+
+		try {
+			var src = document.selection.createRange().text; // get file full path(IE9, IE10에서 사용 불가)
+			var ie_preview_error = document.getElementById("ie_preview_error_" + View_area);
+
+			if (ie_preview_error) {
+
+				preview.removeChild(ie_preview_error); //error가 있으면 delete
+			}
+			
+			var img = document.getElementById(View_area); //이미지가 뿌려질 곳
+			//이미지 로딩, sizingMethod는 div에 맞춰서 사이즈를 자동조절 하는 역할
+			img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+src+"', sizingMethod='scale')";
+
+		} catch (e) {
+
+			if (!document.getElementById("ie_preview_error_" + View_area)) {
+				var info = document.createElement("<p>");
+
+				info.id = "ie_preview_error_" + View_area;
+				info.innerHTML = e.name;
+				preview.insertBefore(info, null);
+			}
+		}
+  //ie가 아닐때(크롬, 사파리, FF)
+	} else {
+		var files = targetObj.files;
+
+		for ( var i = 0; i < files.length; i++) {
+			var file = files[i];
+			var imageType = /image.*/; //이미지 파일일경우만.. 뿌려준다.
+
+			if (!file.type.match(imageType))
+				continue;
+
+			var prevImg = document.getElementById("prev_" + View_area); //이전에 미리보기가 있다면 삭제
+
+			if (prevImg) {
+				preview.removeChild(prevImg);
+			}
+			var img = document.createElement("img"); 
+
+			img.id = "prev_" + View_area;
+			img.classList.add("obj");
+			img.file = file;
+			img.style.height = '100%';
+			preview.appendChild(img);
+
+			if (window.FileReader) { // FireFox, Chrome, Opera 확인.
+				var reader = new FileReader();
+
+				reader.onloadend = (function(aImg) {
+					return function(e) {
+						aImg.src = e.target.result;
+					};
+
+				})(img);
+				reader.readAsDataURL(file);
+			} else { // safari is not supported FileReader
+				//alert('not supported FileReader');
+				if (!document.getElementById("sfr_preview_error_"
+						+ View_area)) {
+					var info = document.createElement("p");
+					info.id = "sfr_preview_error_" + View_area;
+					info.innerHTML = "not supported FileReader";
+					preview.insertBefore(info, null);
+				}
+			}
+		}
+	}
+}
+</script>
 
 </body>
-
 </html>

@@ -56,13 +56,6 @@ public class MenuController {
 	
 	}
 	
-	@RequestMapping("/test4")
-	public ModelAndView test4() {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("basicTest4");
-		return model;
-	}
-	
 	@RequestMapping(value = "/mailSender") 
 	public void mailSender(HttpServletRequest request, ModelMap mo,
 			@RequestParam String email,@RequestParam String password,@RequestParam String message) throws AddressException, MessagingException { 
