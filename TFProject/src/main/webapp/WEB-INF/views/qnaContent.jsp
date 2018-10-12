@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <meta charset="UTF-8">
@@ -187,8 +188,9 @@ border-bottom: 1px solid black;}
 						<c:forEach var="a" items="${alist}">
 							<b style="padding-left:20px; font-size:10pt;">${a.comment_id}</b>: ${a.comment_content}&nbsp;&nbsp;
 							<span style="font-size:9pt; color:#ccc;">
-								<fmt:formatDate value="${a.comment_date}" pattern="yyyy-MM-dd HH:mm"/><br>
+								<fmt:formatDate value="${a.comment_date}" pattern="yyyy-MM-dd HH:mm"/>
 							</span>
+							<button style="font-size:8pt; border:none; color: gray; background-color: white;" onclick="location.href=replydel?">삭제</button><br>
 						</c:forEach>
 					</answer>
 					</div></div></div>

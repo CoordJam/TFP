@@ -45,5 +45,8 @@
 	<select id="qnagetCount" resultType="int">
    		select count(*) from qnaboard
   	</select>
+  	<select id="replyDelete" resultType="CommentDto" parameterType="int">
+		delete from board_comment where comment_seq=#{seq}
+	</select>
 
 </mapper>

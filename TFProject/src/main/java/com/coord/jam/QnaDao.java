@@ -48,4 +48,8 @@ public class QnaDao extends CommonDao {
 		return getSqlSession().selectList("replylistByNum", num);
 	}
   
+  public QnaDto replydelete(int Seq) {
+	    return getSqlSession().selectOne("replyDelete", Seq);
+	  }
+  
 }

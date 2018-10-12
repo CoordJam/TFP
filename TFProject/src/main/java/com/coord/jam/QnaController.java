@@ -62,5 +62,12 @@ public class QnaController {
 		return "redirect:qnaContent?seq="+adto.getComment_parent();		
 		}
 	  
-
+  @RequestMapping("/replydel")
+  public ModelAndView replyDelete(@RequestParam int comment_seq) {
+	    ModelAndView model = new ModelAndView();
+	    QnaDto dto = qnaDao.replydelete(comment_seq);
+	    model.addObject("dto", dto);
+	    model.setViewName("redirect:qnaContent");
+	    return model;
+	  }
 }
