@@ -9,8 +9,8 @@
 	
 	<insert id="galleryInsert" parameterType="GalleryDto">
 		insert into gallery
-		(gallery_seq,gallery_id, gallery_content,gallery_date)
-		values (#{gallery_seq}, #{gallery_seq}, #{gallery_content}, NOW())
+		(gallery_seq,gallery_id, gallery_content,gallery_date,gallery_imgname)
+		values (#{gallery_seq}, #{gallery_seq}, #{gallery_content}, NOW(),#{gallery_imgname})
 	</insert>
 	
 </mapper>
