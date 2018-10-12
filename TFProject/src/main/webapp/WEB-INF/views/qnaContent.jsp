@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="javax.swing.text.Document"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -14,6 +15,12 @@
 
 <head>
  <style>
+
+
+
+
+ 
+ 
  body, html {
  font-family: Verdana,sans-serif;
  font-size: 15px;
@@ -66,6 +73,7 @@ width: 60%;
 border-bottom: 1px solid black;}
 </style>
 
+
 <meta charset="UTF-8">
 <title></title>
 </head>
@@ -108,12 +116,13 @@ border-bottom: 1px solid black;}
 	</div>
  <img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
  
+
  <div align="center">
   <table class="table" style="border: none;">
    <thead class="head">
     <tr>
      <th>${dto.qnaBoard_title}</th>
-     <th align="right">${dto.qnaBoard_date}</th>
+     <th align="right" width="150px">${dto.qnaBoard_date}</th>
     </tr>
    </thead>
    <tbody class="cell">
@@ -123,21 +132,33 @@ border-bottom: 1px solid black;}
    
    
     <tr>
-     <td>${dto.qnaBoard_content}</td>
+     <td style="padding-top: 50px" colspan="2">${dto.qnaBoard_content}</td>
     </tr>
 </tbody>
 </table>
 </div> 
 <br>
- 
+ 	<div align="center">
   <input class="btn btn-primary btn-warning" type="button" value="삭제하기" onclick="location.href='/qnaDelete?seq=${dto.qnaBoard_seq}'">
     <input class="btn btn-primary btn-warning" type="button" value="목록으로" onclick="location.href='/qnaList'">
     
   </div>
+  <br><br>
 
   <div align="center">  
+   <form id="writeCommentForm" action="/qnaReplyInsert" method="post">
+  			 <tr>
+		          <c:choose>
+					    <c:when test="${null eq id}">
+					    <input type="hidden" name="comment_id" value="익명">
+					    </c:when>
+					    <c:when test="${null ne id}">
+					    <input type="hidden" id="names" name="comment_id" value="">
+					    </c:when>
+		   		</c:choose>
+         </tr>
 			<tr bgcolor="#F5F5F5">
-	            <form id="writeCommentForm" action="/qnaReplyInsert" method="post">
+	           
 	               <input type="hidden" name="comment_parent" value="${dto.qnaBoard_seq}">
 	                <!-- 본문 작성-->
 	                <td width="550">
@@ -148,22 +169,32 @@ border-bottom: 1px solid black;}
 	                <!-- 댓글 등록 버튼 -->
 	                <td width="100">
 	                    <div id="btn" style="text-align:center;">
-	                        <input class="btn btn-primary btn-warning" type="submit" value="댓글등록" onclick="location.href='/qnaContent?seq=${dto.qnaBoard_seq}'">    
+	                        <input class="btn btn-primary btn-warning" type="submit" value="댓글등록">    
 	                    </div>
 	                </td>
+	                 </tr>
 	            </form>
-            </tr>
-</div>
-<div>
-	 <c:forEach var="list" items="${list}" varStatus="status">
-            <tr class="">
-                <td align="center">${list.comment_id}</td>
-                <td align="center">${list.comment_content}</td>
-                <td align="center">${list.comment_date}</td>
-            </tr>
-     </c:forEach>
-</div>
- 
+           
+	</div>
+	<br><br>
+	<div class="container">
+
+			
+	<div style="text-align: left;">
+	<b style="cursor:pointer;" id="acount">댓글 ${acount}</b><br>
+	<div id="test" style="display: none">
+	<div id="test" style="display: block">
+					<answer>
+						<c:forEach var="a" items="${alist}">
+							<b style="padding-left:20px; font-size:10pt;">${a.comment_id}</b>: ${a.comment_content}&nbsp;&nbsp;
+							<span style="font-size:9pt; color:#ccc;">
+								<fmt:formatDate value="${a.comment_date}" pattern="yyyy-MM-dd HH:mm"/><br>
+							</span>
+						</c:forEach>
+					</answer>
+					</div></div></div>
+	</div>
+
  
  <div id="kakao_btn_changed">
 <a href="javascript:loginWithKakao()">

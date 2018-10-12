@@ -1,7 +1,8 @@
 package com.coord.jam;
 
-import javax.mail.Message;
-import javax.mail.internet.MimeMessage;
+import java.util.List;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,9 +18,16 @@ public class QnaController {
   private QnaDao qnaDao;
 
   @RequestMapping("/qnaContent")
-  public ModelAndView qnaboardContent(@RequestParam int seq) {
+  public ModelAndView qnaboardContent(@RequestParam int seq,@RequestParam("seq") int comment_parent) {
     ModelAndView model = new ModelAndView();
     QnaDto dto = qnaDao.selectseqqna(seq);
+    
+    
+  //해당 글에 대한 댓글을 보낸다
+	List<CommentDto> alist=qnaDao.getReply(seq);
+	model.addObject("alist", alist); //댓글목록
+	model.addObject("acount", alist.size()); //댓글수
+
     model.addObject("dto", dto);
     model.setViewName("qnaContent");
     return model;
@@ -46,18 +54,13 @@ public class QnaController {
   public String qnaWriteform() {
     return "qnaWriteform";
   }
-  @RequestMapping(value = "/qnaReplyInsert", method = RequestMethod.POST)
-  public ModelAndView qnaReplyInsert(@ModelAttribute QnaDto qnaDto, @RequestParam String comment_content) {
-    
-	String content=comment_content;  
-	ModelAndView view = new ModelAndView();
-	
-	QnaDto dto = qnaDao.ReplyInsertQnaboard(dto);
+  @RequestMapping("/qnaReplyInsert")
+	public String reply(
+			@ModelAttribute CommentDto adto)
+	{
+		qnaDao.insertReply(adto);
+		return "redirect:qnaContent?seq="+adto.getComment_parent();		
+		}
+	  
 
-    view.addObject(content);
-    //view.setViewName("redirect:qnaContent");
-    return view;
-  }
-  
- 
 }

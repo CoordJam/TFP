@@ -39,8 +39,13 @@ public class QnaDao extends CommonDao {
   public List<QnaDto> getMainList() {
     return getSqlSession().selectList("getMainList");
   }
-  public void ReplyInsertQnaboard(QnaDto dto) {
-	    getSqlSession().insert("qnaboardReplyInsert", dto);
-	  }
+  public void insertReply(CommentDto adto) {
+		// TODO Auto-generated method stub
+		getSqlSession().insert("insertreply", adto);
+	}
+  public List<CommentDto> getReply(int num) {
+		// TODO Auto-generated method stub
+		return getSqlSession().selectList("replylistByNum", num);
+	}
   
 }

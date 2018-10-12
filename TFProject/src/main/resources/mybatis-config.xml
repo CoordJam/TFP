@@ -5,7 +5,9 @@
 
 	<typeAliases>
 		<typeAlias type="com.coord.jam.QnaDto" alias="QnaDto"/>
+		<typeAlias type="com.coord.jam.CommentDto" alias="adto"/>
 	</typeAliases>
+	
 	
 	<mappers>
 		<mapper resource="com/coord/jam/QnaSql.xml" />
