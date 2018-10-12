@@ -132,9 +132,7 @@
 		</div>
 	</div>
  <img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
-  <div align="center">
-  <h3>게시글 작성</h3>
-  
+  <h3 style="margin: auto;" align="center">게시글 작성</h3><br>
   <div class="container">
 <table class="table table-bordered">
 
