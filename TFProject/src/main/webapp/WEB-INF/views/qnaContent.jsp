@@ -182,8 +182,7 @@ border-bottom: 1px solid black;}
 			
 	<div style="text-align: left;">
 	<b style="cursor:pointer;" id="acount">댓글 ${acount}</b><br>
-	<div id="test" style="display: none">
-	<div id="test" style="display: block">
+	
 					<answer>
 						<c:forEach var="a" items="${alist}">
 							<b style="padding-left:20px; font-size:10pt;">${a.comment_id}</b>: ${a.comment_content}&nbsp;&nbsp;
