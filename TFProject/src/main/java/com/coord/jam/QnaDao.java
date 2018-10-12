@@ -28,8 +28,8 @@ public class QnaDao extends CommonDao {
     return getSqlSession().selectOne("qnaboardContent", seq);
   }
 
-  public QnaDto delete(int Seq) {
-    return getSqlSession().selectOne("qnaboardDelete", Seq);
+  public QnaDto delete(int seq) {
+    return getSqlSession().selectOne("qnaboardDelete", seq);
   }
 
   public void insertQnaboard(QnaDto dto) {
@@ -47,9 +47,8 @@ public class QnaDao extends CommonDao {
 		// TODO Auto-generated method stub
 		return getSqlSession().selectList("replylistByNum", num);
 	}
-  
-  public QnaDto replydelete(int Seq) {
-	    return getSqlSession().selectOne("replyDelete", Seq);
+  public void replydelete(int seq) {
+	    getSqlSession().delete("replyDelete", seq);
 	  }
-  
+
 }

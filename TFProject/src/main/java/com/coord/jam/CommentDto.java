@@ -9,16 +9,17 @@ public class CommentDto {
 	private Date comment_date;
 	private int comment_parent;
 	private String comment_content;
-	private int comment_num;
+	private int comment_seq;
 	
 	
 	
 	
-	public int getComment_num() {
-		return comment_num;
+
+	public int getComment_seq() {
+		return comment_seq;
 	}
-	public void setComment_num(int comment_num) {
-		this.comment_num = comment_num;
+	public void setComment_seq(int comment_seq) {
+		this.comment_seq = comment_seq;
 	}
 	public String getComment_id() {
 		return comment_id;

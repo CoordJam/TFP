@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class QnaController {
   @Autowired
   private QnaDao qnaDao;
-
+  
   @RequestMapping("/qnaContent")
   public ModelAndView qnaboardContent(@RequestParam int seq,@RequestParam("seq") int comment_parent) {
     ModelAndView model = new ModelAndView();
@@ -33,14 +33,7 @@ public class QnaController {
     return model;
   }
 
-  @RequestMapping("/qnaDelete")
-  public ModelAndView qnaboardDelete(@RequestParam int seq) {
-    ModelAndView model = new ModelAndView();
-    QnaDto dto = qnaDao.delete(seq);
-    model.addObject("dto", dto);
-    model.setViewName("redirect:qnaList");
-    return model;
-  }
+ 
 
   @RequestMapping(value = "/qnaInsert", method = RequestMethod.POST)
   public ModelAndView qnaInsert(@ModelAttribute QnaDto qnaDto) {
@@ -61,13 +54,22 @@ public class QnaController {
 		qnaDao.insertReply(adto);
 		return "redirect:qnaContent?seq="+adto.getComment_parent();		
 		}
+  
+  @RequestMapping("/qnaDelete")
+  public ModelAndView qnaboardDelete(@RequestParam int seq) {
+    ModelAndView model = new ModelAndView();
+    QnaDto dto = qnaDao.delete(seq);
+    model.addObject("dto", dto);
+    model.setViewName("redirect:qnaList");
+    return model;
+  }
 	  
   @RequestMapping("/replydel")
-  public ModelAndView replyDelete(@RequestParam int comment_seq) {
+  public ModelAndView replyDelete(@RequestParam int seq,@RequestParam int num) {
 	    ModelAndView model = new ModelAndView();
-	    QnaDto dto = qnaDao.replydelete(comment_seq);
-	    model.addObject("dto", dto);
-	    model.setViewName("redirect:qnaContent");
+	    qnaDao.replydelete(seq);
+	    
+	    model.setViewName("redirect:qnaContent?seq="+num);
 	    return model;
 	  }
 }

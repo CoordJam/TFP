@@ -190,7 +190,7 @@ border-bottom: 1px solid black;}
 							<span style="font-size:9pt; color:#ccc;">
 								<fmt:formatDate value="${a.comment_date}" pattern="yyyy-MM-dd HH:mm"/>
 							</span>
-							<button style="font-size:8pt; border:none; color: gray; background-color: white;" onclick="location.href=replydel?">삭제</button><br>
+							<button style="font-size:8pt; border:none; color: gray; background-color: white;" onclick="location.href='/replydel?seq=${a.comment_seq}&num=${dto.qnaBoard_seq}'">삭제</button><br>
 						</c:forEach>
 					</answer>
 					</div></div></div>
