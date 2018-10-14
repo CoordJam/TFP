@@ -50,7 +50,7 @@
 </style>
 
 <body id="body">
-	<!-- Navbar (sit on top) -->
+	<!-- 네비 -->
 		<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
 			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"

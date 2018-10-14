@@ -262,15 +262,8 @@ option{font-size: 20px; }
 	    </form>
     </div>
     </div>
-    
-    <form>
-    	
-    </form>
-    
     </div>
   </div>
-  <!-- modal Content -->
-  
   
 	<hr class ="divinderUnderCalanderBox">
 	<!-- First Parallax Image with Logo Text -->
@@ -330,15 +323,6 @@ option{font-size: 20px; }
 	});
 	</script>
 	
-<!-- 	<div class ="fashionModels">
-		<img class ="modelOne" src="">
-		<img class ="modelTwo" src="">
-		<img class ="modelTwo" src="">
-		<img class ="modelTwo" src="">
-		<img class ="modelTwo" src="">
-		<img class ="modelTwo" src="">
-		
-	</div> -->
 	</div>
 	<script>
 	/* alert(${fn:length(list)} ); */
