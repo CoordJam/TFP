@@ -69,7 +69,7 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-21px; width: 100%; margin-bottom: 1%;height: 53vw;  width: 157%;  margin-left: -28%; z-index: -1;pointer-events: none;}
+#player{ margin-top:-21px; width: 100%; margin-bottom: 1%;height: 53vw;  width: 157%;  margin-left: -28%; z-index: -1;}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
 .divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-17px;}
