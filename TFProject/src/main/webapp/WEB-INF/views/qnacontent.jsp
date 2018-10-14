@@ -17,11 +17,6 @@
 <head>
  <style>
 
-
-
-
- 
- 
  body, html {
  font-family: Verdana,sans-serif;
  font-size: 15px;
@@ -86,18 +81,9 @@ border-bottom: 1px solid black;}
 			<a style="text-decoration:none;" class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a style="text-decoration:none;" href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			<a style="text-decoration:none;" href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
-			<a style="text-decoration:none;" href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-				<i class="fa fa-user"></i> ABOUT</a> 
-				
-			<a style="text-decoration:none;" href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-th"></i> RUNWAY</a> 
-				
-			<a style="text-decoration:none;" href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a>
-			
-			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
 			<div id="kakao_btn_changed"></div>
@@ -105,16 +91,16 @@ border-bottom: 1px solid black;}
 			<div style="text-decoration:none;" id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
-		<!-- Navbar on small screens -->
+			<!-- 메뉴바 -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
-			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
 	</div>
+
  <img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
  
 
@@ -140,27 +126,17 @@ border-bottom: 1px solid black;}
 </div> 
 <br>
  	<div align="center">
-  <input class="btn btn-primary btn-warning" type="button" value="삭제하기" onclick="location.href='/qnaDelete?seq=${dto.qnaBoard_seq}'">
-    <input class="btn btn-primary btn-warning" type="button" value="목록으로" onclick="location.href='/qnaList'">
+  <input class="btn btn-primary btn-warning" type="button" value="삭제하기" onclick="location.href='/qnadelete?seq=${dto.qnaBoard_seq}'">
+    <input class="btn btn-primary btn-warning" type="button" value="목록으로" onclick="location.href='/qnalist'">
     
   </div>
   <br><br>
 
   <div align="center">  
-   <form id="writeCommentForm" action="/qnaReplyInsert" method="post">
-  			 <tr>
-		          <c:choose>
-					    <c:when test="${null eq id}">
-					    <input type="hidden" name="comment_id" value="익명">
-					    </c:when>
-					    <c:when test="${null ne id}">
-					    <input type="hidden" id="names" name="comment_id" value="">
-					    </c:when>
-		   		</c:choose>
-         </tr>
+   <form id="writeCommentForm" action="/qnareplyinsert" method="post">
+   		<input id="username" type="hidden" name="comment_id">
+  		<input type="hidden" name="comment_parent" value="${dto.qnaBoard_seq}"> 
 			<tr bgcolor="#F5F5F5">
-	           
-	               <input type="hidden" name="comment_parent" value="${dto.qnaBoard_seq}">
 	                <!-- 본문 작성-->
 	                <td width="550">
 	                    <div>
@@ -193,8 +169,7 @@ border-bottom: 1px solid black;}
 							<button style="font-size:8pt; border:none; color: gray; background-color: white;" onclick="location.href='/replydel?seq=${a.comment_seq}&num=${dto.qnaBoard_seq}'">삭제</button><br>
 						</c:forEach>
 					</answer>
-					</div></div></div>
-	</div>
+					</div></div>
 
  
  <div id="kakao_btn_changed">
@@ -235,22 +210,22 @@ border-bottom: 1px solid black;}
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
-
-		yousound.onclick = function () {
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audioIsPlaying = false;
+		
+		yousound.onclick = function() {
 
 			if (bl) {
-				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-				console.log(bl);
-				bl = !bl;
-				console.log(bl);
-				ytplayer.playVideo();
-				console.log(ytplayer);
-			} else {
 				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-				console.log(bl);
 				bl = !bl;
-				console.log(bl);
-				ytplayer.pauseVideo();
+				audio.play();
+				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
 			}
 		}
 	</script>
@@ -342,7 +317,7 @@ function loginWithKakao(){
 		            console.log(JSON.stringify(res));
 		            createLogoutKakao();
 		            //window.location.href="../login.com";
-		            localStorage.setItem("key1", res.properties.nickname+"("+res.id+")"); 
+		            localStorage.setItem("key1", res.properties.nickname); 
 		            //localStorage.key1=res.properties.nickname;
 		            console.log(res.properties.nickname);
 		            console.log(localStorage.getItem("key1"));
@@ -392,11 +367,15 @@ function createLogoutKakao(){
 // document.getElementById("test1").textContent=userNick;
  $(function(){
 	 var s=document.getElementById("test1");
+	 var usname=$("#username");
 	 if(localStorage.key1!=null){
  		s.innerText=localStorage.key1;
+ 		usname.val(localStorage.key1);
 	 }else{
 		 s.innerText="";
+		 usname.val("익명");
 	 }
+	 //alert(usname.attr('value'));
  });
 </script>
 

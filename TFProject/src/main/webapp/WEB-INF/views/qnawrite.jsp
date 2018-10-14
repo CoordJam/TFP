@@ -1,113 +1,172 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <html>
-<title></title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
-<style>
-body, html {
-	height: 100%;
-	color: #444;
-	line-height: 1.8;
+
+<head> 
+ <style type="text/css">
+ body, html {
+ font-family: Verdana,sans-serif;
+ font-size: 15px;
+ height: 100%;
+ color: #444;
+ line-height: 1.8;
 }
 
+
 .w3-wide {
-	letter-spacing: 10px;
+ letter-spacing: 10px;
 }
 
 .w3-hover-opacity {
-	cursor: pointer;
+ cursor: pointer;
 }
 
 #myNavbar {
-	opacity: 0.6;
-	color: #000;
+ opacity: 0.6;
+ color: #FFF;
 }
 
 #navDemo {
-	opacity: 0.7;
-	color: #000;
+ opacity: 0.7;
+ color: #FFF;
 }
 
 ::-webkit-scrollbar {
-	width: 1px;
+ width: 1px;
 }
 
 ::-webkit-scrollbar-track {
-	display: none;
+ display: none;
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+ border-radius: 10px;
+ -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-</style>
 
-<body id="body">
-	<!-- Navbar (sit on top) -->
+#container{margin: 0 auto; } 
+
+ h3{
+ width: 71%;
+ align:center; 
+ margin-top: 2% }
+ 
+#container {
+ margin: 0 auto;
+}
+
+h3 {
+ width: 71%;
+ align: center;
+ margin-left: 6%;
+ margin-top: 2%
+}
+
+.TB {
+ width: 55%;
+ border-color: gray;
+ align: center;
+ margin-left: 15%;
+ margin-top: 3%;
+}
+
+.TB2 {
+ width: 55%;
+ border-color: gray;
+ align: center;
+ margin-left: 19%;
+ margin-top: 1%;
+ }
+  
+  </style>
+  <title></title>
+ </head>
+ 
+ <body id="body">
+ <!-- Navbar (sit on top) -->
 		<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
-			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
+			<a style="text-decoration:none;" class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			<a style="text-decoration:none;" href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
-			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-				<i class="fa fa-user"></i> ABOUT</a> 
-				
-			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-th"></i> RUNWAY</a> 
-				
-			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a>
-			
-			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
 			<div id="kakao_btn_changed"></div>
 			
-			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
+			<div style="text-decoration:none;" id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
-		<!-- Navbar on small screens -->
+			<!-- 메뉴바 -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
-			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
 	</div>
 
-	<!-- First Parallax Image with Logo Text -->
-	<div class="bgimg-1 w3-display-container" id="home"></div>
-	
-	<img name="b1" src="http://image.noelshack.com/fichiers/2014/38/1410967177-dragonballzgif-0.gif"/>
-	<img src="http://img.over-blog-kiwi.com/0/98/03/83/20150613/ob_5aa106_mdg-4554-5478-12.gif"/>
-	<img name="b2" src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg"/>
-	<img name="b3" src="http://images6.fanpop.com/image/photos/39900000/IMG-6250-PNG-kion-39961687-1024-577.png"/>
+ <img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
+  <h3 style="margin: auto;" align="center">게시글 작성</h3><br>
+  
+  <div class="container">
+  <form action="/qnainsert" method="post">
+  <input id="username" type="hidden" name="qnaBoard_id">
+<table class="table table-bordered">
 
-	<script>
-		
+    <tbody>
+            <tr>
+                <th>제목: </th>
+                <td><input type="text" placeholder="제목을 입력하세요. " name="qnaBoard_title" class="form-control"/></td>
+            </tr>
+            <tr>
+                <th>내용: </th>
+                <td><textarea cols="10" rows="20" placeholder="내용을 입력하세요. " name="qnaBoard_content" class="form-control"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn-primary btn-warning pull-right">작 성</button>
+                   
+                    <input class="btn btn-primary btn-warning" type="button" value="목록으로" onclick="location.href='/qnalist'">
+                </td>
+            </tr>
+        
+    </tbody>
+</table>
+</form>
+</div>
+
+<div id="kakao_btn_changed">
+<a href="javascript:loginWithKakao()">
+<img src="" /></a>
+</div>
+  <script>
 		// Change style of navbar on scroll
-		window.onscroll = function() {
+		window.onscroll = function () {
 			myFunction()
 		};
 		function myFunction() {
 			var navbar = document.getElementById("myNavbar");
 			if (document.body.scrollTop > 300
-					|| document.documentElement.scrollTop > 300) {
+				|| document.documentElement.scrollTop > 300) {
 				navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
-						+ " w3-black";
+					+ " w3-black";
 			} else {
 				navbar.className = navbar.className.replace(
-						" w3-card w3-animate-top w3-black", "");
+					" w3-card w3-animate-top w3-black", "");
 			}
 		}
 
@@ -121,66 +180,60 @@ body, html {
 			}
 		}
 	</script>
-	
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
-
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audioIsPlaying = false;
+		
 		yousound.onclick = function() {
 
 			if (bl) {
-				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-				console.log(bl);
-				bl = !bl;
-				console.log(bl);
-				ytplayer.playVideo();
-				console.log(ytplayer);
-			} else {
 				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-				console.log(bl);
 				bl = !bl;
-				console.log(bl);
-				ytplayer.pauseVideo();
+				audio.play();
+				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
 			}
 		}
 	</script>
-	
+
 	<script>
 		// Select all links with hashes
 		$('a[href*="#"]')
-		  // Remove links that don't actually link to anything
-		  .not('[href="#"]')
-		  .not('[href="#0"]')
-		  .click(function(event) {
-		    // On-page links
-		    if (
-		      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-		      && 
-		      location.hostname == this.hostname
-		    ) {
-		      // Figure out element to scroll to
-		      var target = $(this.hash);
-		      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-		      // Does a scroll target exist?
-		      if (target.length) {
-		        // Only prevent default if animation is actually gonna happen
-		        event.preventDefault();
-		        $('html, body').animate({
-		          scrollTop: target.offset().top
-		        }, 1000); 
-		      }
-		    }
-		  });
+			// Remove links that don't actually link to anything
+			.not('[href="#"]')
+			.not('[href="#0"]')
+			.click(function (event) {
+				// On-page links
+				if (
+					location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+					&&
+					location.hostname == this.hostname
+				) {
+					// Figure out element to scroll to
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+					// Does a scroll target exist?
+					if (target.length) {
+						// Only prevent default if animation is actually gonna happen
+						event.preventDefault();
+						$('html, body').animate({
+							scrollTop: target.offset().top
+						}, 1000);
+					}
+				}
+			});
 	</script>
-	
-	<div id="kakao_btn_changed">
-<a href="javascript:loginWithKakao()">
-<img src="" /></a>
-</div>
-	
-	<script>
+  <script>
 var namelee=localStorage.getItem("key1");
 console.log(localStorage.getItem("key1"));
 console.log(namelee);
@@ -239,7 +292,7 @@ function loginWithKakao(){
 		            console.log(JSON.stringify(res));
 		            createLogoutKakao();
 		            //window.location.href="../login.com";
-		            localStorage.setItem("key1", res.properties.nickname+"("+res.id+")"); 
+		            localStorage.setItem("key1", res.properties.nickname); 
 		            //localStorage.key1=res.properties.nickname;
 		            console.log(res.properties.nickname);
 		            console.log(localStorage.getItem("key1"));
@@ -272,7 +325,7 @@ function logoutWithKakao(){
 // 로그인 버튼생성
 function createLoginKakao(){
  var login_btn = "<a href='javascript:loginWithKakao()'>"+
-                "<div id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
+                "<div style='color:white;' id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
                 "<a/>";
  document.getElementById('kakao_btn_changed').innerHTML  = login_btn;
 }
@@ -280,7 +333,7 @@ function createLoginKakao(){
 // 로그아웃 버튼생성
 function createLogoutKakao(){
  var logout_btn = "<a href='javascript:logoutWithKakao()'>"+
- 				"<div class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Logout</div> "+
+ 				"<div style='color:white;' class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Logout</div> "+
                 "</a>";
  document.getElementById('kakao_btn_changed').innerHTML  = logout_btn;
  
@@ -289,13 +342,18 @@ function createLogoutKakao(){
 // document.getElementById("test1").textContent=userNick;
  $(function(){
 	 var s=document.getElementById("test1");
+	 var usname=$("#username");
 	 if(localStorage.key1!=null){
  		s.innerText=localStorage.key1;
+ 		usname.val(localStorage.key1);
 	 }else{
 		 s.innerText="";
+		 usname.val("익명");
 	 }
+	 //alert(usname.attr('value'));
  });
 </script>
-
 </body>
-</html>
+
+
+</html> 

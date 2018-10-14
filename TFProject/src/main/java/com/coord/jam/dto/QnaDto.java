@@ -1,4 +1,4 @@
-package com.coord.jam;
+package com.coord.jam.dto;
 
 import java.sql.Date;
 

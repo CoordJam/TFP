@@ -74,6 +74,7 @@ body, html {
 	-moz-appearance: none;
 	appearance: none;
 }
+
 </style>
 
 <body id="body">
@@ -83,18 +84,10 @@ body, html {
 			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			<a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
-			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-				<i class="fa fa-user"></i> ABOUT</a> 
-				
-			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-th"></i> RUNWAY</a> 
-				
-			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a>
 			
-			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off 
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
 			<div id="kakao_btn_changed"></div>
@@ -102,31 +95,26 @@ body, html {
 			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
-		<!-- Navbar on small screens -->
+			<!-- 메뉴바 -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
-			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
-	</div><br><br><br><br>
+	</div>
+	<br><br><br><br>
 	
 	
 	<div class="w3-center w3-display-middle">
 	<h3 style="margin-top: 150px;">Gallery Write</h3>
-	<div id="View_area" style="height:350px; width: 100%;"></div><br><br>
+	
+	<div id="View_area" style="height:350px; width: 100%;"><img id="noimg" src="/img/no_image.png"></div><br><br>
 		<form style="margin-bottom: 100px;" method="post" action="/imgupload" enctype="multipart/form-data">
-			<c:choose>
-				<c:when test="${null eq id}">
-				<input type="hidden" name="gallery_id" value="익명">
-				</c:when>
-				<c:when test="${null ne id}">
-				<input type="hidden" name="gallery_id" value="">
-				</c:when>
-			</c:choose>
-			<textarea name="gallery_content" style="background-color:#f5f5f5; border:none; width: 400px; height: 50px; padding: 0; margin: 0;"></textarea><br><br>
+			
+			<input id="username" type="hidden" name="gallery_id">
+			<textarea name="gallery_content" placeholder="      이미지 파일을 선택 후 관련된 내용을 입력하시오"  style="background-color:#f5f5f5; border:none; width: 400px; height: 50px; padding: 0; margin: 0;"></textarea><br><br>
 			<div class="filebox"> 
 				<input class="upload-name" value="파일선택" disabled="disabled"> 
 				<label class="w3-button" style="width:80px; color: #fff; background-color: #a9a9a9; padding: 3px;" for="ex_filename">업로드</label> 
@@ -172,22 +160,22 @@ body, html {
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
-
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audioIsPlaying = false;
+		
 		yousound.onclick = function() {
 
 			if (bl) {
-				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-				console.log(bl);
-				bl = !bl;
-				console.log(bl);
-				ytplayer.playVideo();
-				console.log(ytplayer);
-			} else {
 				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-				console.log(bl);
 				bl = !bl;
-				console.log(bl);
-				ytplayer.pauseVideo();
+				audio.play();
+				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
 			}
 		}
 	</script>
@@ -284,7 +272,7 @@ function loginWithKakao(){
 		            console.log(JSON.stringify(res));
 		            createLogoutKakao();
 		            //window.location.href="../login.com";
-		            localStorage.setItem("key1", res.properties.nickname+"("+res.id+")"); 
+		            localStorage.setItem("key1", res.properties.nickname); 
 		            //localStorage.key1=res.properties.nickname;
 		            console.log(res.properties.nickname);
 		            console.log(localStorage.getItem("key1"));
@@ -334,11 +322,15 @@ function createLogoutKakao(){
 // document.getElementById("test1").textContent=userNick;
  $(function(){
 	 var s=document.getElementById("test1");
+	 var usname=$("#username");
 	 if(localStorage.key1!=null){
  		s.innerText=localStorage.key1;
+ 		usname.val(localStorage.key1);
 	 }else{
 		 s.innerText="";
+		 usname.val("익명");
 	 }
+	 //alert(usname.attr('value'));
  });
 </script>
 <script>
@@ -393,7 +385,7 @@ function previewImage(targetObj, View_area) {
   //ie가 아닐때(크롬, 사파리, FF)
 	} else {
 		var files = targetObj.files;
-
+		var noImg = document.getElementById("noimg");
 		for ( var i = 0; i < files.length; i++) {
 			var file = files[i];
 			var imageType = /image.*/; //이미지 파일일경우만.. 뿌려준다.
@@ -402,18 +394,19 @@ function previewImage(targetObj, View_area) {
 				continue;
 
 			var prevImg = document.getElementById("prev_" + View_area); //이전에 미리보기가 있다면 삭제
-
+			
 			if (prevImg) {
 				preview.removeChild(prevImg);
 			}
+			if(noImg){
+				preview.removeChild(noImg);
+			}
 			var img = document.createElement("img"); 
-
 			img.id = "prev_" + View_area;
 			img.classList.add("obj");
 			img.file = file;
 			img.style.height = '100%';
 			preview.appendChild(img);
-
 			if (window.FileReader) { // FireFox, Chrome, Opera 확인.
 				var reader = new FileReader();
 

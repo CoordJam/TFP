@@ -1,4 +1,4 @@
-package xml;
+package com.coord.jam;
 
 import java.io.File;
 import java.util.List;

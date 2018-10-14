@@ -1,4 +1,4 @@
-package check;
+package com.coord.jam;
 
 import java.io.File;
 import java.io.IOException;

@@ -4,14 +4,14 @@
 <configuration>
 
 	<typeAliases>
-		<typeAlias type="com.coord.jam.QnaDto" alias="QnaDto"/>
-		<typeAlias type="com.coord.jam.GalleryDto" alias="GalleryDto"/>
-		<typeAlias type="com.coord.jam.CommentDto" alias="adto"/>
+		<typeAlias type="com.coord.jam.dto.QnaDto" alias="QnaDto"/>
+		<typeAlias type="com.coord.jam.dto.GalleryDto" alias="GalleryDto"/>
+		<typeAlias type="com.coord.jam.dto.CommentDto" alias="adto"/>
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="com/coord/jam/QnaSql.xml" />
-		<mapper resource="com/coord/jam/GallerySql.xml" />
+		<mapper resource="com/coord/jam/sql/QnaSql.xml" />
+		<mapper resource="com/coord/jam/sql/GallerySql.xml" />
 	</mappers>
 	
 </configuration>

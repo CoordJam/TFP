@@ -1,4 +1,4 @@
-<%@page import="check.IsThereFile"%>
+<%@page import="com.coord.jam.IsThereFile"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -23,24 +23,6 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css'>
 
  <link rel="stylesheet" href="/css/style.css">
-<script>
-/* var currentScroll = 0;
-var keeppingScrollEvent = false;
-$( window ).scroll(function(e) {
-	cureentScroll = $(this).scrollTop();
-	if ($(this).scrollTop()<500){
-		if(currentScroll<$(this).scrollTop() && keepingScrollEvent == false){
-			$('html, body').stop().animate({
-	            scrollTop: 1156
-	            }, 100);
-			keepingScrollEvent = true;
-		}
-	}
-	console.log($(this).scrollTop());
-}); */
-
-</script>
-
 
 <script type="text/javascript">
     $(function() {
@@ -55,7 +37,6 @@ body, html {
 	color: #444;
 	line-height: 1.8;
 }
-
 
 .w3-wide {
 	letter-spacing: 10px;
@@ -188,18 +169,18 @@ option{font-size: 20px; }
 			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			<a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
-			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-				<i class="fa fa-user"></i> ABOUT</a> 
+			<a href="#top" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
+				<i class="fa fa-user"></i> SEARCH</a> 
 				
-			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-th"></i> RUNWAY</a> 
+			<a href="#video" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i class="fa fa-th"></i> VIDEO</a> 
 				
-			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a>
+			<a href="#brand" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i class="fa fa-envelope"></i> BRAND</a>
 			
-			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off 
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
 			<div id="kakao_btn_changed"></div>
@@ -207,18 +188,17 @@ option{font-size: 20px; }
 			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
-		<!-- Navbar on small screens -->
+			<!-- 메뉴바 -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
-			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
 	</div>
 
-	<div class ="calenderBox">
+	<div class ="calenderBox" name="top">
 	<div class = "brandNameBox">
 	<p class = "brandName">${brandName}</p></div>
 		<div class="nextCollection">
@@ -243,7 +223,7 @@ option{font-size: 20px; }
 	    <h1 class ="mordalh1">Season</h1>
     </div>
     <div class ="mordalFormDiv chosen-wrapper chosen-wrapper--style2" data-js="custom-scroll">
-	    <form action="/goCollectionTestPage/">
+	    <form action="/collection/">
 	    	 <select class="chosen-select" data-placeholder="CHOOSE THE BRAND" name="brandName">
 				    <option></option>
 				    <option>Armani Prive</option>
@@ -297,10 +277,10 @@ option{font-size: 20px; }
 	<div class="bgimg-1 w3-display-container" id="home"></div>
 	
 	<!-- <div class ="playerShield"></div>  -->
-	<div id="player"></div> 
+	<div name="video" id="player"></div> 
 	
 	<div class = "secondNextCollection">
-	<h1 class = "brandName2">${brandName }</h1>
+	<h1 name="brand" class = "brandName2">${brandName }</h1>
 	<div class="nextCollection">
 			<span class="goLeft" onclick=" goNextSeason('left')">◀</span>
 				<span class ="collectionName">${year } ${season }</span>
@@ -454,22 +434,22 @@ option{font-size: 20px; }
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
-
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audioIsPlaying = false;
+		
 		yousound.onclick = function() {
 
 			if (bl) {
-				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-				console.log(bl);
-				bl = !bl;
-				console.log(bl);
-				ytplayer.playVideo();
-				console.log(ytplayer);
-			} else {
 				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-				console.log(bl);
 				bl = !bl;
-				console.log(bl);
-				ytplayer.pauseVideo();
+				audio.play();
+				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
 			}
 		}
 	</script>
@@ -606,7 +586,7 @@ function loginWithKakao(){
 		            console.log(JSON.stringify(res));
 		            createLogoutKakao();
 		            //window.location.href="../login.com";
-		            localStorage.setItem("key1", res.properties.nickname+"("+res.id+")"); 
+		            localStorage.setItem("key1", res.properties.nickname); 
 		            //localStorage.key1=res.properties.nickname;
 		            console.log(res.properties.nickname);
 		            console.log(localStorage.getItem("key1"));

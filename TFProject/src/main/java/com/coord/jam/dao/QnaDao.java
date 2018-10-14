@@ -1,8 +1,10 @@
-package com.coord.jam;
+package com.coord.jam.dao;
 
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.stereotype.Repository;
+import com.coord.jam.dto.CommentDto;
+import com.coord.jam.dto.QnaDto;
 
 @Repository
 public class QnaDao extends CommonDao {
@@ -39,16 +41,16 @@ public class QnaDao extends CommonDao {
   public List<QnaDto> getMainList() {
     return getSqlSession().selectList("getMainList");
   }
-  public void insertReply(CommentDto adto) {
-		// TODO Auto-generated method stub
-		getSqlSession().insert("insertreply", adto);
-	}
-  public List<CommentDto> getReply(int num) {
-		// TODO Auto-generated method stub
-		return getSqlSession().selectList("replylistByNum", num);
-	}
-  public void replydelete(int seq) {
-	    getSqlSession().delete("replyDelete", seq);
-	  }
 
+  public void insertReply(CommentDto adto) {
+    getSqlSession().insert("insertreply", adto);
+  }
+
+  public List<CommentDto> getReply(int num) {
+    return getSqlSession().selectList("replylistByNum", num);
+  }
+
+  public void replydelete(int seq) {
+    getSqlSession().delete("replyDelete", seq);
+  }
 }

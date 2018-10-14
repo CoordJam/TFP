@@ -89,7 +89,6 @@ body, html {
 </style>
 
 <body id="body">
-	<!-- Navbar (sit on top) -->
 		<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
 			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
@@ -106,7 +105,7 @@ body, html {
 			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
 				<i class="fa fa-envelope"></i> CONTACT</a>
 			
-			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off 
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
 			<div id="kakao_btn_changed"></div>
@@ -114,33 +113,28 @@ body, html {
 			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
-		<!-- Navbar on small screens -->
+		<!-- 메뉴바 -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
-			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
 	</div>
 
-	<!-- First Parallax Image with Logo Text -->
-	
+	<!-- 첫번째 이미지 -->
 	<div class="bgimg-1 w3-display-container" id="home"></div>
 	<span style="white-space: nowrap;"
 		class="w3-display-middle w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">TOTAL
 		FASHION <span class="w3-hide-small">WEEK</span>
 	</span>
 	
-	<!-- Container (About Section) -->
 	<div class="w3-content w3-container w3-padding-64" id="about">
 		<h3 class="w3-center">ABOUT</h3>
 		<p class="w3-center">
 			<em>I love fashion</em>
 		</p>
-	<!-- <audio controls autoplay src="/audio/sharksong.mp3"  loop="loop" preload="auto" class = "song" type="audio/mp3" muted="muted"></audio> -->
-
 
 
 		<p class="w3-center">Total Fashion - 유명 도시의 유명 브랜드의 패션쇼 정보를 한눈에</p>
@@ -157,7 +151,7 @@ body, html {
 					width="500" height="333">
 			</div>
 			
-			<!-- Hide this text on small devices -->
+			<!-- 화면크기가 작으면 가려짐 -->
 			<div class="w3-col m6 w3-hide-small w3-padding-large"
 				style="margin-top: 80px; text-align: justify;">
 				<span><b>패션 위크(Fashion week)</b>는 디자이너들이 작품을 발표하며, 패션쇼가 집중적으로
@@ -216,14 +210,13 @@ body, html {
 		</div>
 	</div>
 
-	<!-- Second Parallax Image with Portfolio Text -->
+	<!-- 두번째 이미지 -->
 	<div class="bgimg-2 w3-display-container">
 		<div class="w3-display-middle">
 			<span class="w3-xxlarge w3-text-white w3-wide">RUNWAY</span>
 		</div>
 	</div>
 
-	<!-- Container (Portfolio Section) -->
 	<div class="w3-content w3-container w3-padding-64" id="portfolio">
 		<h3 class="w3-center">Runway</h3>
 		<p class="w3-center">
@@ -235,7 +228,6 @@ body, html {
 		</p>
 		<br>
 
-		<!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
 		<div class="w3-row-padding w3-center">
 			<div class="w3-col m3">
 				<img
@@ -297,7 +289,7 @@ body, html {
 		</div>
 	</div>
 
-	<!-- Modal for full size images on click-->
+	<!-- 클릭시 이미지 확대-->
 	<div id="modal01" class="w3-modal w3-black"
 		onclick="this.style.display='none'">
 		<span class="w3-button w3-large w3-black w3-display-topright"
@@ -309,14 +301,13 @@ body, html {
 		</div>
 	</div>
 
-	<!-- Third Parallax Image with Portfolio Text -->
+	<!-- 세번째 이미지 -->
 	<div class="bgimg-3 w3-display-container">
 		<div class="w3-display-middle">
 			<span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
 		</div>
 	</div>
 
-	<!-- Container (Contact Section) -->
 	<div class="w3-content w3-center w3-container w3-padding-64" id="contact">
 	
 		<h3 class="w3-center">WHERE I WORK</h3>
@@ -341,7 +332,7 @@ body, html {
 			
 		</div>
 		
-		<form action="/mailSender" target="_blank">
+		<form action="/mail" target="_blank">
 			<div class="w3-row-padding" style="margin: 0 100px 8px 100px">
 				
 				<div class="w3-half">
@@ -364,7 +355,11 @@ body, html {
 		</form>
 	</div>
 
-	<!-- Footer -->
+	<div id="kakao_btn_changed">
+		<a href="javascript:loginWithKakao()"> <img src="" /></a>
+	</div>
+
+	<!-- 밑 -->
 	<footer
 		class="w3-center w3-black w3-padding-64 w3-opacity-min w3-hover-opacity-off">
 		<a href="#home" class="w3-button w3-light-gray"><i
@@ -424,32 +419,24 @@ body, html {
 		bl = true;
 		var yousound = document.getElementById("usound");
 		var audio = new Audio('/audio/backgroundMusic.mp3');
-		audio.play(); 
-
-		audioIsPlaying = true;
+		audioIsPlaying = false;
 		
 		yousound.onclick = function() {
 
 			if (bl) {
-				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-				console.log(bl);
-				bl = !bl;
-				console.log(bl);
-				
-				audio.pause();
-				audioIsPlaying = false;
-			} else {
 				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-				console.log(bl);
 				bl = !bl;
-				console.log(bl);
-				
 				audio.play();
 				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
 			}
 		}
 	</script>
-	
 	
 	<script>
 		// Select all links with hashes
@@ -479,12 +466,6 @@ body, html {
 		  });
 	</script>
 	
-	<div id="kakao_btn_changed">
-<a href="javascript:loginWithKakao()">
-<img src="" /></a>
-</div>
- 
- 
 <script>
 var namelee=localStorage.getItem("key1");
 console.log(localStorage.getItem("key1"));

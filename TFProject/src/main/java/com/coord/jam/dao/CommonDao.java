@@ -1,4 +1,4 @@
-package com.coord.jam;
+package com.coord.jam.dao;
 
 import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSessionFactory;

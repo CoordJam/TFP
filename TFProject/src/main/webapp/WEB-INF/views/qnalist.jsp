@@ -74,18 +74,10 @@ width: 60%;}
 			<a style="text-decoration:none;" class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a style="text-decoration:none;" href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			<a style="text-decoration:none;" href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
-			<a style="text-decoration:none;" href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-				<i class="fa fa-user"></i> ABOUT</a> 
-				
-			<a style="text-decoration:none;" href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-th"></i> RUNWAY</a> 
-				
-			<a style="text-decoration:none;" href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a>
 			
-			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
 			<div id="kakao_btn_changed"></div>
@@ -93,18 +85,18 @@ width: 60%;}
 			<div style="text-decoration:none;" id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
-		<!-- Navbar on small screens -->
+			<!-- 메뉴바 -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
-			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
 	</div>
 
- <!-- First Parallax Image with Logo Text -->
+
+ <!-- 첫번째 이미지 -->
 
  <img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_img1.jpg"/><br><br><br>
  
@@ -125,7 +117,7 @@ width: 60%;}
                                     <td align="center">${no}</td>
                                     <c:set var="no" value="${no-1}"></c:set>
                                     <td>
-                                        <a href="/qnaContent?seq=${list.qnaBoard_seq}">${list.qnaBoard_title}</a>
+                                        <a href="/qnacontent?seq=${list.qnaBoard_seq}">${list.qnaBoard_title}</a>
                                     </td>
                                     <td align="center">${list.qnaBoard_id}</td>
                                     <td align="center">${list.qnaBoard_date}</td>
@@ -139,14 +131,18 @@ width: 60%;}
 
 
  <div style="border-bottom-width: 3px; border-bottom-color: #e8e8e887; width: 800px; margin: auto;">
-  <input type="button" value="글쓰기" class="btn btn-primary btn-warning" style="margin-left: 500px;" onclick="location.href='/qnaWriteform'">
+  <input type="button" value="글쓰기" class="btn btn-primary btn-warning" style="margin-left: 500px;" onclick="location.href='/qnawrite/'">
  </div>
  
 
  <div align="center" style="height: 40;">
   ${pageShow}
-
  </div>
+ 
+  <div id="kakao_btn_changed">
+<a href="javascript:loginWithKakao()">
+<img src="" /></a>
+</div>
  
 
 
@@ -183,22 +179,22 @@ width: 60%;}
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
-
-		yousound.onclick = function () {
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audioIsPlaying = false;
+		
+		yousound.onclick = function() {
 
 			if (bl) {
-				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-				console.log(bl);
-				bl = !bl;
-				console.log(bl);
-				ytplayer.playVideo();
-				console.log(ytplayer);
-			} else {
 				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-				console.log(bl);
 				bl = !bl;
-				console.log(bl);
-				ytplayer.pauseVideo();
+				audio.play();
+				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
 			}
 		}
 	</script>
@@ -232,10 +228,7 @@ width: 60%;}
 	</script>
 
  
- <div id="kakao_btn_changed">
-<a href="javascript:loginWithKakao()">
-<img src="" /></a>
-</div>
+
  
  <script>
 var namelee=localStorage.getItem("key1");
@@ -296,7 +289,7 @@ function loginWithKakao(){
 		            console.log(JSON.stringify(res));
 		            createLogoutKakao();
 		            //window.location.href="../login.com";
-		            localStorage.setItem("key1", res.properties.nickname+"("+res.id+")"); 
+		            localStorage.setItem("key1", res.properties.nickname); 
 		            //localStorage.key1=res.properties.nickname;
 		            console.log(res.properties.nickname);
 		            console.log(localStorage.getItem("key1"));
@@ -346,11 +339,15 @@ function createLogoutKakao(){
 // document.getElementById("test1").textContent=userNick;
  $(function(){
 	 var s=document.getElementById("test1");
+	 var usname=$("#username");
 	 if(localStorage.key1!=null){
  		s.innerText=localStorage.key1;
+ 		usname.val(localStorage.key1);
 	 }else{
 		 s.innerText="";
+		 usname.val("익명");
 	 }
+	 //alert(usname.attr('value'));
  });
 </script>
 

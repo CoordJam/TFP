@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <title></title>
@@ -55,18 +56,10 @@
 			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			<a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+
 			
-			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-				<i class="fa fa-user"></i> ABOUT</a> 
-				
-			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-th"></i> RUNWAY</a> 
-				
-			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a>
-			
-			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off 
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
 			<div id="kakao_btn_changed"></div>
@@ -74,20 +67,20 @@
 			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
-		<!-- Navbar on small screens -->
+			<!-- 메뉴바 -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
-			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
 	</div>
+
 	
 	<div style="display: flex; width: 100%;">
 		<div style="flex: 1; margin: auto;">
-			<div style="margin-left: 60%; font-size: 60px; opacity: 0.5;" class="w3-left w3-hover-text-gray">&#10094;</div>
+			<div OnClick="location.href='/gallery?page=1&'" style="margin-left: 60%; font-size: 60px; opacity: 0.5;" class="w3-button w3-left w3-hover-text-gray">&#10094;</div>
 		</div>
 		<!-- Container (Portfolio Section) -->
 		<div style="flex: 4;" class="w3-content w3-container w3-padding-48" id="portfolio">
@@ -98,92 +91,44 @@
 				</em>
 			</p>
 			<div class="w3-row-padding w3-center">
-				<div class="w3-col m3">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="The mist over the mountains">
+				<div style="overflow: hidden; height:300px;" class="w3-col m3">
+					<img src="/save/top1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+					 alt="1">
 				</div>
 
-				<div class="w3-col m3">
-					<img src="/img/main_menu_img/main_runway_img2.jpg" style="width: 100%" height="80%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Coffee beans">
+				<div style="overflow: hidden; height:300px;" class="w3-col m3">
+					<img src="/save/top2.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+					 alt="2">
 				</div>
 
-				<div class="w3-col m3">
-					<img src="/img/main_menu_img/main_runway_img3.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Bear closeup">
+				<div style="overflow: hidden; height:300px;" class="w3-col m3">
+					<img src="/save/top3.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+					 alt="3">
 				</div>
 				<p>   Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
 					Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
 					Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3
 					Month Top 3 Month Top 3 Month Top 3 Month Top 3 Month Top 3</p>
 			</div> <br>
-			<!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+			
+			
 			<div class="w3-row-padding w3-center">
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="The mist over the mountains">
+			<c:forEach var="a" items="${list}">
+				<div style="overflow: hidden; height:200px;" class="w3-col m2">
+					<img src="/save/${a.gallery_imgname}" style="margin-top:20px;  width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
+					 alt="${a.gallery_date}, ${a.gallery_id} : ${a.gallery_content}">
 				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img2.jpg" style="width: 100%" height="80%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Coffee beans">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img3.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Bear closeup">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img4.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img8.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-			</div>
-			<div class="w3-row-padding w3-center w3-section">
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img5.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="The mist">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img6.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="My beloved typewriter">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img7.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Empty ghost train">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img8.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Sailing">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-
-				<div class="w3-col m2">
-					<img src="/img/main_menu_img/main_runway_img1.jpg" style="width: 100%" onclick="onClick(this)" class="w3-hover-opacity"
-					 alt="Quiet ocean">
-				</div>
-			</div>
+			</c:forEach>
+			</div><br>
+			<div align="center" style="height: 40;">
+			  ${pageShow}
+			 </div>
+			
+			
 		</div>
 		<div style="flex: 1; margin: auto;">
-			<div style="margin-right: 60%; font-size: 60px; opacity: 0.5;" class="w3-right w3-hover-text-gray">&#10095;</div>
-			<button onclick="location.href='/gallerywrite/'" class="w3-button w3-bottom w3-black" style="width:60px; padding:2px; margin-bottom:2px; opacity: 0.2;" type="button">글쓰기</button>
+			<div OnClick="location.href='/gallery?page=2&'" style="margin-right: 60%; font-size: 60px; opacity: 0.5;" class="w3-button w3-right w3-hover-text-gray">&#10095;</div>
+			<button onclick="location.href='/gallerywrite/'" class="w3-button w3-bottom" style="width:60px; padding:2px; margin-bottom:2px; color: #fff; background-color: #a9a9a9;" type="button">글쓰기</button>
 		</div>
 	</div>
 	<!-- Modal for full size images on click-->
@@ -235,22 +180,22 @@
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
-
-		yousound.onclick = function () {
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audioIsPlaying = false;
+		
+		yousound.onclick = function() {
 
 			if (bl) {
-				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-				console.log(bl);
-				bl = !bl;
-				console.log(bl);
-				ytplayer.playVideo();
-				console.log(ytplayer);
-			} else {
 				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-				console.log(bl);
 				bl = !bl;
-				console.log(bl);
-				ytplayer.pauseVideo();
+				audio.play();
+				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
 			}
 		}
 	</script>
@@ -347,7 +292,7 @@ function loginWithKakao(){
 		            console.log(JSON.stringify(res));
 		            createLogoutKakao();
 		            //window.location.href="../login.com";
-		            localStorage.setItem("key1", res.properties.nickname+"("+res.id+")"); 
+		            localStorage.setItem("key1", res.properties.nickname); 
 		            //localStorage.key1=res.properties.nickname;
 		            console.log(res.properties.nickname);
 		            console.log(localStorage.getItem("key1"));

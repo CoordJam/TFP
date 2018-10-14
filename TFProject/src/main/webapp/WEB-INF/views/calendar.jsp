@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%> 
 <!DOCTYPE html>
 <html>
 <title></title>
@@ -10,11 +11,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
-
-<%@page import="java.text.SimpleDateFormat"%>
-
-<%@page import="java.util.Calendar"%> 
-
 
 
 <%
@@ -62,9 +58,6 @@ body, html {
  line-height: 1.8;
 }
 
- 
-
-
 .w3-wide {
  letter-spacing: 10px;
 }
@@ -105,7 +98,6 @@ body, html {
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
  }
 
-
 td {font-family: "돋움"; font-size: 9pt; color:#595959;}
 th {font-family: "돋움"; font-size: 9pt; color:#000000;}
 select {font-family: "돋움"; font-size: 9pt; color:#595959;}
@@ -117,7 +109,6 @@ text-overflow:ellipsis;
 
 </style>
 
-
 <body id="body">
  <!-- Navbar (sit on top) -->
 		<div class="w3-top">
@@ -125,18 +116,18 @@ text-overflow:ellipsis;
 			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
 			
-			<a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			<a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
-			<a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-				<i class="fa fa-user"></i> ABOUT</a> 
-				
-			<a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-th"></i> RUNWAY</a> 
-				
-			<a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> CONTACT</a>
+			<a href="#top" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i class="fa fa-th"></i> TOP</a> 
 			
-			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+			<a href="#cal" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i class="fa fa-th"></i> CALENDAR</a> 
+				
+			<a href="#foot" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i class="fa fa-envelope"></i> BOTTOM</a>
+			
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off 
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
 				
 			<div id="kakao_btn_changed"></div>
@@ -144,20 +135,19 @@ text-overflow:ellipsis;
 			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
 
-		<!-- Navbar on small screens -->
+			<!-- 메뉴바 -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
-			<a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
 	</div>
-<img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_imgg1.jpg"/><br><br><br>
+
+<img name="top" class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_imgg1.jpg"/><br><br><br>
 
  <form name="calendarFrm" id="calendarFrm" action="" method="post">
-
 
  <script>
 
@@ -177,7 +167,6 @@ text-overflow:ellipsis;
    }
   }
 
-
 <DIV id="content" style="width:712px;">
 
   // Used to toggle the menu on small screens when clicking on the menu button
@@ -193,8 +182,6 @@ text-overflow:ellipsis;
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
- 
-
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
 	<tr>
        <td align ="right">
@@ -205,7 +192,7 @@ text-overflow:ellipsis;
 
 <!--날짜 네비게이션  -->
 
-<table width="100%" border="0" cellspacing="1" cellpadding="1" id="KOO" bgcolor="#F3F9D7" style="border:1px solid #CED99C">
+<table name="cal" width="100%" border="0" cellspacing="1" cellpadding="1" id="KOO" bgcolor="#F3F9D7" style="border:1px solid #CED99C">
 	<tr>
 		<td height="60">
         	<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -285,8 +272,6 @@ text-overflow:ellipsis;
 		  newLine++;
 		}
 		
-		 
-		
 		for(int index = 1; index <= endDay; index++)
 		{
 		       String color = "";
@@ -341,10 +326,15 @@ text-overflow:ellipsis;
 </TABLE>
 </form> <br><br><br><br><br><br>
 
-<!-- Footer -->
-	<footer
+<div id="kakao_btn_changed">
+<a href="javascript:loginWithKakao()">
+<img src="" /></a>
+</div>
+
+<!-- 밑 -->
+	<footer name="foot"
 		class="w3-center w3-black w3-padding-48 w3-opacity-min w3-hover-opacity-off">
-		<a href="#home" class="w3-button w3-light-gray"><i
+		<a href="#top" class="w3-button w3-light-gray"><i
 			class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 		<p>
 			<br> 제휴 사이트&nbsp;&nbsp;&nbsp;<a
@@ -391,27 +381,27 @@ text-overflow:ellipsis;
  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
  <script>
-  bl = true;
-  var yousound = document.getElementById("usound");
+		bl = true;
+		var yousound = document.getElementById("usound");
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audioIsPlaying = false;
+		
+		yousound.onclick = function() {
 
-  yousound.onclick = function () {
-
-   if (bl) {
-    yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-    console.log(bl);
-    bl = !bl;
-    console.log(bl);
-    ytplayer.playVideo();
-    console.log(ytplayer);
-   } else {
-    yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-    console.log(bl);
-    bl = !bl;
-    console.log(bl);
-    ytplayer.pauseVideo();
-   }
-  }
- </script>
+			if (bl) {
+				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.play();
+				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
+			}
+		}
+	</script>
 
  <script>
   // Select all links with hashes
@@ -441,10 +431,7 @@ text-overflow:ellipsis;
    });
  </script>
  
- <div id="kakao_btn_changed">
-<a href="javascript:loginWithKakao()">
-<img src="" /></a>
-</div>
+ 
  
  <script>
 var namelee=localStorage.getItem("key1");
@@ -505,7 +492,7 @@ function loginWithKakao(){
 		            console.log(JSON.stringify(res));
 		            createLogoutKakao();
 		            //window.location.href="../login.com";
-		            localStorage.setItem("key1", res.properties.nickname+"("+res.id+")"); 
+		            localStorage.setItem("key1", res.properties.nickname); 
 		            //localStorage.key1=res.properties.nickname;
 		            console.log(res.properties.nickname);
 		            console.log(localStorage.getItem("key1"));
