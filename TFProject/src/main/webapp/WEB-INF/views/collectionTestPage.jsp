@@ -8,7 +8,8 @@
 <head>
 <title></title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -90,7 +91,7 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-33px; width: 162%; margin-bottom: 1%;height: 53vw;   margin-left: -31%%; z-index: -1;pointer-events: none;}
+#player{ margin-top:-33px; width: 162%; margin-bottom: 1%;height: 53vw;   margin-left: -31%; z-index: -1;pointer-events: none;}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
 .divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-41px;}
@@ -144,6 +145,13 @@ option{font-size: 20px; }
         @media (max-width:1185px){
        .secondNextCollection .nextCollection{display:none;} 
         }
+ @media (max-width:864px){
+ .brandName2{    top: -5vw;}
+        }
+@media (max-width:557px){
+.brandName2{    top:-12vw;}
+}			
+
 @media (max-width:550px){
 			.divinderUnderCalanderBox{visibility: hidden;}
 			.brandNameBox { margin-left: 7%;  }
@@ -155,8 +163,12 @@ option{font-size: 20px; }
 			.collectionName {font-size: 4.3vh;}
 			#player{margin-bottom: 10px;margin-top:35px;    margin-bottom: -64px;}
 			.sectionOne{    margin-left: -6%;}
-			.brandName2{    top: -16vw;}
+			.brandName2{    top: -8vw;}
 			}
+@media (max-width:469px){
+ .brandName2{   top:-16vw;}
+        }
+
 	@media (max-width:750px){		
 			.mordalh1{font-size: 24px; margin: 5px;     left: 13px;}
 			.mordalFormDiv{    width: 237px; z-index: 1;}
@@ -176,8 +188,9 @@ option{font-size: 20px; }
     font-style: italic;
     position: absolute;
 }.p_close {
-    right: 10px;
+    right: 28px;
     z-index: 2;
+    top:10px;
 }
 			}
 .goLeft, .goRight {display:none;}	   

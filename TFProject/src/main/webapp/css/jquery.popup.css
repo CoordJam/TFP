@@ -10,10 +10,6 @@
   transition:top 800ms;
 }
 
-@media (max-width:750px){
-			.popup {  width: 375px; height: 312px;}
-			
-			}
 
 
   .p_content { width:100%; text-align:center; font-size:23px; padding:110px 0 0; }
@@ -60,3 +56,7 @@
   position:fixed; top:0; right:0;
   width:99px; height:99px; background:url(../img/github.png);
 }
+@media (max-width:750px){
+			.popup {  width: 336px; height: 312px; left: 50%}		
+			.p_close{    right: 26px;}	
+			}
