@@ -11,51 +11,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
 
-
-
-<script type="text/javascript">
- img1=new Image()
-img1.src="/img/calendar/s1.png"
- img2=new Image()
-img2.src="/img/calendar/s2.png"
- img3=new Image()
-img3.src="/img/calendar/s3.png"
- img4=new Image()
-img4.src="/img/calendar/s4.png"
- img5=new Image()
-img5.src="/img/calendar/s5.png"
- img6=new Image()
-img6.src="/img/calendar/s6.png"
- img7=new Image()
-img7.src="/img/calendar/s7.png"
- img8=new Image()
-img8.src="/img/calendar/s8.png"
- img9=new Image()
-img9.src="/img/calendar/s9.png"
- img10=new Image()
-img10.src="/img/calendar/s10.png"
- img11=new Image()
-img11.src="/img/calendar/s11.png"
- img12=new Image()
-img12.src="/img/calendar/s12.png"
-
-num=10;
-function slideshow1(){
- num=num-1;
- 
- if(num==0)
-  num=12;
- document.mypic.src=eval("img"+num+".src")
-}
-function slideshow2(){
- num=num+1;
- 
- if(num==13)
-  num=1;
- document.mypic.src=eval("img"+num+".src")
-}
-</script>
-
 <style>
 
 body, html {
@@ -190,16 +145,15 @@ text-overflow:ellipsis;
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
- 
-
 
 <form name="cal" align="center">
-<a href="#" onclick="slideshow1()"><button class="w3-button w3-white w3-border" style="width:100px; border: none;">prev</button></a>&nbsp;
-<a href="#" onclick="slideshow2()"><button class="w3-button w3-white w3-border" style="width:100px; border: none;">next</button></a><br><br>
+<div id="pre" class="w3-button w3-white w3-border" style="width:100px; border: none;">prev</div>&nbsp;
+<div id="nxt" class="w3-button w3-white w3-border" style="width:100px; border: none;">next</div><br><br>
 </form> 
 <div align="center">
-<img src="/img/calendar/s10.png" name="mypic">
-</div>
+<img class="calendar" src="/img/calendar/s10.png" name="mypic">
+</div> 
+
 
   <div id="kakao_btn_changed">
 <a href="javascript:loginWithKakao()">
@@ -423,6 +377,53 @@ function createLogoutKakao(){
    s.innerText="";
   }
  });
+</script>
+
+<script>
+  img1=new Image()
+img1.src="/img/calendar/s1.png"
+ img2=new Image()
+img2.src="/img/calendar/s2.png"
+ img3=new Image()
+img3.src="/img/calendar/s3.png"
+ img4=new Image()
+img4.src="/img/calendar/s4.png"
+ img5=new Image()
+img5.src="/img/calendar/s5.png"
+ img6=new Image()
+img6.src="/img/calendar/s6.png"
+ img7=new Image()
+img7.src="/img/calendar/s7.png"
+ img8=new Image()
+img8.src="/img/calendar/s8.png"
+ img9=new Image()
+img9.src="/img/calendar/s9.png"
+ img10=new Image()
+img10.src="/img/calendar/s10.png"
+ img11=new Image()
+img11.src="/img/calendar/s11.png"
+ img12=new Image()
+img12.src="/img/calendar/s12.png"
+
+num=10;
+ 
+ document.getElementById("pre").onclick=function(){
+	 num=num-1;
+	 
+	 if(num==0)
+	  num=12;
+	 document.mypic.src=eval("img"+num+".src")
+ }
+ 
+ document.getElementById("nxt").onclick=function(){
+	 num=num+1;
+	 
+	 if(num==13)
+	  num=1;
+	 document.mypic.src=eval("img"+num+".src")
+ }
+  
+ 
 </script>
 
 </body>
