@@ -153,7 +153,7 @@ body, html {
 
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
 
-.divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-16px;}
+.divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-34px;}
 
 .goRight, .goLeft{font-size:50px; cursor: pointer; color: black;}
 
@@ -1256,11 +1256,7 @@ function loginWithKakao(){
 
 		            createLogoutKakao();
 
-		            //window.location.href="../login.com";
-
 		            localStorage.setItem("key1", res.properties.nickname); 
-
-		            //localStorage.key1=res.properties.nickname;
 
 		            console.log(res.properties.nickname);
 

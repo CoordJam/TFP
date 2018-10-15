@@ -28,8 +28,6 @@ public class HomeController {
       @RequestParam String password, @RequestParam String message)
       throws AddressException, MessagingException {
     // 네이버일 경우 smtp.naver.com 을 입력합니다.
-    // Google일 경우 smtp.gmail.com 을 입력합니다. 
-
     String host = "smtp.naver.com";
 
     int port = 465; // 포트번호
