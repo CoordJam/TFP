@@ -24,7 +24,7 @@ public class QnaController {
     ModelAndView model = new ModelAndView();
     QnaDto dto = qnaDao.selectseqqna(seq);
 
-    // 해당 글에 대한 댓글을 보낸다
+    // 해당 글에 대한 댓글을 보낸다 
     List<CommentDto> alist = qnaDao.getReply(seq);
     model.addObject("alist", alist); // 댓글목록
     model.addObject("acount", alist.size()); // 댓글수

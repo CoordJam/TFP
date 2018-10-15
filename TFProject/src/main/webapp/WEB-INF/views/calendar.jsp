@@ -129,13 +129,13 @@ text-overflow:ellipsis;
    <a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
    
    <a href="#top" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-    <i class="fa fa-user"></i> TOP</a> 
+    <i style="font-size: 20px;" class="fa fa-arrow-circle-up"></i> TOP</a> 
     
    <a href="#cal" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
     <i class="fa fa-th"></i> CALENDAR</a> 
     
    <a href="#bt" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-    <i class="fa fa-envelope"></i> BOTTOM</a>
+    <i style="font-size: 20px;" class="fa fa-arrow-circle-down"></i> BOTTOM</a>
    
    <i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off 
     w3-right w3-hover-gray w3-button" onclick="sounds()"></i>

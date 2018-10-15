@@ -20,7 +20,7 @@
  color: #444; 
  line-height: 1.8;
 }
-
+ 
 
 .w3-wide {
  letter-spacing: 10px;

@@ -172,13 +172,13 @@ option{font-size: 20px; }
 			<a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
 			
 			<a href="#top" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-				<i class="fa fa-user"></i> SEARCH</a> 
+				<i class="fa fa-spinner"></i> SEARCH</a> 
 				
 			<a href="#video" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-th"></i> VIDEO</a> 
+				<i style="font-size: 20px;" class="fa fa-youtube-play"></i> VIDEO</a> 
 				
 			<a href="#brand" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-				<i class="fa fa-envelope"></i> BRAND</a>
+				<i class="fa fa-asterisk"></i> BRAND</a>
 			
 			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off 
 				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
