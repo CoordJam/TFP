@@ -117,7 +117,7 @@ width: 60%;}
             <tbody class="table">
                             <c:forEach var="list" items="${list}" varStatus="status">
                                 <tr class="cell"> 
-                                    <td align="center">${no}</td>
+                                    <td align="center">${no}</td> 
                                     <c:set var="no" value="${no-1}"></c:set>
                                     <td>
                                         <a href="/qnacontent?seq=${list.qnaBoard_seq}">${list.qnaBoard_title}</a>
