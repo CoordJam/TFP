@@ -116,7 +116,7 @@ width: 60%;}
                 </thead>
             <tbody class="table">
                             <c:forEach var="list" items="${list}" varStatus="status">
-                                <tr class="cell">
+                                <tr class="cell"> 
                                     <td align="center">${no}</td>
                                     <c:set var="no" value="${no-1}"></c:set>
                                     <td>
