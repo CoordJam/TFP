@@ -9,7 +9,7 @@ public class SpringFileWriter {
   public void writeFile(MultipartFile file, String cafe24path, String fileName) {
     try {
       byte fileData[] = file.getBytes();
-      cafe24path="/home/hosting_users/ezbomb19/tomcat/webapps/ROOT/save";
+      //cafe24path="/home/hosting_users/ezbomb19/tomcat/webapps/ROOT/save";
       fos = new FileOutputStream(cafe24path + "/" + fileName);
       fos.write(fileData);
     }
