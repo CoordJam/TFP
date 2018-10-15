@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndViewDefiningException;
 
+import xml.IsThereFile;
 import xml.XmlParser;
 
 @Controller
@@ -22,6 +23,8 @@ public class CollectionController
 {
 	@Autowired
 	XmlParser xmlParser;
+	@Autowired
+	IsThereFile check;
 	
 	@RequestMapping("/goCollectionTestPage/")
 	public ModelAndView goCollectionTestPage(@RequestParam(value ="year",
@@ -50,11 +53,17 @@ public class CollectionController
 		return model;
 	}
 	
-	@RequestMapping("/isThereFile")
+	@RequestMapping("/isThereFile/")
 	@ResponseBody
-	String isThereFile(int year, String brandName, String season) {
-			
-		return  brandName;
+	String isThereFile(String year, String brandName, String season, HttpServletRequest request) {
+		String baseDirectoryPath = request.getServletContext().getRealPath("")+"xml/Collection/";
+		String xmlPath = baseDirectoryPath+brandName+"/"+year+" "+season+".xml";
+		
+		boolean checkVal = check.checkFiel(xmlPath);
+		if (checkVal == true) {
+			return "true";
+		}		
+		return "false";
 	}
 	
 	@RequestMapping("/collectionCalenderPopUp/")

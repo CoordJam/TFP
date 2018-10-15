@@ -1,4 +1,4 @@
-<%@page import="check.IsThereFile"%>
+<%@page import="xml.IsThereFile"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -90,10 +90,10 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-21px; width: 100%; margin-bottom: 1%;height: 53vw;  width: 157%;  margin-left: -28%; z-index: -1;pointer-events: none;}
+#player{ margin-top:-33px; width: 162%; margin-bottom: 1%;height: 53vw;   margin-left: -31%%; z-index: -1;pointer-events: none;}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
-.divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-17px;}
+.divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-27px;}
 .goRight, .goLeft{font-size:50px; cursor: pointer; color: black;}
 .goLeft{position: relative; left:100px;}
 .goRight {position: relative; left:150px;}
@@ -155,7 +155,7 @@ option{font-size: 20px; }
 			.collectionName {font-size: 4.3vh;}
 			#player{margin-bottom: 10px;margin-top:35px;    margin-bottom: -64px;}
 			.sectionOne{    margin-left: -6%;}
-			.brandName2{    top: -11vw;}
+			.brandName2{    top: -16vw;}
 			}
 	@media (max-width:750px){		
 			.mordalh1{font-size: 24px; margin: 5px;     left: 13px;}
@@ -180,7 +180,8 @@ option{font-size: 20px; }
     z-index: 2;
 }
 			}
-			   
+.goLeft, .goRight {display:none;}	   
+.secondNextCollection .nextCollection {    left: 36vw; top: 21.8vh;}
 </style>
 </head>
 <body id="body">
@@ -234,9 +235,36 @@ option{font-size: 20px; }
 	    <h1 class ="mordalh1">Year</h1>
 	    <h1 class ="mordalh1">Season</h1>
     </div>
+    <script>
+    function check(){
+    	var brandName = $("select[name='brandName']").val();
+    	var year = $("select[name='year']").val();
+    	var season = $("select[name='season']").val();
+    	var check;
+    		  $.ajax({
+    		        type:"POST",
+    		        async: false,
+    		        url:"/isThereFile/",
+    		        data : {brandName: brandName, year:year, season:season },
+    		        dataType : "text",
+    		        success: function(text){
+    		            if (text=="true"){
+    		            	check =true;
+    		            }else{
+    		            	alert("해당 컬렉션은 존재하지 않습니다");
+    		            }
+    		        },
+    		        error: function(xhr, status, error) {  }  
+    		    }); 
+    		  if(check==true){
+    			  return true;
+    		  }
+    		  return false;
+    }
+    </script>
     <div class ="mordalFormDiv chosen-wrapper chosen-wrapper--style2" data-js="custom-scroll">
-	    <form action="/goCollectionTestPage/">
-	    	 <select class="chosen-select" data-placeholder="CHOOSE THE BRAND" name="brandName">
+	    <form action="/goCollectionTestPage/"  onsubmit="return check()" id="brandGoForm">
+	    	 <select class="chosen-select" data-placeholder="CHOOSE THE BRAND" name="brandName"  id = "brandName">
 				    <option></option>
 				    <option>Armani Prive</option>
 				    <option>CALVIN KLEIN</option>
@@ -248,7 +276,7 @@ option{font-size: 20px; }
 				    <option>Prada</option>
 				    <option>Versace</option>
   			</select>
-  			<select class="chosen-select" data-placeholder="CHOOSE THE YEAR" name ="year">
+  			<select class="chosen-select" data-placeholder="CHOOSE THE YEAR" name ="year" id = "year">
   					<option></option>
 				    <option>2018</option>
 				    <option>2017</option>
@@ -265,7 +293,7 @@ option{font-size: 20px; }
 				    사진을 클릭하면 크게 나오게 하기~~ -->
 				  
   			</select>
-  			<select class="chosen-select" data-placeholder="CHOOSE THE SEASON" name="season">
+  			<select class="chosen-select" data-placeholder="CHOOSE THE SEASON" name="season" id = "season">
   					<option></option>
 				    <option>SS</option>
 				    <option>FW</option>
