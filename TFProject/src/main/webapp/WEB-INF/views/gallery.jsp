@@ -73,7 +73,7 @@
 			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
 			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
 			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
-			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
+			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
 	</div>
 

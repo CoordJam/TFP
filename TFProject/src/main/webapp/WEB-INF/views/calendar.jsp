@@ -148,7 +148,7 @@ text-overflow:ellipsis;
 			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
 			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
 			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
-			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
+			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
  </div>
 <img name="top" class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_imgg1.jpg"/><br><br><br>

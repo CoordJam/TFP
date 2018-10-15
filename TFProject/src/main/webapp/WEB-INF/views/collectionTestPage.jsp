@@ -1,4 +1,4 @@
-<%@page import="xml.IsThereFile"%>
+<%@page import="com.coord.jam.IsThereFile"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -91,7 +91,7 @@ body, html {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
 }
-#player{ margin-top:-33px; width: 162%; margin-bottom: 1%;height: 53vw;   margin-left: -31%; z-index: -1;pointer-events: none;}
+#player{ margin-top:-33px; width: 162%; margin-bottom: 1%;height: 53vw;   margin-left: -31%; z-index: -1;}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
 .divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-41px;}
@@ -198,33 +198,43 @@ option{font-size: 20px; }
 </style>
 </head>
 <body id="body">
-<c:set var="root" value="<%=request.getContextPath()%>"></c:set>
 	<!-- Navbar (sit on top) -->
-	<div class="w3-top">
+		<div class="w3-top">
 		<div class="w3-bar" id="myNavbar">
-			<a class="w3-bar-item w3-button w3-hover-black w3-left" href="javascript:void(0);"
+			<a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
 			onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
-			<a href="/" class="w3-bar-item w3-hover-black w3-button">HOME</a>
-			<a href="/test2/#b1" class="w3-bar-item w3-button w3-hover-black w3-hide-small"> 
-				<i class="fa fa-user"></i> b1</a> 	
-			<a href="/test2/#b2" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
-				<i class="fa fa-th"></i> b2</a> 
-			<a href="/test2/#b3" class="w3-bar-item w3-button w3-hover-black w3-hide-small">
-				<i class="fa fa-envelope"></i> b3</a> 
-			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
-				w3-right w3-hover-black w3-button" onclick="sounds()"></i>
+			
+			<a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+			
+			<a href="#top" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
+				<i class="fa fa-spinner"></i> SEARCH</a> 
+				
+			<a href="#video" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i style="font-size: 20px;" class="fa fa-youtube-play"></i> VIDEO</a> 
+				
+			<a href="#brand" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+				<i class="fa fa-asterisk"></i> BRAND</a>
+			
+			<i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off 
+				w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
+				
+			<div id="kakao_btn_changed"></div>
+			
+			<div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
 		</div>
-		<!-- Navbar on small screens -->
+
+			<!-- 메뉴바 -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-			<a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-			<a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-			<a href="/test3/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>  
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
 		</div>
 	</div>
 	
 
-	<div class ="calenderBox">
+	<div class ="calenderBox" name="top">
 	<div class = "brandNameBox">
 	<p class = "brandName">${brandName}</p></div>
 		<div class="nextCollection">
@@ -330,10 +340,10 @@ option{font-size: 20px; }
 	<div class="bgimg-1 w3-display-container" id="home"></div>
 	
 	<!-- <div class ="playerShield"></div>  -->
-	<div id="player"></div> 
+	<div name="video" id="player"></div> 
 	
 	<div class = "secondNextCollection">
-	<h1 class = "brandName2">${brandName }</h1>
+	<h1 name="brand" class = "brandName2">${brandName }</h1>
 	<div class="nextCollection">
 			<span class="goLeft" onclick=" goNextSeason('left')">◀</span>
 				<span class ="collectionName">${year } ${season }</span>
@@ -450,6 +460,11 @@ option{font-size: 20px; }
 	
 	<h1>안녕하세요.</h1> -->
 	</div>
+	<div id="kakao_btn_changed">
+<a href="javascript:loginWithKakao()">
+<img src="" /></a>
+</div>
+    
 	
 	<script>
 		
@@ -487,22 +502,22 @@ option{font-size: 20px; }
 	<script>
 		bl = true;
 		var yousound = document.getElementById("usound");
-
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audioIsPlaying = false;
+		
 		yousound.onclick = function() {
 
 			if (bl) {
-				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-				console.log(bl);
-				bl = !bl;
-				console.log(bl);
-				ytplayer.playVideo();
-				console.log(ytplayer);
-			} else {
 				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-				console.log(bl);
 				bl = !bl;
-				console.log(bl);
-				ytplayer.pauseVideo();
+				audio.play();
+				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
 			}
 		}
 	</script>
@@ -574,7 +589,122 @@ option{font-size: 20px; }
 	
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.js'></script>
 
-  
+  <script>
+var namelee=localStorage.getItem("key1");
+console.log(localStorage.getItem("key1"));
+console.log(namelee);
+//document.getElementById("test1").innerHTML=namelee;
+// 로그인 및 로그아웃 버튼 생성 처리
+var cookiedata = document.cookie;
+if(cookiedata.indexOf('kakao_login=done') < 0){
+    createLoginKakao();
+}else{
+    createLogoutKakao();
+}
+ 
+/* 로그인 관련 쿠키 생성 및 삭제 */
+function setCookie( name , value , expired ){
+ 
+ var date = new Date();
+ date.setHours(date.getHours() + expired);
+ var expried_set = "expries="+date.toGMTString();
+ document.cookie = name + "=" + value + "; path=/;" + expried_set + ";"
+ 
+}
+ 
+function getCookie(name){
+    var nameofCookie = name + "=";
+    var x = 0;
+    while(x <= document.cookie.length){
+        var y = ( x + nameofCookie.length);
+        if(document.cookie.substring(x,y) == nameofCookie){
+            if((endofCookie = document.cookie.indexOf(";",y)) == -1)
+                endofCookie = document.cookie.length;
+            return unescape(document.cookie.substring(y,endofCookie));
+        }
+        x = document.cookie.indexOf(" ",x) + 1;
+        if( x == 0 )
+            break;
+        }
+        
+        return "";
+}
+ 
+// 카카오 script key 입력
+Kakao.init('f97d93c0c9455c750f465c1049841311');
+ 
+ // 로그인 처리
+function loginWithKakao(){
+    
+    Kakao.Auth.cleanup();
+    Kakao.Auth.loginForm({
+        persistAccessToken: true,
+        persistRefreshToken: true,
+        success: function(authObj) {
+        	Kakao.API.request({
+        		url:'/v1/user/me',
+        		success: function(res){
+		            setCookie("kakao_login","done",1); // 쿠키생성 (로그인)
+		            console.log(JSON.stringify(res));
+		            createLogoutKakao();
+		            //window.location.href="../login.com";
+		            localStorage.setItem("key1", res.properties.nickname); 
+		            //localStorage.key1=res.properties.nickname;
+		            console.log(res.properties.nickname);
+		            console.log(localStorage.getItem("key1"));
+		            window.location.reload();
+   
+        },
+        fail: function(error){
+        	alert(JSON.stringify(error));
+        }
+        });
+        },
+            fail: function(err) {
+             alert(JSON.stringify(err));
+        }
+                 
+    });
+}
+ 
+// 로그아웃 처리
+function logoutWithKakao(){
+    Kakao.Auth.logout();
+    alert('카카오 로그아웃 완료!');
+    setCookie("kakao_login","",-1);  // 쿠키삭제 (로그아웃)
+    createLoginKakao();
+    //window.location.href="../login.com";
+    localStorage.removeItem("key1");
+    window.location.reload();
+}
+ 
+// 로그인 버튼생성
+function createLoginKakao(){
+ var login_btn = "<a href='javascript:loginWithKakao()'>"+
+                "<div id='kakao_btn_changed' class='w3-bar-item w3-button w3-hover-gray w3-right'>Login <span style='font-size: 8pt;'>(for kakao)</span></div> "+
+                "<a/>";
+ document.getElementById('kakao_btn_changed').innerHTML  = login_btn;
+}
+ 
+// 로그아웃 버튼생성
+function createLogoutKakao(){
+ var logout_btn = "<a href='javascript:logoutWithKakao()'>"+
+ 				"<div class='w3-bar-item w3-button w3-hover-gray w3-hide-small w3-right'>Logout</div> "+
+                "</a>";
+ document.getElementById('kakao_btn_changed').innerHTML  = logout_btn;
+ 
+}
+ 
+// document.getElementById("test1").textContent=userNick;
+ $(function(){
+	 var s=document.getElementById("test1");
+	 if(localStorage.key1!=null){
+ 		s.innerText=localStorage.key1;
+	 }else{
+		 s.innerText="";
+	 }
+ });
+</script>
 
     <script  src="/js/index.js"></script>
 </body>
