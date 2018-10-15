@@ -97,7 +97,7 @@ text-overflow:ellipsis;
    <div id="test1" class="w3-right w3-bar-item w3-hover-gray "></div> 
   </div>
 
-  <!-- Navbar on small screens -->
+  <!-- Navbar on small screens --> 
   <div id="navDemo" class="w3-bar-block w3-white w3-hide">
 			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
 			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
