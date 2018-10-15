@@ -191,8 +191,6 @@ text-overflow:ellipsis;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
  
-
-
 <form name="cal" align="center">
 <a href="#" onclick="slideshow1()"><button class="w3-button w3-white w3-border" style="width:100px; border: none;">prev</button></a>&nbsp;
 <a href="#" onclick="slideshow2()"><button class="w3-button w3-white w3-border" style="width:100px; border: none;">next</button></a><br><br>
