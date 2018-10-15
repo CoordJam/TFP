@@ -107,8 +107,11 @@ width: 60%;}
                     <tr class="head">
                         <th width="50px" align="center">No</th>
                         <th width="850px" align="center">제목</th>
-                        <th width="100px" align="center">작성자</th>
-                        <th width="200px" align="center">작성일</th>
+                        <th width="100px" align="center" style="
+   								padding-left: 20px;">작성자</th>
+                        <th width="200px" align="center" style="
+							    padding-right: 0px;
+							    padding-left: 60px;">작성일</th>
                     </tr>
                 </thead>
             <tbody class="table">

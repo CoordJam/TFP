@@ -48,45 +48,8 @@
 
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css'>
 
- 
 
  <link rel="stylesheet" href="/css/style.css">
-
-<script>
-
-/* var currentScroll = 0;
-
-var keeppingScrollEvent = false;
-
-$( window ).scroll(function(e) {
-
-	cureentScroll = $(this).scrollTop();
-
-	if ($(this).scrollTop()<500){
-
-		if(currentScroll<$(this).scrollTop() && keepingScrollEvent == false){
-
-			$('html, body').stop().animate({
-
-	            scrollTop: 1156
-
-	            }, 100);
-
-			keepingScrollEvent = true;
-
-		}
-
-	}
-
-	console.log($(this).scrollTop());
-
-}); */
-
- 
-
-</script>
-
- 
 
  
 
@@ -143,7 +106,7 @@ body, html {
 #myNavbar {
 
 	opacity: 0.6;
-
+	RIGHT: 14.7PX;
 	color: #000;
 
 }
@@ -374,15 +337,12 @@ option{font-size: 20px; }
 
     font-style: italic;
 
-    position: absolute;
-
-}.p_close {
-
-    right: 28px;
+    position: absolute;}.p_close {right: 28px;
 
     z-index: 2;
 
     top:10px;
+    .popup {  width: 336px; height: 312px; left: 50%}	
 
 }
 
