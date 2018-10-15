@@ -286,7 +286,7 @@ option{font-size: 20px; }
 
         }
 
-        @media (max-width:1185px){
+        @media (max-width:1185px){ 
 
        .secondNextCollection .nextCollection{display:none;} 
 
