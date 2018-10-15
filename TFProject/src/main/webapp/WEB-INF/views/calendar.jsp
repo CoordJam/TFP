@@ -126,18 +126,18 @@ text-overflow:ellipsis;
    <a class="w3-bar-item w3-button w3-hover-gray w3-left" href="javascript:void(0);"
    onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i></a> 
    
-   <a href="#home" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
+   <a href="/" class="w3-bar-item w3-hover-gray w3-button">HOME</a>
    
-   <a href="#about" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
-    <i class="fa fa-user"></i> ABOUT</a> 
+   <a href="#top" class="w3-bar-item w3-button w3-hover-gray w3-hide-small"> 
+    <i class="fa fa-user"></i> TOP</a> 
     
-   <a href="#portfolio" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-    <i class="fa fa-th"></i> RUNWAY</a> 
+   <a href="#cal" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+    <i class="fa fa-th"></i> CALENDAR</a> 
     
-   <a href="#contact" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
-    <i class="fa fa-envelope"></i> CONTACT</a>
+   <a href="#bt" class="w3-bar-item w3-button w3-hover-gray w3-hide-small">
+    <i class="fa fa-envelope"></i> BOTTOM</a>
    
-   <i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-up 
+   <i id="usound" style="font-size: 20px; height: 43px;" class="w3-bar-item fa fa-volume-off 
     w3-right w3-hover-gray w3-button" onclick="sounds()"></i>
     
    <div id="kakao_btn_changed"></div>
@@ -147,15 +147,14 @@ text-overflow:ellipsis;
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide">
-   <a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
-   <a href="/test1/" class="w3-bar-item w3-button" onclick="toggleFunction()">test1</a> 
-   <a href="/test2/" class="w3-bar-item w3-button" onclick="toggleFunction()">test2</a>
-   <a href="/qnaList/" class="w3-bar-item w3-button" onclick="toggleFunction()">test3</a>
-   <a href="/test4/" class="w3-bar-item w3-button" onclick="toggleFunction()">test4</a>
-   <a href="/goCollectionTestPage/" class="w3-bar-item w3-button" onclick="toggleFunction()">CollectionTestPage</a>    
-  </div>
+			<a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a> 
+			<a href="/calendar/" class="w3-bar-item w3-button" onclick="toggleFunction()">Calendar</a> 
+			<a href="/qnalist/" class="w3-bar-item w3-button" onclick="toggleFunction()">QnA</a>
+			<a href="/gallery/" class="w3-bar-item w3-button" onclick="toggleFunction()">Gallery</a>
+			<a href="/collection/" class="w3-bar-item w3-button" onclick="toggleFunction()">Collection</a>    
+		</div>
  </div>
-<img class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_imgg1.jpg"/><br><br><br>
+<img name="top" class="w3-card" style="width: 100%;" name="c1" src="/img/main_menu_img/hor_imgg1.jpg"/><br><br><br>
 
  
 
@@ -197,26 +196,25 @@ text-overflow:ellipsis;
  
 
 
-<form align="center">
-<a href="#" onclick="slideshow1()"><input  class="w3-button w3-white w3-border" value="prev" style="border: none;"></a>
-<a href="#" onclick="slideshow2()"><input  class="w3-button w3-white w3-border" value="next" style="border: none;"></a>
+<form name="cal" align="center">
+<a onclick="slideshow1()"><button class="w3-button w3-white w3-border" value="prev" style="width:100px; border: none;">prev</button></a>&nbsp;
+<a onclick="slideshow2()"><button class="w3-button w3-white w3-border" value="next" style="width:100px; border: none;">next</button></a><br><br>
 </form> 
 <div align="center">
 <img src="/img/calendar/s10.png" name="mypic">
 </div>
 
- 
+  <div id="kakao_btn_changed">
+<a href="javascript:loginWithKakao()">
+<img src="" /></a>
+</div>
 
- 
-
- 
-
- <br><br><br><br><br><br>
+ <br><br><br><br><br>
 
 <!-- Footer -->
- <footer
+ <footer name="bt"
   class="w3-center w3-black w3-padding-48 w3-opacity-min w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-gray"><i
+  <a href="#top" class="w3-button w3-light-gray"><i
    class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <p>
    <br> 제휴 사이트&nbsp;&nbsp;&nbsp;<a
@@ -263,27 +261,27 @@ text-overflow:ellipsis;
  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 
  <script>
-  bl = true;
-  var yousound = document.getElementById("usound");
+		bl = true;
+		var yousound = document.getElementById("usound");
+		var audio = new Audio('/audio/backgroundMusic.mp3');
+		audioIsPlaying = false;
+		
+		yousound.onclick = function() {
 
-  yousound.onclick = function () {
-
-   if (bl) {
-    yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
-    console.log(bl);
-    bl = !bl;
-    console.log(bl);
-    ytplayer.playVideo();
-    console.log(ytplayer);
-   } else {
-    yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
-    console.log(bl);
-    bl = !bl;
-    console.log(bl);
-    ytplayer.pauseVideo();
-   }
-  }
- </script>
+			if (bl) {
+				yousound.className = "w3-bar-item fa fa-volume-up w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.play();
+				audioIsPlaying = true;
+				
+			} else {
+				yousound.className = "w3-bar-item fa fa-volume-off w3-right w3-hover-black w3-button";
+				bl = !bl;
+				audio.pause();
+				audioIsPlaying = false;
+			}
+		}
+	</script>
 
  <script>
   // Select all links with hashes
@@ -312,11 +310,6 @@ text-overflow:ellipsis;
     }
    });
  </script>
- 
- <div id="kakao_btn_changed">
-<a href="javascript:loginWithKakao()">
-<img src="" /></a>
-</div>
  
  <script>
 var namelee=localStorage.getItem("key1");
@@ -377,7 +370,7 @@ function loginWithKakao(){
               console.log(JSON.stringify(res));
               createLogoutKakao();
               //window.location.href="../login.com";
-              localStorage.setItem("key1", res.properties.nickname+"("+res.id+")"); 
+              localStorage.setItem("key1", res.properties.nickname); 
               //localStorage.key1=res.properties.nickname;
               console.log(res.properties.nickname);
               console.log(localStorage.getItem("key1"));
