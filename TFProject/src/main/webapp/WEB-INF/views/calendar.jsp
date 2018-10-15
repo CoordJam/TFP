@@ -11,9 +11,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
 
-<%@page import="java.text.SimpleDateFormat"%>
-
-<%@page import="java.util.Calendar"%> 
 
 
 <script type="text/javascript">
@@ -197,8 +194,8 @@ text-overflow:ellipsis;
 
 
 <form name="cal" align="center">
-<a onclick="slideshow1()"><button class="w3-button w3-white w3-border" value="prev" style="width:100px; border: none;">prev</button></a>&nbsp;
-<a onclick="slideshow2()"><button class="w3-button w3-white w3-border" value="next" style="width:100px; border: none;">next</button></a><br><br>
+<a href="#" onclick="slideshow1()"><button class="w3-button w3-white w3-border" style="width:100px; border: none;">prev</button></a>&nbsp;
+<a href="#" onclick="slideshow2()"><button class="w3-button w3-white w3-border" style="width:100px; border: none;">next</button></a><br><br>
 </form> 
 <div align="center">
 <img src="/img/calendar/s10.png" name="mypic">
