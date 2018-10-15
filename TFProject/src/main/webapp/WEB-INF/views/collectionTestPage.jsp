@@ -93,7 +93,7 @@ body, html {
 #player{ margin-top:-33px; width: 162%; margin-bottom: 1%;height: 53vw;   margin-left: -31%%; z-index: -1;pointer-events: none;}
 .logo{position: absolute;height: 109px;left: 832px;margin: 15px; top: 177px;}
 .calenderBox{position: relative; height: 100px; width:100%; left:20vw; margin-top:40px; border:0px solid black; margin-bottom: 10px;}
-.divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-27px;}
+.divinderUnderCalanderBox{color:black; position: relative; left:227px; border:solid 1px black; top:-41px;}
 .goRight, .goLeft{font-size:50px; cursor: pointer; color: black;}
 .goLeft{position: relative; left:100px;}
 .goRight {position: relative; left:150px;}
