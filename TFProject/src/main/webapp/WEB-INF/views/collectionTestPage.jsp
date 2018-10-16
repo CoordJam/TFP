@@ -307,7 +307,7 @@ option{font-size: 20px; }
 
 			.mordalh1{font-size: 24px; margin: 5px;     left: 13px;}
 
-			.mordalFormDiv{    width: 237px; z-index: 1;}
+			.mordalFormDiv{    width: 202px; z-index: 1;}
 
 			.chosen-container-single .chosen-single{font-size: 15px; border-color:white; padding: -4px; }
 
@@ -319,7 +319,7 @@ option{font-size: 20px; }
 
 			.chosen-wrapper .chosen-container .chosen-single{ border-bottom-color: white;     margin-bottom: 5px;}
 
-			.chosen-wrapper .chosen-container .chosen-single{font-size: 17px;}
+			.chosen-wrapper .chosen-container .chosen-single{font-size: 15px;}
 
 			.gosubmit {
 
